@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sanstale&#39;s Blog</title>
+  
+  
+  <link href="https://cybereal.ml/atom.xml" rel="self"/>
+  
+  <link href="https://cybereal.ml/"/>
+  <updated>2023-07-05T17:14:53.215Z</updated>
+  <id>https://cybereal.ml/</id>
+  
+  <author>
+    <name>Sanstale</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>修一下博客</title>
+    <link href="https://cybereal.ml/2023/07/06/repairblog/"/>
+    <id>https://cybereal.ml/2023/07/06/repairblog/</id>
+    <published>2023-07-05T16:51:28.000Z</published>
+    <updated>2023-07-05T17:14:53.215Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从上次重装系统忘记备份之后博客的源文件全部丢失，只剩下留在网上的文章，于是2月以来一直没写 拖到今天爆砍4小时基本还原<br>由于手动还原，以前的文章可能出现各种奇奇怪怪的问题<br>手搓博客真的好累，不过熟练度确实也提高了，这些东西之前搞了几天这次四小时就好了，另外网上留着的文章是html，不能直接转回md，找不到好用的工具求助班友了解到一个pandoc，一篇篇手动删掉了乱码终于搞完了<br>下面终于可以开始正常写文章了<br>另：军训很爽 暑假正式开始了 加油！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;自从上次重装系统忘记备份之后博客的源文件全部丢失，只剩下留在网上的文章，于是2月以来一直没写 拖到今天爆砍4小时基本还原&lt;br&gt;由于手动还原，以前的文章可能出现各种奇奇怪怪的问题&lt;br&gt;手搓博客真的好累，不过熟练度确实也提高了，这些东西之前搞了几天这次四小时就好了，另外网上</summary>
+      
+    
+    
+    
+    <category term="杂记" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+    <category term="博客" scheme="https://cybereal.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="hexo" scheme="https://cybereal.ml/tags/hexo/"/>
+    
+    <category term="好累" scheme="https://cybereal.ml/tags/%E5%A5%BD%E7%B4%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PS3不完全指北</title>
+    <link href="https://cybereal.ml/2023/02/11/ps3guide/"/>
+    <id>https://cybereal.ml/2023/02/11/ps3guide/</id>
+    <published>2023-02-11T15:01:06.000Z</published>
+    <updated>2023-07-05T16:41:56.052Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近咬咬牙入了ps3，感觉真是入了个大坑，光破解相关的东西就有一大堆，以下是最近几天的一点成果。</p><span id="more"></span><h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p>OFW : official firmware 官方固件</p><p>CFW : custom firmware 自制固件&#x2F;自制系统</p><p>HFW : hybrid firmware 混合固件</p><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>PlayStation<br>3（官方缩写：PS3）是索尼电子娱乐推出的家用电子游戏机。PlayStation<br>3于2006年11月11日在日本发售，同年11月17日于美国、香港及台湾上市，2007年3月23日于欧洲和大洋洲推出。</p><p>ps3生涯中发行过很多型号，大体可分为1000，2000，3000，4000型，体型依次减小。</p><p>其中，1000型被称为厚机，体型最大，可以直接兼容ps2游戏，但是发行最早，双90（即cpu与gpu均为90nm工艺），发热较大，容易”死亡黄灯”</p><p>2000可以细分为20xx,21xx,25xx几个类型，差别不太大，20是45+65，其他都是45+40工艺，风险较小</p><p>3000，4000工艺更新，基本不会有黄灯风险，但破解不太完美（个人角度），而且散热不太行，胜在轻薄。</p><p><a href="https://www.psdevwiki.com/ps3/SKU_Models">详情参考</a></p><h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><p>主要分为硬破和软破</p><p>硬破：较为古老</p><p>软破：分为cfw和hen，3000和4000主要使用hen，cfw只能在1000和2000使用，hen也可以在某些1000和2000使用，以支持列表为准</p><p>区别在于，cfw安装稍显复杂，安装完后可以游玩任何自制软件，盗版游戏，hen每次启动时要点击enable<br>hen，等待一会，然后和cfw操作基本一致。</p><p>详情代填。（可能永远不填</p><h2 id="参考-amp-推荐"><a href="#参考-amp-推荐" class="headerlink" title="参考&amp;推荐"></a>参考&amp;推荐</h2><p>破解相关wiki<br><a href="https://consolemods.org/">https://consolemods.org/</a></p><p>破解论坛<br><a href="https://www.psx-place.com/">https://www.psx-place.com/</a></p><p>游戏资源<br><a href="https://www.oldmanemu.net/">https://www.oldmanemu.net/</a><br> （不仅限于ps3）</p><p>中文论坛之一<br><a href="https://bbs.oldmanemu.net/">https://bbs.oldmanemu.net/</a><br> （不仅限于ps3）</p><p>导航站 <a href="https://loveps4.com/">https://loveps4.com/</a></p><p>寻找游戏：<a href="https://bgm.tv/game/browser/ps3/?sort=rank">https://bgm.tv/game/browser/ps3/?sort=rank</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;最近咬咬牙入了ps3，感觉真是入了个大坑，光破解相关的东西就有一大堆，以下是最近几天的一点成果。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    
+    
+    <category term="游戏" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+    <category term="ps3" scheme="https://cybereal.ml/tags/ps3/"/>
+    
+    <category term="指南" scheme="https://cybereal.ml/tags/%E6%8C%87%E5%8D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PS3愿望单</title>
+    <link href="https://cybereal.ml/2023/02/04/ps3wishlist/"/>
+    <id>https://cybereal.ml/2023/02/04/ps3wishlist/</id>
+    <published>2023-02-04T15:01:06.000Z</published>
+    <updated>2023-07-05T16:40:42.741Z</updated>
+    
+    <content type="html"><![CDATA[<p>买了NDSL之后也就打通了一两部游戏 但是反而开始对老主机很感兴趣了。</p><span id="more"></span><p>说实话，WiiU PSV<br>3DS其实都挺想要的。太老了画质不好，太新了到ps4就有点贵了，目前看下来ps3算性价比比较高的，带手柄也就500~600，就是硬盘有点小，普遍160g，要加个硬盘，目前观望不知道这机子什么时候能落地</p><p>顺便看着bangumi列了一个wishlist，但是可能有些游戏没中文</p><p>省略号代表该系列在ps3有多部</p><p>尼尔1<br>龙背上的骑兵3<br>战神1&#x2F;2<br>死亡空间 ……<br>白色相簿1&#x2F;2<br>p4&#x2F;p5(无royal）<br>CLANNAD<br>石头门1&#x2F;0<br>黑魂1&#x2F;2<br>gta5<br>美末1<br>巫师三<br>ICO<br>老滚4&#x2F;5<br>潜龙谍影<br>cod ……<br>风之旅人<br>猎天使魔女1<br>project diva ft&#x2F;f<br>鬼泣DMC&#x2F;3&#x2F;4<br>刺客信条<br>战地3&#x2F;4<br>如龙0&#x2F;极 ……</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;买了NDSL之后也就打通了一两部游戏 但是反而开始对老主机很感兴趣了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    
+    
+    <category term="游戏" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+    <category term="ps3" scheme="https://cybereal.ml/tags/ps3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>年前干的几件事</title>
+    <link href="https://cybereal.ml/2023/01/20/thingsthatdo/"/>
+    <id>https://cybereal.ml/2023/01/20/thingsthatdo/</id>
+    <published>2023-01-20T15:01:06.000Z</published>
+    <updated>2023-07-05T16:42:40.602Z</updated>
+    
+    <content type="html"><![CDATA[<p>明天就是除夕了，简单记记这个月看的玩的&#x2F;以及一些大事件。</p><p>说实话，主要是浏览，其实也没做什么东西。</p><p>时间顺序排列。</p><p>keyword:chunithm 钢炼 业余无线电 暴雪</p><span id="more"></span><h1 id="CHUNITHM"><a href="#CHUNITHM" class="headerlink" title="CHUNITHM"></a>CHUNITHM</h1><p>前两周去人广迪美玩了两把中二节奏，果不其然是非常的好玩，不愧于是街机版pjsk（bushi<br>回家就很想玩啊 于是就开始查中二怎么上pc玩 经过查找发现还是非常的困难<br>成本比较高也要较高的动手能力 于是暂时是玩不成了<br>不过还是有一些研究成果的。</p><p>先是一些参考网站：</p><p><a href="https://bemani.cc/">BEMANICN</a><br>（仅支持大陆地区访问，如果开了代理记得改一下规则）</p><p><a href="http://www.emuline.org/">emuline</a><br>(在撰写本文时这个网站暂时不可用了，但我几周前折腾的时候还是可以用的)</p><p>题外话：我才知道原来chunithm是中二的意思啊 我说为什么译名叫中二<br>之前我都不会拼这个词啊我丢</p><p>首先，中二大体可以分为新框和旧框，2021.11.4日版开始启用新框体，旧框体的最新版本为<br>CHUNITHM PARADISE<br>LOST，新框最新版本为SUN，不过我是没看到有SUN的资源，一般NEW&#x2F;NEW<br>PLUS比较多。</p><p>其次<br>中二要求显示器分辨率要大于等于1080p，大概是因为街机是1080p吧，120hz有没有都可以，于是我这个答辩768p屏幕就玩不了咯<br>虽然折腾几天成功启动了 但是窗口显示不全</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/49E785AAA6D7E701F7772DE14DDC84A9.jpg" alt="49E785AAA6D7E701F7772DE14DDC84A9"></p><p>成功启动但是显示不全</p><p>能启动我也很满足了，这东西的折腾就告一段落了，具体的软件安装可以在论坛里找，能不能运行就看你了</p><p>然后是硬件需求，首先你要有1080p+的显示器，最好是32寸的，然后要有windows电脑（因为街机是win系统<br>大概）最麻烦的就是手台了 没有手台这游戏用键盘操作基本是不可玩的状态</p><p>那么手台怎么整呢？一种方法是买tasoller（淘宝搜索即可）价格如图</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20230120211012243.png" alt="image-20230120211012243"></p><p>价格确实是很哈宁，不过这东西质量应该是手台里质量最好的了（应该<br>而且也包含了安装游戏等等后续一系列事情<br>如果你像我一样装过游戏就会知道装游戏有多痛苦了）</p><p>另一种方案就是diy 现在有大佬的几个开源方案（关键词gsk<br>lingthm），论坛里也有低至80元的方案</p><p>不过缺点就是相当硬核，虽然他们提供了图纸，但是你还是需要自己去定制亚克力板<br>推荐个店铺：<a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.51a52e8d5TkX2i&id=674805171065&_u=j31bblfv7ab9">tb</a></p><p>然后需要在嘉立创打样pcb<br>再买一堆元件自己焊，还有各种可能出现的问题，技术难度过大</p><p>总之这个游戏想在家玩起来真是困难重重，我放弃了。</p><h1 id="钢之炼金术师-FA"><a href="#钢之炼金术师-FA" class="headerlink" title="钢之炼金术师 FA"></a>钢之炼金术师 FA</h1><p>久仰钢炼的大名，最近有空来看，一看居然64集，有点哈宁</p><p>先后找了几个动漫站居然都没有fa，要么没有钢炼要么只有03版，有点纳闷这番不是挺有名的吗</p><p>最后是在阿里盘看的，六天狂肝64话，看下来确实是酣畅淋漓，战斗剧情都是一流水准，剧情很热血，怎么说呢，看到后面其实感觉有点拖了，（以及为什么兄弟分开旅行了啊<br>阿尔你哥这样出去不危险吗）可能我不是特别喜欢热血番吧。总的来说还是很不错的，看完人感到很舒爽啊。</p><p>必补老番之一。</p><h1 id="业余无线电"><a href="#业余无线电" class="headerlink" title="业余无线电"></a>业余无线电</h1><p>这个是前两天刷知乎的时候看到一个无线电相关的回答，感觉业余无线电还是挺有意思的<br>（到底是无线电有意思还是考证有意思呢 可能我只是想要考个证发朋友圈吧）</p><p>简单来说玩无线电先需要进行操作考试，分为abc三级，不能跳级，a级考试是30道选择题，从题库365道里抽。考试要先在线上报名然后到线下考试，有点遗憾上海最近一次考试是在十二月，不知道下一次是什么时候。</p><p>然后需要买一个入门的电台，并进行申报，申报完会发一个执照，有了两个证件才算踏入业余无线电的大门了。</p><p>这个爱好还是学问很深的，了解比较浅薄，等我开始玩了再说吧。</p><h1 id="暴雪绿茶"><a href="#暴雪绿茶" class="headerlink" title="暴雪绿茶"></a>暴雪绿茶</h1><p>去年暴雪和网易分手闹得沸沸扬扬，最近暴雪又说没找到下家要和网易再呆六个月，以及魔兽的电子骨灰盒等等事件……再过几年，可能暴雪就成为了中国玩家的记忆了吧。网易最近还推出了暴雪绿茶，很快就脱销了，也是挺搞笑的</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/1674115878_974255.jpg" alt="网易&quot;暴雪绿茶&quot;饮品爆红全网：官方上传自制教程_3DM单机"></p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/006q8RPdgy1ha6jbxhgoaj31g63odnpe.jpg" alt="006q8RPdgy1ha6jbxhgoaj31g63odnpe"></p><h1 id="想玩的-x2F-在玩的-x2F-没打完的游戏"><a href="#想玩的-x2F-在玩的-x2F-没打完的游戏" class="headerlink" title="想玩的&#x2F;在玩的&#x2F;没打完的游戏"></a>想玩的&#x2F;在玩的&#x2F;没打完的游戏</h1><p><strong>想玩的：</strong></p><p>如龙0</p><p><strong>在玩的：</strong></p><p>Kingdom Rush</p><p>osu</p><p>project sekai</p><p>clash of clans</p><p>counter strike 1.6</p><p><strong>没打完的：</strong></p><p>NieR：Automata</p><p>幽灵诡计</p><p>逆转裁判</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;明天就是除夕了，简单记记这个月看的玩的&amp;#x2F;以及一些大事件。&lt;/p&gt;
+&lt;p&gt;说实话，主要是浏览，其实也没做什么东西。&lt;/p&gt;
+&lt;p&gt;时间顺序排列。&lt;/p&gt;
+&lt;p&gt;keyword:chunithm 钢炼 业余无线电 暴雪&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="游戏" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+    <category term="街机" scheme="https://cybereal.ml/tags/%E8%A1%97%E6%9C%BA/"/>
+    
+    <category term="动漫" scheme="https://cybereal.ml/tags/%E5%8A%A8%E6%BC%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Missing-Semester学习笔记</title>
+    <link href="https://cybereal.ml/2023/01/01/Missing-Semester/"/>
+    <id>https://cybereal.ml/2023/01/01/Missing-Semester/</id>
+    <published>2023-01-01T15:01:06.000Z</published>
+    <updated>2023-07-05T16:09:47.160Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一个有关MIT的The Missing Semester of Your CS<br>Education这一课程的学习笔记，我会记录一些我在学习中遇到的难点和思考。</p><p><a href="https://missing.csail.mit.edu/">课程官网</a><br><a href="https://missing-semester-cn.github.io/">中文版课程</a></p><p>你可以在官网找到youtube上的课程视频，也可以在b站找到翻译的版本。</p><span id="more"></span><h1 id="第一课-Shell"><a href="#第一课-Shell" class="headerlink" title="[第一课 Shell]"></a>[第一课 Shell]</h1><p>这一课我之前学过，但是基本上都忘得差不多了，今天复习一下。</p><p>在日常生活中我们使用的绝大部分工具都是图形界面，也就是GUI，但实际上他们可以执行的功能非常有限。使用命令行(CLI)可以很方便的将各个程序间互相结合使用，以及对他们的功能的添加修改等等。</p><p>在这里，你可以简单的把Shell直接理解成命令行界面，shell分很多种，每个操作系统都有各自不同的shell，windows主要是CMD和PowerShell。在这个课程中使用bash进行教学，这是一个内置在linux和MacOS中的shell，但windows中并没有。因此我装了git来在windows使用bash。</p><p>思考了一下，我不想只是把课程里的东西用我稀烂的语言复述一遍，这样还不如直接看中文文档。下面我想写一些重点，还有作业的内容。</p><p>在Git bash中，界面是长这样的：</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20230101194934285.png" alt="image-20230101194934285"></p><p>使用<code>date</code>命令可以获取现在的时间。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">date</span></span></span><br><span class="line">Sun Jan  1 19:50:31     2023</span><br></pre></td></tr></table></figure><p><code>echo</code>顾名思义，回声，会重复输入给它的内容。</p><p>传输一个多单词的参数时，使用引号括起来。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> <span class="string">&quot;hello world&quot;</span></span></span><br><span class="line">hello world</span><br></pre></td></tr></table></figure><p>也可以使用单转义符号。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">echo</span> hello\ world</span></span><br><span class="line">hello world</span><br></pre></td></tr></table></figure><p><code>如果不用引号括起来，可能会变成两个参数，比如</code>mkdir my photo&#96;会生成my和photo两个文件夹。</p><p>如果你要求 shell 执行某个指令，但是该指令并不是 shell<br>所了解的编程关键字，那么它会去咨询 <em>环境变量</em> <code>$PATH</code>，它会列出当 shell<br>接到某条指令时，进行程序搜索的路径。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">missing:~$ echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br><span class="line">missing:~$ which echo</span><br><span class="line">/bin/echo</span><br><span class="line">missing:~$ /bin/echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</span><br></pre></td></tr></table></figure><p><code>which</code>可以告诉我某一个命令的程序所在路径。</p><p>在win中，每个驱动器都有一个根目录，linux和mac中，所有文件都在一个根目录下，即&#x2F;。</p><p>可以用<code>pwd</code>获取当前工作目录。print working directory</p><p>使用cd来切换工作目录。使用<code>.</code>表示当前目录，<code>..</code>表示上一个目录，注意这两个都是用来表示相对路径的。</p><p>比如在&#x2F;时，输入<code>cd ./home</code>可以到&#x2F;home，再次输入就不行了，因为&#x2F;home中并没有另一个home文件夹。</p><p><code>cd</code>中，<code>~</code>表示用户目录，<code>-</code>则表示上一个目录，也就是你用cd之前的目录。</p><p>一般可以把-或–后面没有参数，比如-a,–all都可以叫做flag，-C，-color叫做option，因为要加一个参数。注意对于每个命令他们的flag和option都不相同，可以使用<br>–help查阅这个命令的用法。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">missing:~$ ls -l /home</span><br><span class="line">drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;这是一个有关MIT的The Missing Semester of Your CS&lt;br&gt;Education这一课程的学习笔记，我会记录一些我在学习中遇到的难点和思考。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://missing.csail.mit.edu/&quot;&gt;课程官网&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://missing-semester-cn.github.io/&quot;&gt;中文版课程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;你可以在官网找到youtube上的课程视频，也可以在b站找到翻译的版本。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    
+    
+    <category term="编程" scheme="https://cybereal.ml/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="笔记" scheme="https://cybereal.ml/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="命令行" scheme="https://cybereal.ml/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022年的回顾和2023的一些展望</title>
+    <link href="https://cybereal.ml/2022/12/31/2022review/"/>
+    <id>https://cybereal.ml/2022/12/31/2022review/</id>
+    <published>2022-12-31T15:01:06.000Z</published>
+    <updated>2023-07-05T16:32:22.729Z</updated>
+    
+    <content type="html"><![CDATA[<p>2022年还有一个小时不到就要在UTC&#x2F;GMT+08:00过去了，趁这个没什么事干的时间看看这一年都学了什么玩了什么吧。</p><p><del>不是怎么这么多游戏啊</del></p><span id="more"></span><h1 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h1><p>有关学习，其实能说的并不太多。我说过我不是很想写一些生活的东西，这里简单提一提吧。相比2020，今年的学校生活可以说更加多灾多难的一点…上半年上到了三月份就开始上网课，学习也很摆烂，整个上半年，哎，就是没什么进步，游戏倒是玩了不少。暑假也是半玩半学，到了下半年开学开始振作了一些。主要还是运气缘故吧，期中考成绩不错，看得出来偏科也很厉害，但是上了半个多学期又开始悲催的网课…只能尽量学习了吧，这样想着又开始摸鱼。哎，整个人很矛盾。</p><p>在这里就不展开说了。</p><h1 id="ACG"><a href="#ACG" class="headerlink" title="ACG"></a>ACG</h1><p>说到这个就来劲了啊。看得出来今年还是没怎么内卷，在acg方面涉猎不少。</p><h2 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h2><p>游戏这里分几块，先讲讲NS方面的。今年玩了不少大作，也算是提升了一些本人审美了。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/220px-The_Legend_of_Zelda_Breath_of_the_Wild.png" alt="The Legend of Zelda Breath of theWild.png"></p><p>旷野之息，公认的神作。为什么我不是刚拿到ns就玩的呢？当时也不知道怎么想的，觉得塞尔达这种rpg玩着没什么意思，玩的第一款ns游戏是奥德赛。今年想着试一试塞尔达，然后这不就真香了嘛。其实我还没全推完就卖了，现在想想还有点后悔，毕竟我还买了个dlc，再加上这卡从实体店js买的，算下来这游戏花了我450，回血只回了270左右，亏死了…可能以后会再买回来吧。不过明年王国之泪要出了，不知道有没有这个机会。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/146598_m2Dj6.jpg" alt="img"></p><p>《十三机兵防卫圈》，可以说是文字冒险里数一数二的好作品了。图是ps的，实际是在ns上玩的，在闲鱼上淘一个带特典的花了我325，回血三百一十几，游玩成本十多块，太划算了啊有木有。</p><p>流程三十多个小时，剧情很神，个人不太喜欢崩坏篇，没玩过文字冒险的可以先看看实况什么的考虑要不要入，也可以eshop里下个试玩版试试。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/302805_Vc7z2.jpg" alt="img"></p><p><strong>世界游戏大全51</strong></p><p>和朋友线下玩很快乐的游戏，暑假一半的快乐都是它带来的。</p><p>如果你平时没什么朋友玩就不要买，实测暑假过完之后打开这个游戏的频率直线下滑。</p><p>还有两款不错的单机，由于已经只剩半个小时了，限于时间不详细讲了。</p><p>或者过两天我来补。</p><p>星之卡比：探索发现和精灵与萤火意志，都是很好玩的作品，难度适中，时长都在20~25小时左右。</p><h2 id="动漫"><a href="#动漫" class="headerlink" title="动漫"></a>动漫</h2><p>今年也是补了一些番，限于篇幅还是挑重点讲。</p><p>先是年度神番：（虽然不是今年的）</p><p><strong>命运石之门</strong></p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/10380_YwP4R.jpg" alt="img"></p><p>太好看了。太好看了。刚看完那几天我真的是被震撼到满脑子都是这部番，必须承认这好像是唯一一部让我有这种感觉的作品，剧情有些慢热导致我一度看到第六话弃掉了，但最后还是捡起来看完了，剧情太好了，各个方面都几乎无可挑剔。助手QAQ</p><p>唯一我有点不舒服的是后面有一点点后宫向，不过那应该算是不存在的现实吧（笑</p><p><strong>辉夜大小姐想让我告白-超级浪漫-</strong></p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/317613_bpGX4.jpg" alt="img"></p><p>另一部我喜欢到不行的番。就算原作发病又怎么样，我还是要一遍骂原作一遍吹它。制作组厨力爆表，堪称在我微不足道的阅历中最好的的恋爱喜剧。</p><p>看不够啊，真是看不够啊。</p><p>早坂爱啊啊啊啊啊啊啊啊真是太喜欢小爱了。她的主题曲《春色リップ》真的听不厌啊。</p><p><strong>进击的巨人</strong></p><p>补了前三季，给人感觉确实很震撼。第四季看了一点在考虑要不要看下去。</p><p><strong>四叠半神话大系</strong></p><p>被推荐的番，看完虽不是特别惊艳，确实和普通动画有很大不同，也很有深意。</p><p>讲讲答辩。</p><h3 id="名侦探柯南-万圣节的新娘"><a href="#名侦探柯南-万圣节的新娘" class="headerlink" title="名侦探柯南 万圣节的新娘"></a>名侦探柯南 万圣节的新娘</h3><p>我靠真的不知道如何评价…原谅我柯南剧场版看的不多，对这种答辩剧情没什么接受度。当时看到朋友圈都在看就凑热闹去看了（还是一个人看的），剧情真的是..难以描述。开头看得出来有p5的影子，很不错。提到这部电影我只能想到我还没玩p5。</p><p>（答辩就这一部啊</p><p><strong>孤独摇滚</strong></p><p>都在吹的作品，说实话看完并不是很有感觉，可能我不是它的受众吧。演出不错，人物不错，这是我的评价。至于社恐，它让我感觉我还是没那么社恐的嘛。还是挺快乐的一部番，只是我感觉没有那么神。</p><p>已经48分了..下面说点别的</p><h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><p>今年也是有不少编程方面的进展，做课题让我又捡起来本就不多的python知识，然后学了一点MIT-Missing-Semester，有空继续。</p><p>看到一个项目很不错：<a href="https://github.com/ByteLegend/ByteLegend">https://github.com/ByteLegend/ByteLegend</a>{target&#x3D;”_blank”<br>rel&#x3D;”noopener”}</p><p>2023继续学习吧！</p><h1 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h1><p>即将到来的2023年，希望我可以学习更多吧。更努力一点，游戏和补番可以适当放一放，再拼一拼吧。还有一年半，加油！</p><p>虽说是少玩，但5-12的王国之泪我是必玩的，但当然是在暑假。其他动画什么的还没有特别想看的，适当看看吧，要降低频率多多学习了。</p><p>编程方面，既然开了一个头就多多学习吧！先把MIT-Missing-Semester学完（才学了第一课），然后有空再看看能不能学CS61A吧，当然是在不影响学习的情况。</p><p>想说的话太多，真正写起来才发现一个小时根本不够写。还有几分钟2023就要来了，也祝看到这篇文章的你，2023快乐呀！</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;2022年还有一个小时不到就要在UTC&amp;#x2F;GMT+08:00过去了，趁这个没什么事干的时间看看这一年都学了什么玩了什么吧。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;不是怎么这么多游戏啊&lt;/del&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="年终总结" scheme="https://cybereal.ml/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android+Windows双端同步的RSS</title>
+    <link href="https://cybereal.ml/2022/12/28/android-windows-rss/"/>
+    <id>https://cybereal.ml/2022/12/28/android-windows-rss/</id>
+    <published>2022-12-28T15:01:06.000Z</published>
+    <updated>2023-07-05T16:29:51.028Z</updated>
+    
+    <content type="html"><![CDATA[<p>花了一个上午折腾了一下RSS，基本上是一个免费可用的双端同步方案了。</p><span id="more"></span><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p><strong>什么是RSS？</strong></p><p>RSS（Really Simple<br>Syndication，简易信息聚合）是一种描述和同步网站内容的格式。</p><p>你可以认为是一种定制个性化推送信息的服务。它能解决你漫无目的浏览网页的问题。</p><p>它不会过时，信息越是过剩，它的意义也越加彰显。</p><p><strong>为什么需要RSS？</strong></p><p>网络上充斥着大量的信息垃圾，我的体会是：每天摄入了太多我根本不关心的信息。</p><p>我希望让我关注的信息主动来找我<br>，且这些信息都是我需要的，这就是RSS的意义。</p><p>（摘自<a href="https://www.zhihu.com/question/19580096">https://www.zhihu.com/question/19580096</a><br>）</p><h1 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h1><p>那么我主要是使用了这样几个软件&#x2F;服务&#x2F;网站：</p><h2 id="RSSHub"><a href="#RSSHub" class="headerlink" title="RSSHub"></a>RSSHub</h2><p>很多网站原生并不支持rss，这个软件适配了很多网站，可以给他们生成各种各样的rss</p><p>比如bilibili原生不支持rss，使用rsshub可以获取UP 主投稿 用户追番列表 UP<br>主所有视频<br>等等的特定rss。这项服务可以使用官方搭建的（已经被墙），也可以使用他人免费搭建的，也可以自己搭（用vercel），由于有梯子那么使用官方的<br><a href="https://rsshub.app/">https://rsshub.app</a><br>加后缀就可以了。</p><p>具体请看：<a href="https://docs.rsshub.app/">https://docs.rsshub.app/</a></p><h2 id="Fluent-Reader"><a href="#Fluent-Reader" class="headerlink" title="Fluent Reader"></a>Fluent Reader</h2><p>这个软件其实pc安卓ios都有，这里我是在win端使用。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221228114026858.png" alt="image-20221228114026858"></p><p>界面长这样，还挺好看的。</p><p>可以本地订阅，同时支持Fever API，Feedbin，Google Reader API，Inoreader<br>等等几个rss服务用来多端同步。</p><p>实际软件里好像还有个nextcloud什么的，不重要，这几个里面选一个就行了</p><p>具体同步我后面会讲。</p><p>下载地址：<a href="https://github.com/yang991178/fluent-reader/releases/latest">https://github.com/yang991178/fluent-reader/releases/latest</a></p><h2 id="Feedme"><a href="#Feedme" class="headerlink" title="Feedme"></a>Feedme</h2><p>安卓端的rss软件。</p><p>前面提到fluent<br>reader也有安卓端，但是那个完全依赖同步服务，都不能自己加本地订阅，而且果味太重了我不太喜欢。</p><p>页面长这样：</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221228115009023.png" alt="image-20221228115009023"></p><p>支持rss服务，也可以导入导出opml文件，也就是你的订阅。也可以在本地加订阅，刚刚下还没怎么体验过，目前看下来还行，如果有什么痛点以后会说。</p><p>下载地址：<a href="https://github.com/seazon/FeedMe/releases/latest">https://github.com/seazon/FeedMe/releases/latest</a></p><h2 id="The-Old-Reader"><a href="#The-Old-Reader" class="headerlink" title="The Old Reader"></a>The Old Reader</h2><p>这是我在用的rss服务，因为不用这些在线服务的话多端同步就比较的麻烦，需要自建rss服务，总的来说就是你想同步就必须要一个在线服务！很多服务都是要付费的，我选了一个免费额度还可以的，可以免费订阅100个feed。这家算是google<br>reader的精神后续，支持Google Reader API。</p><p>官网：<a href="https://theoldreader.com/">https://theoldreader.com/</a></p><p>简单注册一下就可以用了，如果你之前本地有一些订阅的话可以点右上角import导入opml文件，在网页上也可以订阅。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221228122605759.png" alt="image-20221228122605759"></p><p>在网页端操作好之后在前面两个客户端上配置一下就好了。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221228122726209.png" alt="image-20221228122726209"></p><p>然后就可以开始使用rss阅读了，希望你早日逃离信息茧房<del>然后自己造一个信息茧房</del></p><h1 id="参考网站"><a href="#参考网站" class="headerlink" title="参考网站"></a>参考网站</h1><p><a href="https://rss-source.com/">https://rss-source.com/</a><br>介绍了一些带rss的网站，看看有没有你想要的。</p><p><a href="https://werss.app/">https://werss.app/</a><br>实现了微信公众号的rss订阅，不过要付费，只有三天试用期，试了一下效果确实好，但是也真的贵，最后还是没用。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;花了一个上午折腾了一下RSS，基本上是一个免费可用的双端同步方案了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    
+    
+    <category term="RSS" scheme="https://cybereal.ml/tags/RSS/"/>
+    
+    <category term="windows" scheme="https://cybereal.ml/tags/windows/"/>
+    
+    <category term="Android" scheme="https://cybereal.ml/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Telegram的1library机器人下载电子书</title>
+    <link href="https://cybereal.ml/2022/12/17/1lib/"/>
+    <id>https://cybereal.ml/2022/12/17/1lib/</id>
+    <published>2022-12-17T15:01:06.000Z</published>
+    <updated>2023-07-05T16:23:16.532Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>前排提醒:zlib网站情况多变,文章内容可能已经过时</strong></p><p>众所周知知名下载电子书的网站zlibrary被fbi搞了，于是就不能很方便的直接上他的官网下书了。好在它的telegram<br>bot还是可以正常使用的。</p><p>虽然没有推荐这种功能了，但是搜书还是很方便的。那么要用这个bot就有那么一些门槛了，下面稍微讲解一下。</p><span id="more"></span><p>2022-12-29更新：telegram已经把机器人封禁了，原来捐赠使用的@zlibrary2bot还正常，不过要付费，应该也没几个人能用，也不知道能活多久。zlibrary官方还没表态。</p><hr><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>一个代理 能上谷歌看油管就行。</p><p><del>tor浏览器<br>用来上暗网</del>好像也不是很需要了，下载地址:<a href="https://www.torproject.org/zh-CN/download/">https://www.torproject.org/zh-CN/download/</a></p><p>一个telegram账号<br><a href="https://telegram.org/">https://telegram.org/</a><br>具体注册就不讲了</p><p>注意tg的假官网很多，别下错了。</p><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>注意这是要用到tor浏览器的方法，下文提到的网站不需要暗网，如果你用<a href="https://singlelogin.me/">https://singlelogin.me/</a><br>不能注册再尝试这个方法。</p><p>打开tor应该是这个界面，如果你第一次打开的话。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217211212941.png" alt="image-20221217211212941"></p><p>然后这时候你应该是开着代理，点击连接，不出意外的话就可以连上了。如果连不上要么是你的网络问题要么是代理问题。如果你和我一样用clash的话，可以在tor的设置-连接，高级-配置tor浏览器联网方式这里这样填：<img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217211702984.png" alt="image-20221217211702984"></p><p>这是cfw的默认端口，如果你不是请自行更改。</p><p>当然连不上的话也可以使用网桥，我也试了几次才连上，比较玄学。连上后长这样：</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217212237040.png" alt="image-20221217212237040"></p><p>然后就可以输入zlibrary的暗网网址<a href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/">http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/</a><br>来登录了。这个网址复制自它的tgbot，可能以后会变。</p><p>连上后长这样：<img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217212516934.png" alt="image-20221217212516934"></p><p>接着就像正常注册网站注册就行了，注意最好不要用国内邮箱，qq或者163这些，如果你实在要用也不是不行。</p><p>然后就可以把账号关联到tg机器人了。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217212720785.png" alt="image-20221217212720785"></p><p>这样就可以愉快搜书了。</p><p>效果如下：</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217210250884.png" alt="image-20221217210250884"></p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217210305898.png" alt="image-20221217210305898"></p><h1 id="不用暗网的方法"><a href="#不用暗网的方法" class="headerlink" title="不用暗网的方法"></a>不用暗网的方法</h1><p>写完之后才发现好像zlib又可以在公网访问了。。<a href="https://singlelogin.me/">https://singlelogin.me/</a><br>直接在这个链接注册应该就行了，流程同上。</p><h1 id="个人不太推荐的方法"><a href="#个人不太推荐的方法" class="headerlink" title="个人不太推荐的方法"></a>个人不太推荐的方法</h1><p>网上好像有一些zlibrary的共享账号什么的，也就是登陆之后把账号绑到自己的tg上，不过这方法指不定有什么风险，最好还是自己注册一个，反正也不费什么时间。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>欢迎继续畅游在电子书海洋中。</p><p>当然zilib的书也不是最全的，下面再推几个电子书相关网站。</p><p>mox.moe:<a href="https://mox.moe/">https://mox.moe/</a></p><p>电子书漫画网站，漫画非常全，还可以一键发到kindle上看，非常方便。就是注册时的验证码比较麻烦。</p><p>尘缘轻水：<a href="https://www.chenyuanqingshui.cn/">https://www.chenyuanqingshui.cn/</a></p><p>日系轻小说非常全，以前是放在蓝奏云上的，后来因为人太多搞了一个网站，总体来说资源还是很丰富的。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;前排提醒:zlib网站情况多变,文章内容可能已经过时&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;众所周知知名下载电子书的网站zlibrary被fbi搞了，于是就不能很方便的直接上他的官网下书了。好在它的telegram&lt;br&gt;bot还是可以正常使用的。&lt;/p&gt;
+&lt;p&gt;虽然没有推荐这种功能了，但是搜书还是很方便的。那么要用这个bot就有那么一些门槛了，下面稍微讲解一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    
+    
+    <category term="telegram" scheme="https://cybereal.ml/tags/telegram/"/>
+    
+    <category term="机器人" scheme="https://cybereal.ml/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+    <category term="电子书" scheme="https://cybereal.ml/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ChatGPT</title>
+    <link href="https://cybereal.ml/2022/12/13/chatgpt/"/>
+    <id>https://cybereal.ml/2022/12/13/chatgpt/</id>
+    <published>2022-12-13T15:01:06.000Z</published>
+    <updated>2023-07-05T16:31:53.131Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近openai发布的chatgpt很火，基本上哪哪都是这货。上周本来想试一试这个玩意，但是注册openai要国外手机号，google<br>voice也不行，还要花钱整接码平台，想想懒得搞了。后来看到老师也在玩这个，咬咬牙三块多钱接了个码总算注册上了，开始快乐的调戏日常。</p><span id="more"></span><p>关于怎么注册openai可以看这个：<a href="https://juejin.cn/post/7173447848292253704">https://juejin.cn/post/7173447848292253704</a></p><h1 id="这什么玩意？"><a href="#这什么玩意？" class="headerlink" title="这什么玩意？"></a>这什么玩意？</h1><p>鉴于这个东西倒还没到人尽皆知的地步，先来段自我介绍：</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221213231511791.png" alt="image-20221213231511791"></p><p>简单来说，chatgpt就是一个聊天机器人，可以回复你说的每一句话。可能有人说，市面上的聊天机器人已经如此之多，也不差他一个。chatgpt之所以大火，肯定是有他的过人之处的。</p><h1 id="有点东西"><a href="#有点东西" class="headerlink" title="有点东西"></a>有点东西</h1><p>首先，相比以前的一些聊天机器人，包括之前的彩云小梦啊什么的，这个机器人的对话，包括上下文的理解能力，都有了质的飞跃。</p><p><del>[还没写完]</del></p><p>懒得写了，反正网上教程很多，摆了</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;最近openai发布的chatgpt很火，基本上哪哪都是这货。上周本来想试一试这个玩意，但是注册openai要国外手机号，google&lt;br&gt;voice也不行，还要花钱整接码平台，想想懒得搞了。后来看到老师也在玩这个，咬咬牙三块多钱接了个码总算注册上了，开始快乐的调戏日常。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    
+    
+    <category term="AI" scheme="https://cybereal.ml/tags/AI/"/>
+    
+    <category term="技术" scheme="https://cybereal.ml/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="弃坑" scheme="https://cybereal.ml/tags/%E5%BC%83%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一次NDSL的购买记录</title>
+    <link href="https://cybereal.ml/2022/12/04/ndsl/"/>
+    <id>https://cybereal.ml/2022/12/04/ndsl/</id>
+    <published>2022-12-04T15:01:06.000Z</published>
+    <updated>2023-07-05T16:01:09.344Z</updated>
+    
+    <content type="html"><![CDATA[<p>前阵子刷b站的时候刷到一条视频，引发了我对这个十年前的小掌机的兴趣。<br><a href="https://www.bilibili.com/video/BV1o84y1k7WU">https://www.bilibili.com/video/BV1o84y1k7WU</a><br>由于之前也或多或少的了解了一些nds和烧录卡的内容，但是没有深入了解，这次决定马上整一个ndsl来玩，想想看花两百左右的钱可以玩到几百款经典游戏，不论大小还是重量都比ns小多了，非常适合摸鱼。</p><span id="more"></span><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Nintendo Dual<br>Screen，简称NDS，是<a href="https://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC">日本</a>电玩游戏商任天堂公司开发的第三代掌上游乐器，初代发售于2004年。DS是Dual<br>Screen（双萤幕）的缩写。主要的特征包括双萤幕显示，其中下方的萤幕为<a href="https://zh.wikipedia.org/wiki/%E8%A7%B8%E6%8E%A7%E5%BC%8F%E8%9E%A2%E5%B9%95">触控式萤幕</a>声音输入装置和<a href="https://zh.wikipedia.org/wiki/Wi-Fi">Wi-Fi</a><a href="https://zh.wikipedia.org/wiki/%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF">无线网路</a>功能。（摘自维基）</p><p>nds是目前为止销量仅次于ps2的游戏机<br>游戏阵容很强大，光是我听过名字的就有很多，这里简单列一些：</p><p>宝可梦黑白1、2；珍珠，钻石；勇者斗恶龙<br>，最终幻想，火焰纹章，马里奥64，马里奥赛车ds，新超马，太鼓达人，逆转裁判1234，任天狗，甚至还有使命召唤上的几部作品，光听听就很心动了。</p><p>如果你也想买nds，那么我有建议你先弄清自己的需求。如果你买游戏机只是头脑发热一时兴起，那么买完之后也是吃灰。在买前，先仔细想好自己到底是不是需要这个东西，买了有没有时间玩，以及对未来可能出现的问题做好心理准备，毕竟也都是十几年前的老机子了。当然如果买机是为了收藏，那么也可以。</p><h1 id="了解nds的型号"><a href="#了解nds的型号" class="headerlink" title="了解nds的型号"></a>了解nds的型号</h1><p>nds有四种型号，分别是初代nds，nds lite （ndsl），ndsi，还有ndsi LL&#x2F;XL。</p><p>一般来说，初代也被称为饭盒机，因为它相比后面几代实在显得有些过于厚重了。优点是可以玩gba游戏，一些怀旧玩家可能喜欢吧。</p><p><img src="https://s2.loli.net/2023/07/05/HNRVBCZzcpDP5Wq.png" alt="Nintendo-DS-Fat-Blue"></p><p>ndsl是四个机种里销量最高的一款，相比初代轻薄了不少，也可以玩gba卡带，一般现在选这个的比较多。</p><p><img src="https://s2.loli.net/2023/07/05/2lZyxmP3sSXCp6Y.png" alt="Nintendo-DS-Lite-Black-Open"></p><p>ndsi是ndsl的改款，外形更加现代化一点，主要是加了一个30w像素的摄像头（基本等于没有），还去掉了gba卡槽。ndsi可以玩一些前两个机不能玩的东西，但也很有限，基本都不是什么大作。ndsi最大的有点是可以无卡破解，后面再讲。</p><p><img src="https://s2.loli.net/2023/07/05/WdbTBNklUmjtX4y.png" alt="Nintendo-DSi-Bl-Open"></p><p>ndsixl是ndsi的屏幕加大款，不过加大了屏幕似乎并没有带来什么好的反响，因为屏幕分辨率还是一样的，加大屏幕显得更加大果粒了，一般不推荐。</p><p><img src="https://s2.loli.net/2023/07/05/7vfHKTuiyzYLgem.png" alt="Nintendo-DSi-XL-Burg"></p><h1 id="了解烧录卡"><a href="#了解烧录卡" class="headerlink" title="了解烧录卡"></a>了解烧录卡</h1><p>提到nds，就不得不提到烧录卡了。简单来说，烧录卡就是一张盗版卡带，但是不同于正版卡带中只装了一个游戏，烧录卡一般可以装很多游戏，还有很多其他附加功能。烧录卡作为盗版软件的载体，却在nds和gba历史上留下难以磨灭的痕迹，必然有其原因。烧录卡带来了很多正版没有的功能，包括但不限于一卡多游戏，软复位，金手指，及时存档等等等等，以至于后来很多欧美的正版玩家都转投向烧录卡了。烧录卡的流行还有一大原因就是nds和ndsl是无法升级系统的，也就是说一旦系统被破解，任天堂根本无法修补漏洞，除非召回所有机器，这显然是不可能的。到了ndsi系统可以被升级，许多漏洞也被补上了，但并不意味着ndsi不能使用烧录卡了，事实上ndsi有烧录卡与无卡破解两种破解方案。关于烧录卡的历史可以看这个帖子：<a href="http://tieba.baidu.com/p/3767215598">http://tieba.baidu.com/p/3767215598</a>  </p><p>现在除了收藏需要，基本已经没有人需要购买正版卡带了，但是目前市面上的烧录卡可谓是五花八门，非常繁杂。就我所知道的，最近几年的主流烧录卡有R4以及它的衍生物，还有SuperCard的DSOne(i)和DSTWO，还有TT、ak2i等等，据统计大概有一百多种（<a href="https://wiki.gbatemp.net/wiki/Ultimate_Flashcart_Download_Index%EF%BC%89">https://wiki.gbatemp.net/wiki/Ultimate_Flashcart_Download_Index）</a>  </p><p>，是不是已经眼花了？不用担心，大部分已经被历史的车轮淘汰了。现在在淘宝搜到最多的就是R4烧录卡，根据卡上的标识可以分为com卡，wood卡，还有hk（这个比较高端）等，但是我比较推荐的是dsone这张（我也只买过这张），兼容性比较好，还有即时存档，即使金手指等等其他烧录卡没有的特性，我在咸鱼买到是65一张，带一个64g的tf卡。它的缺点是其中的psram芯片容易坏，要让卖家检测良好之后再发出。非常不幸的是，我买的时候卖家说已经测试了好几遍都是好的，但是我用了几天还是坏了，听他说这是极个别案例，那我就算了吧。如果不能容忍这个缺陷，也可以买dsonei，不过价格已经被炒得翻了一倍了。</p><h1 id="购买渠道"><a href="#购买渠道" class="headerlink" title="购买渠道"></a>购买渠道</h1><p>强调一下，nds是十几年前的机器，正常价格不可能买到全新机，都是二手的。nds我不建议在淘宝购买，因为那些商家加价实在太厉害了，一百多可以买到的东西在淘宝要三百朝上才行，属实不太值。当然淘宝的优点是比较方便，价格高应该也能买到成色好甚至带箱说的（应该？），如果你有钱的花，那就上淘宝吧。</p><p>除了淘宝，那么就是在闲鱼买了。拿ndsl举例子，我的预计价格在130~150左右，我看到前两年的帖子都说一百二就能收个成色好的，我确实是没找到。在这个价格区间，需要满足的条件有：带有触摸笔，没有明显的瑕疵，没有什么转轴裂了啊之类的问题，最好带充电线，最好还要有防尘塞。因为我买的时候没带充电器，等充电器的几天时间我一直没得玩。。哭死<br>另外要买的就是那张dsone烧录卡，我在闲鱼只看到一家专门卖这个的，价格就是65一张带tf卡，插上即玩，记得让他检测psram。</p><p>蹲闲鱼是一个比较痛苦的过程，短则一两个小时，多则几天，我买的时候连着三四天每天刷半个小时，让我一度再也不想看闲鱼了…但这是省钱的代价，加油吧。</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>nds到手后就可以开始快乐了，不说了，去打逆转裁判力（喜</p><p>推荐</p><p>关于nds以及其他的掌机、主机的故事，这里列出几个网站、up主参考：</p><p><strong>博van小哥哥</strong><a href="https://space.bilibili.com/28732825">https://space.bilibili.com/28732825</a><br>   介绍过很多老掌机</p><p><strong>红酒汤姆一世</strong><a href="https://space.bilibili.com/567673">https://space.bilibili.com/567673</a><br>   介绍过很多电子产品发展史，可以了解一些nds的历史</p><p><strong>老男人游戏网</strong><a href="https://www.oldmanemu.net/">https://www.oldmanemu.net/</a><br>   收集了很多游戏资源，基本上本世代之前的都有</p><p><strong>TG频道<br>游戏书籍Hub</strong><a href="https://t.me/BookForGamer">https://t.me/BookForGamer</a>  </p><p>收录了很多经典的游戏杂志，关于nds可以看看掌机系列中的NDS专辑，是UCG出品的，我看过一些很不错</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;前阵子刷b站的时候刷到一条视频，引发了我对这个十年前的小掌机的兴趣。&lt;br&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1o84y1k7WU&quot;&gt;https://www.bilibili.com/video/BV1o84y1k7WU&lt;/a&gt;&lt;br&gt;由于之前也或多或少的了解了一些nds和烧录卡的内容，但是没有深入了解，这次决定马上整一个ndsl来玩，想想看花两百左右的钱可以玩到几百款经典游戏，不论大小还是重量都比ns小多了，非常适合摸鱼。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    
+    
+    <category term="游戏机" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA/"/>
+    
+    <category term="retro" scheme="https://cybereal.ml/tags/retro/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>别等了，就现在</title>
+    <link href="https://cybereal.ml/2022/11/27/first_article/"/>
+    <id>https://cybereal.ml/2022/11/27/first_article/</id>
+    <published>2022-11-27T15:01:06.000Z</published>
+    <updated>2023-07-05T15:57:51.096Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="别等了，就现在"><a href="#别等了，就现在" class="headerlink" title="别等了，就现在"></a>别等了，就现在</h1><p>自从了解到个人博客之后，自己一直想着写一个属于自己的个人博客，结果前前后后试了很多次，最后都是以失败告终。前后接触过hexo，hugo等等知名的静态博客框架，甚至还了解了一下typecho这种动态博客，后来还是因为要搞服务器之类的原因不了了之了。</p><span id="more"></span><p>仔细看看，过去我想搞博客的次数不下四五次，每次都是兴致勃勃的申请域名，搞github&#x2F;cloudflare pages，结果又总是出问题，接着再上网查……等到准备开始写了又不知道写点什么好，到了第二天又嫌麻烦不整了。从我个人角度分析，造成这种情况的原因还是因为我总是喜欢先做一大堆准备工作，但这些繁杂琐碎的工作消耗了太多时间，以至于忘记了博客最重要的部分——写作。也许我享受的并不是写作的过程，而是去搭建博客的过程？拜托，就连最简单的静态博客都已经搞得我焦头烂额了，我一度怀疑我到底还能不能算一个会用电脑的人。还有一个原因时这些博客框架的部署实在有些麻烦。部署一个博客要先起个名字初始化，还是cli的界面，整的好像一个人会搞两三个博客似的，写博没有一个能一键commit的工具（至少我没看到，应该是有的），还去了解了一些md的语法。可以说在博客这方面，除了没写过以外我确实是了解很多了。<br>今天想起来博客这档子事还是因为最近做课题，要写问题日志，然后就联想到了这玩意。讲道理，我并不是很想把博客搞成一个类似日记的东西，也不想写点太过正经，只是想在自己折腾东西的时候有一个能记录的地方，并没有什么流量的需求但也不想是针对三次元发的牢骚。所以，希望像这篇一样的文章还是少一点吧。？或许吧。<br>很高兴，今天搜到了gridea这样一个gui工具，可以让我更加方便的写作，主题我也没什么要求，有字就行，希望这一次的博客可以真正的写下去吧。目前这个博客是部署在github<br>page上，过两天应该会整个域名再搞个cdn加速（vercel<br>，netlify？）什么的，好像coding<br>pages也不错？但是国内会不会要整备案？但要分清主次，写作为主，其他什么能不能显示之类的其实不重要，（反正也没几个人看吧）如果哪天自己写的东西能帮到别人就更好了。<br>如果你（或我）有幸读到这篇文章，那么可以看出我并不是一个语文很好的人，写的东西逻辑很乱，想到哪写到哪，事实也确实如此，上次语文才，额，78？悲伤往事。总之，我尽力不把博客搞成一个发泄个人情绪的地方，期待我的下一篇文章吧（希望不要太久）</p><hr><p>12-13更新–gridea没几天就出毛病了…打开软件显示不出文章。。还是换hexo了</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;别等了，就现在&quot;&gt;&lt;a href=&quot;#别等了，就现在&quot; class=&quot;headerlink&quot; title=&quot;别等了，就现在&quot;&gt;&lt;/a&gt;别等了，就现在&lt;/h1&gt;&lt;p&gt;自从了解到个人博客之后，自己一直想着写一个属于自己的个人博客，结果前前后后试了很多次，最后都是以失败告终。前后接触过hexo，hugo等等知名的静态博客框架，甚至还了解了一下typecho这种动态博客，后来还是因为要搞服务器之类的原因不了了之了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+  </entry>
+  
+</feed>
