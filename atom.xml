@@ -6,7 +6,7 @@
   <link href="https://cybereal.ml/atom.xml" rel="self"/>
   
   <link href="https://cybereal.ml/"/>
-  <updated>2023-07-05T17:14:53.215Z</updated>
+  <updated>2023-07-11T13:10:28.703Z</updated>
   <id>https://cybereal.ml/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://cybereal.ml/2023/07/06/repairblog/"/>
     <id>https://cybereal.ml/2023/07/06/repairblog/</id>
     <published>2023-07-05T16:51:28.000Z</published>
-    <updated>2023-07-05T17:14:53.215Z</updated>
+    <updated>2023-07-11T13:10:28.703Z</updated>
     
     <content type="html"><![CDATA[<p>自从上次重装系统忘记备份之后博客的源文件全部丢失，只剩下留在网上的文章，于是2月以来一直没写 拖到今天爆砍4小时基本还原<br>由于手动还原，以前的文章可能出现各种奇奇怪怪的问题<br>手搓博客真的好累，不过熟练度确实也提高了，这些东西之前搞了几天这次四小时就好了，另外网上留着的文章是html，不能直接转回md，找不到好用的工具求助班友了解到一个pandoc，一篇篇手动删掉了乱码终于搞完了<br>下面终于可以开始正常写文章了<br>另：军训很爽 暑假正式开始了 加油！</p>]]></content>
     
@@ -33,7 +33,7 @@
     
     
     
-    <category term="杂记" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%AE%B0/"/>
+    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
     
     
     <category term="博客" scheme="https://cybereal.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
