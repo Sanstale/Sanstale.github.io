@@ -437,4 +437,47 @@ Wild.png"></p>
         <tag>番评</tag>
       </tags>
   </entry>
+  <entry>
+    <title>简单方便地追当季新番和补老番</title>
+    <url>/2023/07/17/watchbangumi/</url>
+    <content><![CDATA[<p>鉴于b站最近新番实在不够看，好不容易上的新番还可能暗含阉割，如何在第一时间追番就是一个不得不提的话题。</p>
+<p>本文仅提到了如何看熟肉。如果你想看生肉，可以去找一些日本网站，博主没有详细研究过</p>
+<span id="more"></span>
+
+<p>目前主流追番无非两种方法：在线网站或者BT下载。</p>
+<h2 id="在线网站"><a href="#在线网站" class="headerlink" title="在线网站"></a>在线网站</h2><p><strong>优点</strong>：操作简单傻瓜化，一个网址就能看番</p>
+<p><strong>缺点</strong>：网站时不时会挂，每个网站的资源数量质量良莠不齐，在线看可能会因为网络有卡顿，对于新番的更新往往有延迟。（再怎么快也总有一个多小时的延迟）最重要的是：码率太低，画质根本不能看</p>
+<p>网站列表参考：<a href="https://ayouth.top/ayouth/animation.html">https://ayouth.top/ayouth/animation.html</a></p>
+<h2 id="BT下载"><a href="#BT下载" class="headerlink" title="BT下载"></a>BT下载</h2><p><strong>优点</strong>：能够第一时间拿到资源，本地播放不用担心卡顿问题（除非你的显卡连解码都会卡），码率比在线高很多，不用担心网站挂掉</p>
+<p><strong>缺点</strong>：需要有一定动手能力，冷门资源难找且速度可能会慢（也不一定，一些老资源会一直有人做种）</p>
+<p>首先，你需要知道几个网站：</p>
+<p>萌番组：<a href="https://bangumi.moe/">https://bangumi.moe/</a></p>
+<p>蜜柑计划：<a href="https://mikanani.me/">https://mikanani.me/</a></p>
+<p>动漫花园：<a href="https://share.dmhy.org/">https://share.dmhy.org/</a></p>
+<p>还需要安装一个bt软件，我推荐qbittorrent, 也可以使用其他bt软件，注意不要用迅雷</p>
+<p>当季新番在出了熟肉一般都会发到萌番组，要下载只要打开想下载的标题，拉到最下面点磁力链接，就会跳转到bt软件，确定保存路径等等之后直接确定，等待下载完就行了，一般热门的番下载都很快的。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed/image-20230717225014529.png" alt="image-20230717225014529"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed/image-20230717225204600.png" alt="image-20230717225204600"></p>
+<p>中间的四个数字，前两个是下载，第三个是上传，第四个是完成数，如果上传是0的话可能下载就会没有速度</p>
+<p>新番放出之后，如果巴哈姆特或者bilibili港澳台有版权字幕的话，在这些流媒体平台解禁之后几分钟就会有搬运组把资源搬到萌番组，就我所知主要有**[Lilith-Raws]<strong>和</strong>[ANi]**，这类资源速度最快，但可能没有简中字幕。过几天之后，会有别的字幕组做好字幕上传，这些资源质量相对更高，一般会有简中字幕，字体等等也会更加精美。</p>
+<p>蜜柑计划是基于萌番组的一个追番网站，待更新</p>
+<p>补旧番vcb-studio等 待更新</p>
+<p>除此之外还有autobangumi等等更高级的追番方式，但底层还是依靠蜜柑计划，萌番组这些网站</p>
+<p>其他资源链接：</p>
+<p><a href="https://www.himiku.com/archives/auto-bangumi.html">https://www.himiku.com/archives/auto-bangumi.html</a></p>
+<p><a href="https://bgm.tv/group/topic/367032">https://bgm.tv/group/topic/367032</a></p>
+<p><a href="https://vcb-s.com/">https://vcb-s.com/</a></p>
+<p><a href="https://nyaa.sbs/">https://nyaa.sbs/</a></p>
+<p><a href="https://bbs.acgrip.com/">https://bbs.acgrip.com/</a></p>
+<p><a href="https://www.tsdm39.com/forum.php">https://www.tsdm39.com/forum.php</a></p>
+<p><a href="https://www.acgbox.link/">https://www.acgbox.link/</a></p>
+]]></content>
+      <categories>
+        <category>ACG</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>追番</tag>
+      </tags>
+  </entry>
 </search>
