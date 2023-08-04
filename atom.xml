@@ -3,11 +3,11 @@
   <title>Sanstale&#39;s Blog</title>
   
   
-  <link href="https://cybereal.ml/atom.xml" rel="self"/>
+  <link href="https://cybereal.one/atom.xml" rel="self"/>
   
-  <link href="https://cybereal.ml/"/>
+  <link href="https://cybereal.one/"/>
   <updated>2023-08-04T06:32:08.104Z</updated>
-  <id>https://cybereal.ml/</id>
+  <id>https://cybereal.one/</id>
   
   <author>
     <name>Sanstale</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>简短的CHINAJOY 2023游记</title>
-    <link href="https://cybereal.ml/2023/07/30/chinajoy2023/"/>
-    <id>https://cybereal.ml/2023/07/30/chinajoy2023/</id>
+    <link href="https://cybereal.one/2023/07/30/chinajoy2023/"/>
+    <id>https://cybereal.one/2023/07/30/chinajoy2023/</id>
     <published>2023-07-30T14:26:04.000Z</published>
     <updated>2023-08-04T06:32:08.104Z</updated>
     
@@ -30,21 +30,21 @@
     
     
     
-    <category term="游记" scheme="https://cybereal.ml/categories/%E6%B8%B8%E8%AE%B0/"/>
+    <category term="游记" scheme="https://cybereal.one/categories/%E6%B8%B8%E8%AE%B0/"/>
     
     
-    <category term="游戏" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="出行" scheme="https://cybereal.ml/tags/%E5%87%BA%E8%A1%8C/"/>
+    <category term="出行" scheme="https://cybereal.one/tags/%E5%87%BA%E8%A1%8C/"/>
     
-    <category term="展会" scheme="https://cybereal.ml/tags/%E5%B1%95%E4%BC%9A/"/>
+    <category term="展会" scheme="https://cybereal.one/tags/%E5%B1%95%E4%BC%9A/"/>
     
   </entry>
   
   <entry>
     <title>简单方便地追当季新番和补老番</title>
-    <link href="https://cybereal.ml/2023/07/17/watchbangumi/"/>
-    <id>https://cybereal.ml/2023/07/17/watchbangumi/</id>
+    <link href="https://cybereal.one/2023/07/17/watchbangumi/"/>
+    <id>https://cybereal.one/2023/07/17/watchbangumi/</id>
     <published>2023-07-17T14:29:47.000Z</published>
     <updated>2023-07-17T15:00:39.108Z</updated>
     
@@ -56,19 +56,19 @@
     
     
     
-    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    <category term="ACG" scheme="https://cybereal.one/categories/ACG/"/>
     
     
-    <category term="教程" scheme="https://cybereal.ml/tags/%E6%95%99%E7%A8%8B/"/>
+    <category term="教程" scheme="https://cybereal.one/tags/%E6%95%99%E7%A8%8B/"/>
     
-    <category term="追番" scheme="https://cybereal.ml/tags/%E8%BF%BD%E7%95%AA/"/>
+    <category term="追番" scheme="https://cybereal.one/tags/%E8%BF%BD%E7%95%AA/"/>
     
   </entry>
   
   <entry>
     <title>看完只觉得心如止水:Fate/Stay Night UBW观后感</title>
-    <link href="https://cybereal.ml/2023/07/17/fatestaynight-ubw/"/>
-    <id>https://cybereal.ml/2023/07/17/fatestaynight-ubw/</id>
+    <link href="https://cybereal.one/2023/07/17/fatestaynight-ubw/"/>
+    <id>https://cybereal.one/2023/07/17/fatestaynight-ubw/</id>
     <published>2023-07-17T13:56:55.000Z</published>
     <updated>2023-07-17T14:24:21.588Z</updated>
     
@@ -80,17 +80,17 @@
     
     
     
-    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    <category term="ACG" scheme="https://cybereal.one/categories/ACG/"/>
     
     
-    <category term="番评" scheme="https://cybereal.ml/tags/%E7%95%AA%E8%AF%84/"/>
+    <category term="番评" scheme="https://cybereal.one/tags/%E7%95%AA%E8%AF%84/"/>
     
   </entry>
   
   <entry>
     <title>修一下博客</title>
-    <link href="https://cybereal.ml/2023/07/06/repairblog/"/>
-    <id>https://cybereal.ml/2023/07/06/repairblog/</id>
+    <link href="https://cybereal.one/2023/07/06/repairblog/"/>
+    <id>https://cybereal.one/2023/07/06/repairblog/</id>
     <published>2023-07-05T16:51:28.000Z</published>
     <updated>2023-07-11T13:10:28.703Z</updated>
     
@@ -104,21 +104,21 @@
     
     
     
-    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://cybereal.one/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-    <category term="博客" scheme="https://cybereal.ml/tags/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="博客" scheme="https://cybereal.one/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-    <category term="hexo" scheme="https://cybereal.ml/tags/hexo/"/>
+    <category term="hexo" scheme="https://cybereal.one/tags/hexo/"/>
     
-    <category term="好累" scheme="https://cybereal.ml/tags/%E5%A5%BD%E7%B4%AF/"/>
+    <category term="好累" scheme="https://cybereal.one/tags/%E5%A5%BD%E7%B4%AF/"/>
     
   </entry>
   
   <entry>
     <title>PS3不完全指北</title>
-    <link href="https://cybereal.ml/2023/02/11/ps3guide/"/>
-    <id>https://cybereal.ml/2023/02/11/ps3guide/</id>
+    <link href="https://cybereal.one/2023/02/11/ps3guide/"/>
+    <id>https://cybereal.one/2023/02/11/ps3guide/</id>
     <published>2023-02-11T15:01:06.000Z</published>
     <updated>2023-07-05T16:41:56.052Z</updated>
     
@@ -129,21 +129,21 @@
     
     
     
-    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    <category term="ACG" scheme="https://cybereal.one/categories/ACG/"/>
     
     
-    <category term="ps3" scheme="https://cybereal.ml/tags/ps3/"/>
+    <category term="ps3" scheme="https://cybereal.one/tags/ps3/"/>
     
-    <category term="游戏" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="指南" scheme="https://cybereal.ml/tags/%E6%8C%87%E5%8D%97/"/>
+    <category term="指南" scheme="https://cybereal.one/tags/%E6%8C%87%E5%8D%97/"/>
     
   </entry>
   
   <entry>
     <title>PS3愿望单</title>
-    <link href="https://cybereal.ml/2023/02/04/ps3wishlist/"/>
-    <id>https://cybereal.ml/2023/02/04/ps3wishlist/</id>
+    <link href="https://cybereal.one/2023/02/04/ps3wishlist/"/>
+    <id>https://cybereal.one/2023/02/04/ps3wishlist/</id>
     <published>2023-02-04T15:01:06.000Z</published>
     <updated>2023-07-05T16:40:42.741Z</updated>
     
@@ -154,19 +154,19 @@
     
     
     
-    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    <category term="ACG" scheme="https://cybereal.one/categories/ACG/"/>
     
     
-    <category term="ps3" scheme="https://cybereal.ml/tags/ps3/"/>
+    <category term="ps3" scheme="https://cybereal.one/tags/ps3/"/>
     
-    <category term="游戏" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
   <entry>
     <title>年前干的几件事</title>
-    <link href="https://cybereal.ml/2023/01/20/thingsthatdo/"/>
-    <id>https://cybereal.ml/2023/01/20/thingsthatdo/</id>
+    <link href="https://cybereal.one/2023/01/20/thingsthatdo/"/>
+    <id>https://cybereal.one/2023/01/20/thingsthatdo/</id>
     <published>2023-01-20T15:01:06.000Z</published>
     <updated>2023-07-05T16:42:40.602Z</updated>
     
@@ -180,21 +180,21 @@
     
     
     
-    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://cybereal.one/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-    <category term="游戏" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F/"/>
+    <category term="游戏" scheme="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F/"/>
     
-    <category term="街机" scheme="https://cybereal.ml/tags/%E8%A1%97%E6%9C%BA/"/>
+    <category term="街机" scheme="https://cybereal.one/tags/%E8%A1%97%E6%9C%BA/"/>
     
-    <category term="动漫" scheme="https://cybereal.ml/tags/%E5%8A%A8%E6%BC%AB/"/>
+    <category term="动漫" scheme="https://cybereal.one/tags/%E5%8A%A8%E6%BC%AB/"/>
     
   </entry>
   
   <entry>
     <title>Missing-Semester学习笔记</title>
-    <link href="https://cybereal.ml/2023/01/01/Missing-Semester/"/>
-    <id>https://cybereal.ml/2023/01/01/Missing-Semester/</id>
+    <link href="https://cybereal.one/2023/01/01/Missing-Semester/"/>
+    <id>https://cybereal.one/2023/01/01/Missing-Semester/</id>
     <published>2023-01-01T15:01:06.000Z</published>
     <updated>2023-07-05T16:09:47.160Z</updated>
     
@@ -207,21 +207,21 @@
     
     
     
-    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
     
     
-    <category term="编程" scheme="https://cybereal.ml/tags/%E7%BC%96%E7%A8%8B/"/>
+    <category term="编程" scheme="https://cybereal.one/tags/%E7%BC%96%E7%A8%8B/"/>
     
-    <category term="笔记" scheme="https://cybereal.ml/tags/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://cybereal.one/tags/%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="命令行" scheme="https://cybereal.ml/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    <category term="命令行" scheme="https://cybereal.one/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>2022年的回顾和2023的一些展望</title>
-    <link href="https://cybereal.ml/2022/12/31/2022review/"/>
-    <id>https://cybereal.ml/2022/12/31/2022review/</id>
+    <link href="https://cybereal.one/2022/12/31/2022review/"/>
+    <id>https://cybereal.one/2022/12/31/2022review/</id>
     <published>2022-12-31T15:01:06.000Z</published>
     <updated>2023-07-05T16:32:22.729Z</updated>
     
@@ -233,17 +233,17 @@
     
     
     
-    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://cybereal.one/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-    <category term="年终总结" scheme="https://cybereal.ml/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    <category term="年终总结" scheme="https://cybereal.one/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>Android+Windows双端同步的RSS</title>
-    <link href="https://cybereal.ml/2022/12/28/android-windows-rss/"/>
-    <id>https://cybereal.ml/2022/12/28/android-windows-rss/</id>
+    <link href="https://cybereal.one/2022/12/28/android-windows-rss/"/>
+    <id>https://cybereal.one/2022/12/28/android-windows-rss/</id>
     <published>2022-12-28T15:01:06.000Z</published>
     <updated>2023-07-05T16:29:51.028Z</updated>
     
@@ -254,21 +254,21 @@
     
     
     
-    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
     
     
-    <category term="RSS" scheme="https://cybereal.ml/tags/RSS/"/>
+    <category term="RSS" scheme="https://cybereal.one/tags/RSS/"/>
     
-    <category term="windows" scheme="https://cybereal.ml/tags/windows/"/>
+    <category term="windows" scheme="https://cybereal.one/tags/windows/"/>
     
-    <category term="Android" scheme="https://cybereal.ml/tags/Android/"/>
+    <category term="Android" scheme="https://cybereal.one/tags/Android/"/>
     
   </entry>
   
   <entry>
     <title>使用Telegram的1library机器人下载电子书</title>
-    <link href="https://cybereal.ml/2022/12/17/1lib/"/>
-    <id>https://cybereal.ml/2022/12/17/1lib/</id>
+    <link href="https://cybereal.one/2022/12/17/1lib/"/>
+    <id>https://cybereal.one/2022/12/17/1lib/</id>
     <published>2022-12-17T15:01:06.000Z</published>
     <updated>2023-07-05T16:23:16.532Z</updated>
     
@@ -281,21 +281,21 @@
     
     
     
-    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
     
     
-    <category term="telegram" scheme="https://cybereal.ml/tags/telegram/"/>
+    <category term="telegram" scheme="https://cybereal.one/tags/telegram/"/>
     
-    <category term="机器人" scheme="https://cybereal.ml/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    <category term="机器人" scheme="https://cybereal.one/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
     
-    <category term="电子书" scheme="https://cybereal.ml/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    <category term="电子书" scheme="https://cybereal.one/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
     
   </entry>
   
   <entry>
     <title>ChatGPT</title>
-    <link href="https://cybereal.ml/2022/12/13/chatgpt/"/>
-    <id>https://cybereal.ml/2022/12/13/chatgpt/</id>
+    <link href="https://cybereal.one/2022/12/13/chatgpt/"/>
+    <id>https://cybereal.one/2022/12/13/chatgpt/</id>
     <published>2022-12-13T15:01:06.000Z</published>
     <updated>2023-07-05T16:31:53.131Z</updated>
     
@@ -306,21 +306,21 @@
     
     
     
-    <category term="TECH" scheme="https://cybereal.ml/categories/TECH/"/>
+    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
     
     
-    <category term="AI" scheme="https://cybereal.ml/tags/AI/"/>
+    <category term="AI" scheme="https://cybereal.one/tags/AI/"/>
     
-    <category term="技术" scheme="https://cybereal.ml/tags/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://cybereal.one/tags/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="弃坑" scheme="https://cybereal.ml/tags/%E5%BC%83%E5%9D%91/"/>
+    <category term="弃坑" scheme="https://cybereal.one/tags/%E5%BC%83%E5%9D%91/"/>
     
   </entry>
   
   <entry>
     <title>一次NDSL的购买记录</title>
-    <link href="https://cybereal.ml/2022/12/04/ndsl/"/>
-    <id>https://cybereal.ml/2022/12/04/ndsl/</id>
+    <link href="https://cybereal.one/2022/12/04/ndsl/"/>
+    <id>https://cybereal.one/2022/12/04/ndsl/</id>
     <published>2022-12-04T15:01:06.000Z</published>
     <updated>2023-07-05T16:01:09.344Z</updated>
     
@@ -331,19 +331,19 @@
     
     
     
-    <category term="ACG" scheme="https://cybereal.ml/categories/ACG/"/>
+    <category term="ACG" scheme="https://cybereal.one/categories/ACG/"/>
     
     
-    <category term="游戏机" scheme="https://cybereal.ml/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA/"/>
+    <category term="游戏机" scheme="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA/"/>
     
-    <category term="retro" scheme="https://cybereal.ml/tags/retro/"/>
+    <category term="retro" scheme="https://cybereal.one/tags/retro/"/>
     
   </entry>
   
   <entry>
     <title>别等了，就现在</title>
-    <link href="https://cybereal.ml/2022/11/27/first_article/"/>
-    <id>https://cybereal.ml/2022/11/27/first_article/</id>
+    <link href="https://cybereal.one/2022/11/27/first_article/"/>
+    <id>https://cybereal.one/2022/11/27/first_article/</id>
     <published>2022-11-27T15:01:06.000Z</published>
     <updated>2023-07-05T15:57:51.096Z</updated>
     
@@ -354,7 +354,7 @@
     
     
     
-    <category term="杂谈" scheme="https://cybereal.ml/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://cybereal.one/categories/%E6%9D%82%E8%B0%88/"/>
     
     
   </entry>
