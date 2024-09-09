@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cybereal.one","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="大概是在上个星期的周四周五，又刷到了蜗牛星际，冒出了组一台nas的冲动。其实想整nas很久了，三四年前还没上高中的时候就想买一个，还想着可以放在学校之类的、、、现在想来其实对这些需求倒真不是很大，买来主要就是为了折腾玩，顺便重新开始玩玩pt。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="黑群晖NAS折腾之路">
+<meta property="og:url" content="https://cybereal.one/2024/09/06/nas/index.html">
+<meta property="og:site_name" content="Sanstale&#39;s Blog">
+<meta property="og:description" content="大概是在上个星期的周四周五，又刷到了蜗牛星际，冒出了组一台nas的冲动。其实想整nas很久了，三四年前还没上高中的时候就想买一个，还想着可以放在学校之类的、、、现在想来其实对这些需求倒真不是很大，买来主要就是为了折腾玩，顺便重新开始玩玩pt。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909155033836.png">
+<meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909161403466.png">
+<meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/45IRN4~7OA%7D9UEP1DIWWXLP.png">
+<meta property="article:published_time" content="2024-09-06T15:34:50.000Z">
+<meta property="article:modified_time" content="2024-09-09T08:47:17.202Z">
+<meta property="article:author" content="Sanstale">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="折磨">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="校园网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909155033836.png">
+
+
+<link rel="canonical" href="https://cybereal.one/2024/09/06/nas/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cybereal.one/2024/09/06/nas/","path":"2024/09/06/nas/","title":"黑群晖NAS折腾之路"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>黑群晖NAS折腾之路 | Sanstale's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Sanstale's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sanstale's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%91%E4%B8%BB%E6%9D%BF%EF%BC%8C%E4%B9%B0%E6%9C%BA%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">挑主板，买机器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.</span> <span class="nav-text">装系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E2%80%9D%E5%90%AF%E5%8A%A8%E2%80%9D%E5%90%8E%E6%97%A0%E6%B3%95%E6%89%BE%E5%88%B0DSM"><span class="nav-number">2.1.</span> <span class="nav-text">关于”启动”后无法找到DSM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker"><span class="nav-number">3.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Zerotier"><span class="nav-number">4.</span> <span class="nav-text">Zerotier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ddns-go"><span class="nav-number">5.</span> <span class="nav-text">ddns-go</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#qBittorrent-amp-%E6%A0%A1%E5%9B%AD%E7%BD%91%E9%97%AE%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">qBittorrent&amp;校园网问题</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sanstale</p>
+  <div class="site-description" itemprop="description">简单记录生活</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cybereal.one/2024/09/06/nas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sanstale">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstale's Blog">
+      <meta itemprop="description" content="简单记录生活">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="黑群晖NAS折腾之路 | Sanstale's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          黑群晖NAS折腾之路
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-09-06 23:34:50" itemprop="dateCreated datePublished" datetime="2024-09-06T23:34:50+08:00">2024-09-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-09 16:47:17" itemprop="dateModified" datetime="2024-09-09T16:47:17+08:00">2024-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TECH/" itemprop="url" rel="index"><span itemprop="name">TECH</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>大概是在上个星期的周四周五，又刷到了蜗牛星际，冒出了组一台nas的冲动。其实想整nas很久了，三四年前还没上高中的时候就想买一个，还想着可以放在学校之类的、、、现在想来其实对这些需求倒真不是很大，买来主要就是为了折腾玩，顺便重新开始玩玩pt。</p>
+<span id="more"></span>
+
+<h1 id="挑主板，买机器"><a href="#挑主板，买机器" class="headerlink" title="挑主板，买机器"></a>挑主板，买机器</h1><p>组nas第一步排除品牌机，白裙太贵了买不起，其他品牌的虽然价格略低但也没便宜到哪去，而且系统也不是群晖的。系统选群晖一方面是因为linux确实玩得不太行，需要一个用户友好的系统；另一方面群晖是除了truenas，unraid这些之外用的最多的nas系统，放在国内应该是妥妥的第一了，黑的白的生态都比较完善，功能齐全。</p>
+<p>一开始想着是搞一颗4-6代酷睿加100以内主板，但想想一方面是功耗太高，而且选itx也不见得便宜，遂放弃。然后在主流的低功耗cpu里找，对比了n5105，j3455，j4105，n100等等等等各种知名nas用cpu，最后还是选了最最著名的华擎j3455itx。不是不想买性能更好的，随便来个j4105什么的价格就上去不少（其实没那么贵的也有，但都没有pcie，我挑主板的时候对pcie有点执念，于是全都ban了）</p>
+<p>选都选j3455了，想着要不还是看看我们的传奇矿渣吧。这属于又转回起点了，本来就是不想买蜗牛星际才去看别的板，兜兜转转归来仍是j3455，选了半天后入了暴风播酷云二代，咸鱼400自提。当天没拍照，借一下卖家的图</p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909155033836.png" alt="image-20240909155033836"></p>
+<h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><p>卖家送了一个32g的小U盘但是没引导，看了一下网上的教程都是arpl好像有点过时了，选择rr做引导。不过其实大同小异，可能就是一个东西。<a target="_blank" rel="noopener" href="https://rrorg.cn/">RR官网</a>下完之后跟着官网教程走，img刷入u盘，u盘插nas上开机（我用的采集卡接到笔记本上），选ds918+编译，进入这个画面（rr官网的，我没截图）</p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909161403466.png" alt="image-20240909161403466"></p>
+<p>到目前为止都很顺利，但访问这个5000端口怎么也进不去。找原因照了半天，发现rr的faq里有写到这个问题：</p>
+<blockquote>
+<h2 id="关于”启动”后无法找到DSM"><a href="#关于”启动”后无法找到DSM" class="headerlink" title="关于”启动”后无法找到DSM"></a>关于”启动”后无法找到DSM</h2><p>当启动后 提示的IP无法访问，或者 find.synology.com 也无法查找到设备的问题.</p>
+<p>这是一个复杂的问题，很多人上来就 xx网卡驱动不了，这种大概率都不是网卡驱动的问题,而是kernel崩溃掉了. 引起kernel崩溃的问题很复杂. 还有这个界面就应该是卡死的状态, 橙色提示下光标不应该闪烁，如果一直闪烁可能是硬件与kexec不兼容，这种情况建议切换到”直接启动 或者 内核的切换方式”.</p>
+<p>如果你无法定位是否kernel崩溃（需要串口）只能尝试进行以下操作:</p>
+<p>BIOS 设置, 关闭 super io 相关，关闭 RAID，开启AHCI，开启 UEFI，<br>尝试切换 “LKM 版本”, 目前没有统一的标准，有些硬件prod好使，有些硬件只能用dev.<br>空盘有概率第一次会kernel崩溃,重启会好. (23.10.1 后 崩溃会自动重启)<br>尝试切换 “直接启动” 或者 “内核的切换方式”，如果是概率性的进不去，切换直接启动大部分会有所缓解.<br>sata引导可尝试切换 “切换 SATADOM 模式”.<br>DT型号目前不兼容HBA扩展卡, 如果有会在启动时kernel崩溃，或者识别不到HBA上的硬盘.<br>CPU性能不同，不同得型号首次启动等待时间也略有不同，请耐心等待，(J3455 安装DS920+ 有15分钟的先例.)<br>存在不兼容的模块也可能导致内核崩溃或者无法获取到有效IP，尝试取消无关的模块.<br>尝试编译其他型号。<br>(另外虚拟环境可修改虚拟网卡型号，物理环境可附加USB网卡或者取日志(#173)，来确定是不是网卡驱动的问题)</p>
+</blockquote>
+<p>改成直接启动后能访问5000端口了（不是在bios改，是在rr里面改）</p>
+<p>但每次开机还是要等很久（十分钟左右），有时候还是概率性不能成功启动。</p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/45IRN4~7OA%7D9UEP1DIWWXLP.png" alt="45IRN4~7OA}9UEP1DIWWXLP"></p>
+<p>进去之后直接按流程走就行了，创建一个存储池，之后参照网上教程下各种套件</p>
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>现在docker在套件中心里改名叫container manager了</p>
+<h1 id="Zerotier"><a href="#Zerotier" class="headerlink" title="Zerotier"></a>Zerotier</h1><p>zerotier官方在dsm7.x上的安装方法是用docker，第三方源也有可以直接下载的套件。但是不知道为什么，套件版连不上，docker可以加入但是手机仍然连不上nas，有空再研究。</p>
+<h1 id="ddns-go"><a href="#ddns-go" class="headerlink" title="ddns-go"></a>ddns-go</h1><p>一个ddns的东西，也是有套件和docker，可以设置ipv4和v6，但神奇的是设置完之后在内网可以用域名访问，外网环境就不行了</p>
+<h1 id="qBittorrent-amp-校园网问题"><a href="#qBittorrent-amp-校园网问题" class="headerlink" title="qBittorrent&amp;校园网问题"></a>qBittorrent&amp;校园网问题</h1><p>搞nas的最初动机就是为了玩pt。但装上后发现：上传好慢啊！公网bt在pt上能跑60MB&#x2F;s+，nas只有10MB&#x2F;s左右，可能是由于nas练的是路由器，而路由器走联通，上行限速。我们这校园网很神奇，直接连校园网是1000M上下行对等，但如果办了宽带，并不是但拉一条线，而是一样的网口，只是锐捷认证的时候选对应运营商，也就是说线路是一样的。然而联通似乎只有200&#x2F;50M，真的满啊。关于联通性，学校的nat都是对称，所以ipv4就别想了（公网BTipv4还是有速度的，pt根本没上传），只能试试ipv6。</p>
+<p>那么问题来了，本来nas网口连路由器，现在就要把nas直连校园网，而校园网需要认证，想要认证就要电脑连上nas，但是nas只有一个网口…这个问题让我想了半天，后来发现：nas有一个网口，那我加个usb网卡不就行了吗、、、,这样pc就可以连上nas进行校园网认证了，现在东西都准备好了，有空连一下试试。可能出现的问题是nas因为驱动等等问题认不出usb网卡，那就有点麻烦了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Sanstale
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cybereal.one/2024/09/06/nas/" title="黑群晖NAS折腾之路">https://cybereal.one/2024/09/06/nas/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NAS/" rel="tag"># NAS</a>
+              <a href="/tags/%E6%8A%98%E8%85%BE/" rel="tag"># 折腾</a>
+              <a href="/tags/%E6%8A%98%E7%A3%A8/" rel="tag"># 折磨</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+              <a href="/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/" rel="tag"># 校园网</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/22/your-name/" rel="prev" title="时隔八年，君名重映">
+                  <i class="fa fa-chevron-left"></i> 时隔八年，君名重映
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Sanstale</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">17k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div><div class="moebeian"><a href="https://icp.gov.moe/?keyword=20232339" target="_blank">萌ICP备20232339号</a>
+  </div>
+
+    </div>
+  </footer>
+
+  <script type="text/javascript"
+    src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
