@@ -994,4 +994,37 @@ Wild.png"></p>
         <tag>番评</tag>
       </tags>
   </entry>
+  <entry>
+    <title>给旧手机root一下来跑校园跑</title>
+    <url>/2024/12/07/try-root/</url>
+    <content><![CDATA[<p>学校要求每学期40公里校园跑，偏偏某大学还是三学期，于是一年要整三次校园跑，实在很麻烦。上学期是用模拟器完成的，但想想还是实体机方便一点。</p>
+<span id="more"></span>
+
+<p>安卓模拟器虽然自带root也自带虚拟定位，但可能是微信有检测机制之类的，在模拟器上登录微信实在是非常慢，并且还经常需要新设备验证，太折磨了。顺带一提某大学是用微信小程序来校园跑的，如果是其他的app可能会检测root之类的，这里就不讨论这类了。</p>
+<p>本次刷机除了root也换了个印度版系统，其实单纯root是不一定要刷系统的，只是大陆版miui更新把gms给封了，换个系统也方便用google。</p>
+<p>本文只是记录了刷机的过程，不是教程。</p>
+<h1 id="解锁BL"><a href="#解锁BL" class="headerlink" title="解锁BL"></a>解锁BL</h1><p>众所周知root的第一步是刷机（远古机型也可以直接解），刷机的第一步是解BL锁。BL俗称bootloader，也就是引导程序，具体原理因为本人知识储备也不是很足，就不乱解释了。这是一个比较底层的软件，负责开机的时候的引导。现代手机为了防止用户乱操作都是默认锁住bl的，想解锁就根据厂商不同，解锁的难度也就不同。笔者的旧手机是redmi note 10(5g)，新手机也是redmi，都是小米家的。在miui时期解锁还是相对容易的，下载官网的小米解锁工具就行，后来增加了要激活满七天的限制，到澎湃时期更是要答一系列逆天题目才能解锁。好在博主手机比较老，还是miui12.5，所以可以用官方工具解锁。但是</p>
+<p>但是笔者并没有用官方工具解锁。</p>
+<p>其实一开始时要用的，但在xda上看到一个帖子说这个机型可以用一个联发科专用解锁工具，可以不清数据解bl。虽然这手机的数据都不重要，但我一想还有这种好事？就试试看了（非官方工具解锁有风险，其他联发科机器也不一定能用）<a href="https://xdaforums.com/t/instant-bootloader-unlock-without-losing-data.4599949/">原帖地址</a></p>
+<p>跟着教程走，还真成了！打开手机一开还真解锁了，数据也在，真有点东西的。不过这么一说，联发科机型安全性就有点问题了。如果不清数据就能解bl，那么这数据实在不太不安全了。</p>
+<p>还有就是解了bl每次开机5s内要按一下电源键否则会自动关机，因为手机觉得自己“corrupt”了&#x2F;&#x2F;就是开机的时候显示的一行字提示的</p>
+<h1 id="尝试刷入LineageOS失败"><a href="#尝试刷入LineageOS失败" class="headerlink" title="尝试刷入LineageOS失败"></a>尝试刷入LineageOS失败</h1><p>笔者机器开发代号camellia，在LineageOS官网并没有官方的系统发行，但xda有一个unofficial的bulid，就尝试刷入了。<a href="https://xdaforums.com/t/rom-13-unofficial-camellia-camellian-lineageos-20-0-updated-16-03-2024.4618399/">原帖地址</a></p>
+<p>一直到刷入第三方rec时还比较顺利，但是sideload刷rom就有点问题了。因为笔者第一次刷lineageos，所以在怎么在rec里面开adb还找了半天，然后发现只要选了enable adb和apply update就行了…开启之后在pc用sideload刷入rom。刷到一半卡47%进度，不过似乎也是·正常的，但刷完之后重启进不了系统，只能进rec，这就不太正常了。这期间反复刷了三四次，有一次似乎是看到了lineageos的关机充电的指示画面，但没能成功进系统。不知道是哪里有问题，考虑了一下还是决定刷官方系统。</p>
+<h1 id="刷入印度版MIUI"><a href="#刷入印度版MIUI" class="headerlink" title="刷入印度版MIUI"></a>刷入印度版MIUI</h1><p>这个note10机型只有大陆版和印度版的rom，反观隔壁同名不同代号的机型就有很多版本，另外还有个代号很像的camellian，这款的版本很多，网上也有成功刷入的文章。不过担心变砖还是老老实实刷印度版吧。</p>
+<p>刷机没什么好说的，下好rom，进fastboot，用MiFlash直接刷入即可。需要注意跨地区刷rom不能锁上bl，否则会因为验证问题无法开机，牺牲了一点安全性。</p>
+<p>刷完正常开机，爽！说实话这个rom基本看不出什么印度特色，全语言都有，自带谷歌全家桶，很方便。</p>
+<h1 id="ROOT"><a href="#ROOT" class="headerlink" title="ROOT"></a>ROOT</h1><p>还是使用最常见的magisk来root。从之前下的线刷包里找到boot.img，传到手机上，用magisk修补img(只能用本机修补)，再传回pc，fastboot刷入boot.img即可获取root。</p>
+<h1 id="虚拟定位"><a href="#虚拟定位" class="headerlink" title="虚拟定位"></a>虚拟定位</h1><p>虚拟定位用的是Fake Location，这也算是个老牌校园跑软件了（笑），虽然作者声称封掉了校园跑相关，但是本人用的是微信啊哈哈，软件貌似并没有检测到。打开微信的校园跑小程序，打开虚拟定位，完美！</p>
+]]></content>
+      <categories>
+        <category>TECH</category>
+      </categories>
+      <tags>
+        <tag>折腾</tag>
+        <tag>大学生</tag>
+        <tag>root</tag>
+        <tag>bootloader</tag>
+        <tag>校园跑</tag>
+      </tags>
+  </entry>
 </search>
