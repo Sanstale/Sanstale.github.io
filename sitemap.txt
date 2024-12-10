@@ -1,6 +1,7 @@
+https://cybereal.one/about/index.html
+https://cybereal.one/2024/12/10/2024-shanghai-marathon/
 https://cybereal.one/2024/12/07/try-root/
 https://cybereal.one/2024/11/18/kansai/
-https://cybereal.one/about/index.html
 https://cybereal.one/2024/09/06/nas/
 https://cybereal.one/2024/07/22/your-name/
 https://cybereal.one/2024/06/01/youth/
@@ -71,6 +72,10 @@ https://cybereal.one/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F/
 https://cybereal.one/tags/root/
 https://cybereal.one/tags/bootloader/
 https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E8%B7%91/
+https://cybereal.one/tags/%E8%A7%82%E8%B5%9B/
+https://cybereal.one/tags/%E8%BF%90%E5%8A%A8/
+https://cybereal.one/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/
+https://cybereal.one/tags/%E6%B8%B8%E8%AE%B0/
 https://cybereal.one/categories/%E6%9D%82%E8%B0%88/
 https://cybereal.one/categories/TECH/
 https://cybereal.one/categories/LIFE/
