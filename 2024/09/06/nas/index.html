@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/45IRN4~7OA%7D9UEP1DIWWXLP.png">
 <meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240921203011713.png">
 <meta property="article:published_time" content="2024-09-06T15:34:50.000Z">
-<meta property="article:modified_time" content="2024-09-21T12:30:47.705Z">
+<meta property="article:modified_time" content="2024-12-24T01:43:10.175Z">
 <meta property="article:author" content="Sanstale">
 <meta property="article:tag" content="NAS">
 <meta property="article:tag" content="折腾">
@@ -237,7 +237,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-21 20:30:47" itemprop="dateModified" datetime="2024-09-21T20:30:47+08:00">2024-09-21</time>
+      <time title="修改时间：2024-12-24 09:43:10" itemprop="dateModified" datetime="2024-12-24T09:43:10+08:00">2024-12-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,9 +286,9 @@
 <h1 id="挑主板，买机器"><a href="#挑主板，买机器" class="headerlink" title="挑主板，买机器"></a>挑主板，买机器</h1><p>组nas第一步排除品牌机，白裙太贵了买不起，其他品牌的虽然价格略低但也没便宜到哪去，而且系统也不是群晖的。系统选群晖一方面是因为linux确实玩得不太行，需要一个用户友好的系统；另一方面群晖是除了truenas，unraid这些之外用的最多的nas系统，放在国内应该是妥妥的第一了，黑的白的生态都比较完善，功能齐全。</p>
 <p>一开始想着是搞一颗4-6代酷睿加100以内主板，但想想一方面是功耗太高，而且选itx也不见得便宜，遂放弃。然后在主流的低功耗cpu里找，对比了n5105，j3455，j4105，n100等等等等各种知名nas用cpu，最后还是选了最最著名的华擎j3455itx。不是不想买性能更好的，随便来个j4105什么的价格就上去不少（其实没那么贵的也有，但都没有pcie，我挑主板的时候对pcie有点执念，于是全都ban了）</p>
 <p>选都选j3455了，想着要不还是看看我们的传奇矿渣吧。这属于又转回起点了，本来就是不想买蜗牛星际才去看别的板，兜兜转转归来仍是j3455，选了半天后入了暴风播酷云二代，咸鱼400自提。当天没拍照，借一下卖家的图</p>
-<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909155033836.png" alt="image-20240909155033836"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909155033836.png"></p>
 <h1 id="装系统"><a href="#装系统" class="headerlink" title="装系统"></a>装系统</h1><p>卖家送了一个32g的小U盘但是没引导，看了一下网上的教程都是arpl好像有点过时了，选择rr做引导。不过其实大同小异，可能就是一个东西。<a target="_blank" rel="noopener" href="https://rrorg.cn/">RR官网</a>下完之后跟着官网教程走，img刷入u盘，u盘插nas上开机（我用的采集卡接到笔记本上），选ds918+编译，进入这个画面（rr官网的，我没截图）</p>
-<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909161403466.png" alt="image-20240909161403466"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240909161403466.png"></p>
 <p>到目前为止都很顺利，但访问这个5000端口怎么也进不去。找原因照了半天，发现rr的faq里有写到这个问题：</p>
 <blockquote>
 <h2 id="关于”启动”后无法找到DSM"><a href="#关于”启动”后无法找到DSM" class="headerlink" title="关于”启动”后无法找到DSM"></a>关于”启动”后无法找到DSM</h2><p>当启动后 提示的IP无法访问，或者 find.synology.com 也无法查找到设备的问题.</p>
@@ -298,7 +298,7 @@
 </blockquote>
 <p>改成直接启动后能访问5000端口了（不是在bios改，是在rr里面改）</p>
 <p>但每次开机还是要等很久（十分钟左右），有时候还是概率性不能成功启动。</p>
-<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/45IRN4~7OA%7D9UEP1DIWWXLP.png" alt="45IRN4~7OA}9UEP1DIWWXLP"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/45IRN4~7OA%7D9UEP1DIWWXLP.png"></p>
 <p>进去之后直接按流程走就行了，创建一个存储池，之后参照网上教程下各种套件</p>
 <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>现在docker在套件中心里改名叫container manager了</p>
 <h1 id="Zerotier"><a href="#Zerotier" class="headerlink" title="Zerotier"></a>Zerotier</h1><p>zerotier官方在dsm7.x上的安装方法是用docker，第三方源也有可以直接下载的套件。但是不知道为什么，套件版连不上，docker可以加入但是手机仍然连不上nas，有空再研究。</p>
@@ -310,7 +310,7 @@
 <p>把nas搬回家。</p>
 <p>是的我放弃了，在宿舍插上网卡（AX88179）后，好消息是，群晖能识别它是usb设备，但并不会把他当作网卡。有一个好消息是，网上搜到了好几篇在群晖上安装ax88179驱动的文章，坏消息是跟着做装不上。好消息是芯片厂商提供了驱动linux源码，甚至有人写过怎么编译这个驱动的文章（还是前面写文章的人），坏消息是好不容易配好环境make却不能用，遂放弃。校园网上传虽快，毕竟nat是对称，可以说除了教育网ipv6和大上传也并无其他优势。反观家里，200m联通公网+100m电信非公，上传虽不如校园网但联通性是好多了，而且放在家里也不用担心噪音问题（其实还是有噪音的，但是电视一开也就听不到了）</p>
 <h1 id="Emby"><a href="#Emby" class="headerlink" title="Emby"></a>Emby</h1><p>其实一开始用的是jellyfin，但是出现了许多问题，比如根本刮削不到元数据，安装插件也没啥反应等等，这些我都还能忍受，但忍不了的是我在学校可以访问群晖的webui，却访问不了jellyfin的？相当诡异。我以为这些都是jellyfin的设置问题，后来换用群晖自带的videoStation，但刮削仍然不行。最后安装了emby，所有问题迎刃而解，海报基本都能显示了，连接也正常了。才发现：原来不是我设置的不对，单纯是jellyfin做的烂啊。。。只能说商业软件还是有点东西的。不过安装了破解补丁后web端可以显示，其他客户端仍然没有会员，这也是个小缺憾，不过大部分功能都是可用的。</p>
-<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240921203011713.png" alt="image-20240921203011713"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20240921203011713.png"></p>
 <p>电影还不多，但这海报墙是真爽</p>
 
     </div>
@@ -387,13 +387,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">31k</span>
+    <span title="站点总字数">30k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:51</span>
+    <span title="站点阅读时长">1:50</span>
   </span>
 </div>
 <div class="busuanzi-count">
