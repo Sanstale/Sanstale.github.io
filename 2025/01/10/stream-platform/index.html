@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cybereal.one","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="初衷是想给朋友直播一些游戏或者一起看剧看番这类需求，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。 想给朋友直播一些游戏或者一起看剧看番，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用SRS搭建一个私人直播平台">
+<meta property="og:url" content="https://cybereal.one/2025/01/10/stream-platform/index.html">
+<meta property="og:site_name" content="Sanstale&#39;s Blog">
+<meta property="og:description" content="初衷是想给朋友直播一些游戏或者一起看剧看番这类需求，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。 想给朋友直播一些游戏或者一起看剧看番，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110222040294.png">
+<meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110221817620.png">
+<meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110221925857.png">
+<meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110223503412.png">
+<meta property="article:published_time" content="2025-01-10T13:52:34.000Z">
+<meta property="article:modified_time" content="2025-01-10T14:37:58.098Z">
+<meta property="article:author" content="Sanstale">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="直播">
+<meta property="article:tag" content="分享">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110222040294.png">
+
+
+<link rel="canonical" href="https://cybereal.one/2025/01/10/stream-platform/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cybereal.one/2025/01/10/stream-platform/","path":"2025/01/10/stream-platform/","title":"用SRS搭建一个私人直播平台"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>用SRS搭建一个私人直播平台 | Sanstale's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Sanstale's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sanstale's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%9B%B0%E9%9A%BE%E7%97%87"><span class="nav-number">1.</span> <span class="nav-text">选择困难症</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E9%98%B5%E5%9C%B0"><span class="nav-number">2.</span> <span class="nav-text">转移阵地</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sanstale</p>
+  <div class="site-description" itemprop="description">简单记录生活</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cybereal.one/2025/01/10/stream-platform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sanstale">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstale's Blog">
+      <meta itemprop="description" content="简单记录生活">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="用SRS搭建一个私人直播平台 | Sanstale's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用SRS搭建一个私人直播平台
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-01-10 21:52:34 / 修改时间：22:37:58" itemprop="dateCreated datePublished" datetime="2025-01-10T21:52:34+08:00">2025-01-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TECH/" itemprop="url" rel="index"><span itemprop="name">TECH</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>初衷是想给朋友直播一些游戏或者一起看剧看番这类需求，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。</p>
+<p>想给朋友直播一些游戏或者一起看剧看番，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。</p>
+<span id="more"></span>
+
+<p>起初在群里看到有人用syncplay和对象一起看电影（可恶啊！），想到以前和朋友看剧也有点麻烦，遂去了解了一下syncplay。这软件只能同步播放进度，同步播放暂停等等功能，只支持桌面端的几个播放器，比如mpv，mpc-hc等等，而且还要事先给所有人分发视频文件，对于非技术向人群还是不够友好。</p>
+<h1 id="选择困难症"><a href="#选择困难症" class="headerlink" title="选择困难症"></a>选择困难症</h1><p>于是就想干脆搭个直播平台吧。这样在obs加东西也比较方便，什么都能播。咨询GPT之后给出几个方案：</p>
+<ol>
+<li><p>Nginx RTMP</p>
+</li>
+<li><p>SRS (Simple Realtime Server)（最终的方案）</p>
+</li>
+<li><p>Ant Media Server</p>
+</li>
+<li><p>NMS（Node-Media-Server）</p>
+</li>
+</ol>
+<p>gpt的总结：</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>难度</th>
+<th>优点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Nginx RTMP</strong></td>
+<td>⭐⭐</td>
+<td>稳定、高效</td>
+<td>传统 RTMP 推流</td>
+</tr>
+<tr>
+<td><strong>SRS</strong></td>
+<td>⭐⭐</td>
+<td>支持多协议、低延迟</td>
+<td>实时流媒体传输</td>
+</tr>
+<tr>
+<td><strong>Ant Media Server</strong></td>
+<td>⭐⭐⭐</td>
+<td>支持 WebRTC、企业级</td>
+<td>低延迟互动需求</td>
+</tr>
+<tr>
+<td><strong>Node-Media-Server</strong></td>
+<td>⭐⭐⭐</td>
+<td>基于 Node.js，易扩展</td>
+<td>前端开发者</td>
+</tr>
+</tbody></table>
+<p>其他几个都没有尝试，使用体验略。</p>
+<p>我问GPT SRS怎么用的时候他让我要么用WSL要么docker装，感觉都有点麻烦，，遂去看文档，发现其实SRS有Windows版。</p>
+<p><a target="_blank" rel="noopener" href="https://ossrs.net/lts/zh-cn/docs/v6/doc/getting-started">SRS文档</a></p>
+<p>有一说一我觉得这个文档，，可能是语言风格的问题，让人感觉并非非常，有文档的感觉。更像是我这种博客的语言风格，快速起步感觉也不是很傻瓜化，介绍不是很多。不过我docker和Linux用的都不多是真的</p>
+<p>Windows服务端是可以正常用的，在电脑上开个服务端再开个OBS推流到本机就可以在内网看到直播了。但本人的笔记本经常移动，网络环境不固定，不太适合外网访问，于是打算把SRS部署到群晖上。</p>
+<h1 id="转移阵地"><a href="#转移阵地" class="headerlink" title="转移阵地"></a>转移阵地</h1><p>部署说难也不难，毕竟DSM上有docker。下好镜像之后部署一下，记得把8080和1935端口都打开就行了。8080是访问web服务的，1935是RTMP推流端口。</p>
+<p>这次只搞了RTMP，WebRTC之类的就没弄了，基本都是默认配置没动过。</p>
+<p>部署完之后访问NAS的8080端口即可看到欢迎页</p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110222040294.png" alt="欢迎页"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110221817620.png" alt="SRS控制台"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110221925857.png" alt="直播页"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110223503412.png" alt="服务器资源监控"></p>
+<p>NAS的CPU是J3455，内存8G，直播时资源监控如图。</p>
+<p>在OBS的推流设置填入NAS的IP和密钥（也可不填密钥）然后推流即可在内网访问直播页。</p>
+<p>如果要在外网访问，首先你需要一个公网IP和一个域名，域名映射到你的服务器上（我这里是NAS），然后在路由器的端口映射把NAS的8080和1935映射到你想要的端口号。</p>
+<p>DSM上可以设置反向代理，我把内部的8080映射到了域名的8080端口，不知道这一步是不是需要的。</p>
+<p>然后就可以在外网用域名+端口号访问SRS了，也可以让你的朋友推流到这个网址了。</p>
+<p>由于没加推流密钥没有鉴权，所以任何知道网址的人都可以推流，但我也没研究怎么加密钥，所以解决方法是不用的时候把srs的服务关掉，以后研究一下安全问题。</p>
+<p>此外HTTPS也没整。</p>
+<p>以上。这只是一个勉强能用的无审查直播方案，但问题还很多。除了上面提到的问题，现在本人这里pc可以访问播放页，手机关掉代理（可能是使用的域名不在规则里会自动走代理）之后wifi和流量都可以访问，但朋友那边只能用手机流量访问而推流正常，原因不明。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Sanstale
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cybereal.one/2025/01/10/stream-platform/" title="用SRS搭建一个私人直播平台">https://cybereal.one/2025/01/10/stream-platform/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+              <a href="/tags/%E7%9B%B4%E6%92%AD/" rel="tag"># 直播</a>
+              <a href="/tags/%E5%88%86%E4%BA%AB/" rel="tag"># 分享</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/12/10/2024-shanghai-marathon/" rel="prev" title="2024上海马拉松凑热闹实录">
+                  <i class="fa fa-chevron-left"></i> 2024上海马拉松凑热闹实录
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Sanstale</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">31k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:54</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div><div class="moebeian"><a href="https://icp.gov.moe/?keyword=20232339" target="_blank">萌ICP备20232339号</a>
+  </div>
+
+    </div>
+  </footer>
+
+
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>

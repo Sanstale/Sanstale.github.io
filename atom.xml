@@ -6,7 +6,7 @@
   <link href="https://cybereal.one/atom.xml" rel="self"/>
   
   <link href="https://cybereal.one/"/>
-  <updated>2024-12-24T01:43:10.141Z</updated>
+  <updated>2025-01-10T14:37:58.098Z</updated>
   <id>https://cybereal.one/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用SRS搭建一个私人直播平台</title>
+    <link href="https://cybereal.one/2025/01/10/stream-platform/"/>
+    <id>https://cybereal.one/2025/01/10/stream-platform/</id>
+    <published>2025-01-10T13:52:34.000Z</published>
+    <updated>2025-01-10T14:37:58.098Z</updated>
+    
+    <content type="html"><![CDATA[<p>初衷是想给朋友直播一些游戏或者一起看剧看番这类需求，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。</p><p>想给朋友直播一些游戏或者一起看剧看番，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。</p><span id="more"></span><p>起初在群里看到有人用syncplay和对象一起看电影（可恶啊！），想到以前和朋友看剧也有点麻烦，遂去了解了一下syncplay。这软件只能同步播放进度，同步播放暂停等等功能，只支持桌面端的几个播放器，比如mpv，mpc-hc等等，而且还要事先给所有人分发视频文件，对于非技术向人群还是不够友好。</p><h1 id="选择困难症"><a href="#选择困难症" class="headerlink" title="选择困难症"></a>选择困难症</h1><p>于是就想干脆搭个直播平台吧。这样在obs加东西也比较方便，什么都能播。咨询GPT之后给出几个方案：</p><ol><li><p>Nginx RTMP</p></li><li><p>SRS (Simple Realtime Server)（最终的方案）</p></li><li><p>Ant Media Server</p></li><li><p>NMS（Node-Media-Server）</p></li></ol><p>gpt的总结：</p><table><thead><tr><th>工具</th><th>难度</th><th>优点</th><th>适用场景</th></tr></thead><tbody><tr><td><strong>Nginx RTMP</strong></td><td>⭐⭐</td><td>稳定、高效</td><td>传统 RTMP 推流</td></tr><tr><td><strong>SRS</strong></td><td>⭐⭐</td><td>支持多协议、低延迟</td><td>实时流媒体传输</td></tr><tr><td><strong>Ant Media Server</strong></td><td>⭐⭐⭐</td><td>支持 WebRTC、企业级</td><td>低延迟互动需求</td></tr><tr><td><strong>Node-Media-Server</strong></td><td>⭐⭐⭐</td><td>基于 Node.js，易扩展</td><td>前端开发者</td></tr></tbody></table><p>其他几个都没有尝试，使用体验略。</p><p>我问GPT SRS怎么用的时候他让我要么用WSL要么docker装，感觉都有点麻烦，，遂去看文档，发现其实SRS有Windows版。</p><p><a href="https://ossrs.net/lts/zh-cn/docs/v6/doc/getting-started">SRS文档</a></p><p>有一说一我觉得这个文档，，可能是语言风格的问题，让人感觉并非非常，有文档的感觉。更像是我这种博客的语言风格，快速起步感觉也不是很傻瓜化，介绍不是很多。不过我docker和Linux用的都不多是真的</p><p>Windows服务端是可以正常用的，在电脑上开个服务端再开个OBS推流到本机就可以在内网看到直播了。但本人的笔记本经常移动，网络环境不固定，不太适合外网访问，于是打算把SRS部署到群晖上。</p><h1 id="转移阵地"><a href="#转移阵地" class="headerlink" title="转移阵地"></a>转移阵地</h1><p>部署说难也不难，毕竟DSM上有docker。下好镜像之后部署一下，记得把8080和1935端口都打开就行了。8080是访问web服务的，1935是RTMP推流端口。</p><p>这次只搞了RTMP，WebRTC之类的就没弄了，基本都是默认配置没动过。</p><p>部署完之后访问NAS的8080端口即可看到欢迎页</p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110222040294.png" alt="欢迎页"></p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110221817620.png" alt="SRS控制台"></p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110221925857.png" alt="直播页"></p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250110223503412.png" alt="服务器资源监控"></p><p>NAS的CPU是J3455，内存8G，直播时资源监控如图。</p><p>在OBS的推流设置填入NAS的IP和密钥（也可不填密钥）然后推流即可在内网访问直播页。</p><p>如果要在外网访问，首先你需要一个公网IP和一个域名，域名映射到你的服务器上（我这里是NAS），然后在路由器的端口映射把NAS的8080和1935映射到你想要的端口号。</p><p>DSM上可以设置反向代理，我把内部的8080映射到了域名的8080端口，不知道这一步是不是需要的。</p><p>然后就可以在外网用域名+端口号访问SRS了，也可以让你的朋友推流到这个网址了。</p><p>由于没加推流密钥没有鉴权，所以任何知道网址的人都可以推流，但我也没研究怎么加密钥，所以解决方法是不用的时候把srs的服务关掉，以后研究一下安全问题。</p><p>此外HTTPS也没整。</p><p>以上。这只是一个勉强能用的无审查直播方案，但问题还很多。除了上面提到的问题，现在本人这里pc可以访问播放页，手机关掉代理（可能是使用的域名不在规则里会自动走代理）之后wifi和流量都可以访问，但朋友那边只能用手机流量访问而推流正常，原因不明。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;初衷是想给朋友直播一些游戏或者一起看剧看番这类需求，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。&lt;/p&gt;
+&lt;p&gt;想给朋友直播一些游戏或者一起看剧看番，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
+    
+    
+    <category term="网络" scheme="https://cybereal.one/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="直播" scheme="https://cybereal.one/tags/%E7%9B%B4%E6%92%AD/"/>
+    
+    <category term="分享" scheme="https://cybereal.one/tags/%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>2024上海马拉松凑热闹实录</title>
@@ -502,29 +528,6 @@
     <category term="技术" scheme="https://cybereal.one/tags/%E6%8A%80%E6%9C%AF/"/>
     
     <category term="弃坑" scheme="https://cybereal.one/tags/%E5%BC%83%E5%9D%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一次NDSL的购买记录</title>
-    <link href="https://cybereal.one/2022/12/04/ndsl/"/>
-    <id>https://cybereal.one/2022/12/04/ndsl/</id>
-    <published>2022-12-04T15:01:06.000Z</published>
-    <updated>2024-12-24T01:43:10.179Z</updated>
-    
-    <content type="html"><![CDATA[<p>前阵子刷b站的时候刷到一条视频，引发了我对这个十年前的小掌机的兴趣。<br><a href="https://www.bilibili.com/video/BV1o84y1k7WU">https://www.bilibili.com/video/BV1o84y1k7WU</a><br>由于之前也或多或少的了解了一些nds和烧录卡的内容，但是没有深入了解，这次决定马上整一个ndsl来玩，想想看花两百左右的钱可以玩到几百款经典游戏，不论大小还是重量都比ns小多了，非常适合摸鱼。</p><span id="more"></span><h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Nintendo Dual<br>Screen，简称NDS，是<a href="https://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC">日本</a>电玩游戏商任天堂公司开发的第三代掌上游乐器，初代发售于2004年。DS是Dual<br>Screen（双萤幕）的缩写。主要的特征包括双萤幕显示，其中下方的萤幕为<a href="https://zh.wikipedia.org/wiki/%E8%A7%B8%E6%8E%A7%E5%BC%8F%E8%9E%A2%E5%B9%95">触控式萤幕</a>声音输入装置和<a href="https://zh.wikipedia.org/wiki/Wi-Fi">Wi-Fi</a><a href="https://zh.wikipedia.org/wiki/%E7%84%A1%E7%B7%9A%E7%B6%B2%E8%B7%AF">无线网路</a>功能。（摘自维基）</p><p>nds是目前为止销量仅次于ps2的游戏机<br>游戏阵容很强大，光是我听过名字的就有很多，这里简单列一些：</p><p>宝可梦黑白1、2；珍珠，钻石；勇者斗恶龙<br>，最终幻想，火焰纹章，马里奥64，马里奥赛车ds，新超马，太鼓达人，逆转裁判1234，任天狗，甚至还有使命召唤上的几部作品，光听听就很心动了。</p><p>如果你也想买nds，那么我有建议你先弄清自己的需求。如果你买游戏机只是头脑发热一时兴起，那么买完之后也是吃灰。在买前，先仔细想好自己到底是不是需要这个东西，买了有没有时间玩，以及对未来可能出现的问题做好心理准备，毕竟也都是十几年前的老机子了。当然如果买机是为了收藏，那么也可以。</p><h1 id="了解nds的型号"><a href="#了解nds的型号" class="headerlink" title="了解nds的型号"></a>了解nds的型号</h1><p>nds有四种型号，分别是初代nds，nds lite （ndsl），ndsi，还有ndsi LL&#x2F;XL。</p><p>一般来说，初代也被称为饭盒机，因为它相比后面几代实在显得有些过于厚重了。优点是可以玩gba游戏，一些怀旧玩家可能喜欢吧。</p><p><img src="https://s2.loli.net/2023/07/05/HNRVBCZzcpDP5Wq.png"></p><p>ndsl是四个机种里销量最高的一款，相比初代轻薄了不少，也可以玩gba卡带，一般现在选这个的比较多。</p><p><img src="https://s2.loli.net/2023/07/05/2lZyxmP3sSXCp6Y.png"></p><p>ndsi是ndsl的改款，外形更加现代化一点，主要是加了一个30w像素的摄像头（基本等于没有），还去掉了gba卡槽。ndsi可以玩一些前两个机不能玩的东西，但也很有限，基本都不是什么大作。ndsi最大的有点是可以无卡破解，后面再讲。</p><p><img src="https://s2.loli.net/2023/07/05/WdbTBNklUmjtX4y.png"></p><p>ndsixl是ndsi的屏幕加大款，不过加大了屏幕似乎并没有带来什么好的反响，因为屏幕分辨率还是一样的，加大屏幕显得更加大果粒了，一般不推荐。</p><p><img src="https://s2.loli.net/2023/07/05/7vfHKTuiyzYLgem.png"></p><h1 id="了解烧录卡"><a href="#了解烧录卡" class="headerlink" title="了解烧录卡"></a>了解烧录卡</h1><p>提到nds，就不得不提到烧录卡了。简单来说，烧录卡就是一张盗版卡带，但是不同于正版卡带中只装了一个游戏，烧录卡一般可以装很多游戏，还有很多其他附加功能。烧录卡作为盗版软件的载体，却在nds和gba历史上留下难以磨灭的痕迹，必然有其原因。烧录卡带来了很多正版没有的功能，包括但不限于一卡多游戏，软复位，金手指，及时存档等等等等，以至于后来很多欧美的正版玩家都转投向烧录卡了。烧录卡的流行还有一大原因就是nds和ndsl是无法升级系统的，也就是说一旦系统被破解，任天堂根本无法修补漏洞，除非召回所有机器，这显然是不可能的。到了ndsi系统可以被升级，许多漏洞也被补上了，但并不意味着ndsi不能使用烧录卡了，事实上ndsi有烧录卡与无卡破解两种破解方案。关于烧录卡的历史可以看这个帖子：<a href="http://tieba.baidu.com/p/3767215598">http://tieba.baidu.com/p/3767215598</a>  </p><p>现在除了收藏需要，基本已经没有人需要购买正版卡带了，但是目前市面上的烧录卡可谓是五花八门，非常繁杂。就我所知道的，最近几年的主流烧录卡有R4以及它的衍生物，还有SuperCard的DSOne(i)和DSTWO，还有TT、ak2i等等，据统计大概有一百多种（<a href="https://wiki.gbatemp.net/wiki/Ultimate_Flashcart_Download_Index%EF%BC%89">https://wiki.gbatemp.net/wiki/Ultimate_Flashcart_Download_Index）</a>  </p><p>，是不是已经眼花了？不用担心，大部分已经被历史的车轮淘汰了。现在在淘宝搜到最多的就是R4烧录卡，根据卡上的标识可以分为com卡，wood卡，还有hk（这个比较高端）等，但是我比较推荐的是dsone这张（我也只买过这张），兼容性比较好，还有即时存档，即使金手指等等其他烧录卡没有的特性，我在咸鱼买到是65一张，带一个64g的tf卡。它的缺点是其中的psram芯片容易坏，要让卖家检测良好之后再发出。非常不幸的是，我买的时候卖家说已经测试了好几遍都是好的，但是我用了几天还是坏了，听他说这是极个别案例，那我就算了吧。如果不能容忍这个缺陷，也可以买dsonei，不过价格已经被炒得翻了一倍了。</p><h1 id="购买渠道"><a href="#购买渠道" class="headerlink" title="购买渠道"></a>购买渠道</h1><p>强调一下，nds是十几年前的机器，正常价格不可能买到全新机，都是二手的。nds我不建议在淘宝购买，因为那些商家加价实在太厉害了，一百多可以买到的东西在淘宝要三百朝上才行，属实不太值。当然淘宝的优点是比较方便，价格高应该也能买到成色好甚至带箱说的（应该？），如果你有钱的花，那就上淘宝吧。</p><p>除了淘宝，那么就是在闲鱼买了。拿ndsl举例子，我的预计价格在130~150左右，我看到前两年的帖子都说一百二就能收个成色好的，我确实是没找到。在这个价格区间，需要满足的条件有：带有触摸笔，没有明显的瑕疵，没有什么转轴裂了啊之类的问题，最好带充电线，最好还要有防尘塞。因为我买的时候没带充电器，等充电器的几天时间我一直没得玩。。哭死<br>另外要买的就是那张dsone烧录卡，我在闲鱼只看到一家专门卖这个的，价格就是65一张带tf卡，插上即玩，记得让他检测psram。</p><p>蹲闲鱼是一个比较痛苦的过程，短则一两个小时，多则几天，我买的时候连着三四天每天刷半个小时，让我一度再也不想看闲鱼了…但这是省钱的代价，加油吧。</p><h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>nds到手后就可以开始快乐了，不说了，去打逆转裁判力（喜</p><p>推荐</p><p>关于nds以及其他的掌机、主机的故事，这里列出几个网站、up主参考：</p><p><strong>博van小哥哥</strong><a href="https://space.bilibili.com/28732825">https://space.bilibili.com/28732825</a><br>   介绍过很多老掌机</p><p><strong>红酒汤姆一世</strong><a href="https://space.bilibili.com/567673">https://space.bilibili.com/567673</a><br>   介绍过很多电子产品发展史，可以了解一些nds的历史</p><p><strong>老男人游戏网</strong><a href="https://www.oldmanemu.net/">https://www.oldmanemu.net/</a><br>   收集了很多游戏资源，基本上本世代之前的都有</p><p><strong>TG频道<br>游戏书籍Hub</strong><a href="https://t.me/BookForGamer">https://t.me/BookForGamer</a>  </p><p>收录了很多经典的游戏杂志，关于nds可以看看掌机系列中的NDS专辑，是UCG出品的，我看过一些很不错</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;前阵子刷b站的时候刷到一条视频，引发了我对这个十年前的小掌机的兴趣。&lt;br&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1o84y1k7WU&quot;&gt;https://www.bilibili.com/video/BV1o84y1k7WU&lt;/a&gt;&lt;br&gt;由于之前也或多或少的了解了一些nds和烧录卡的内容，但是没有深入了解，这次决定马上整一个ndsl来玩，想想看花两百左右的钱可以玩到几百款经典游戏，不论大小还是重量都比ns小多了，非常适合摸鱼。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="ACG" scheme="https://cybereal.one/categories/ACG/"/>
-    
-    
-    <category term="游戏机" scheme="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F%E6%9C%BA/"/>
-    
-    <category term="retro" scheme="https://cybereal.one/tags/retro/"/>
     
   </entry>
   
