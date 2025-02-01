@@ -16,15 +16,15 @@ document.addEventListener('page:loaded', () => {
     }
 
     const imageTitle = $image.attr('title') || $image.attr('alt');
-    /*if (imageTitle) {
+    if (imageTitle) {
       // Do not append image-caption if pandoc has already created a figcaption
       if (!$imageWrapLink.next('figcaption').length) {
         $imageWrapLink.append(`<p class="image-caption">${imageTitle}</p>`);
       }
-      // Make sure img title tag wi ll show correctly in fancybox
+      // Make sure img title tag will show correctly in fancybox
       $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
     }
-  });*/
+  });
 
   $.fancybox.defaults.hash = false;
   $('.fancybox').fancybox({
@@ -33,8 +33,6 @@ document.addEventListener('page:loaded', () => {
       overlay: {
         locked: false
       }
-    },
-    caption: function(instance, item) {
-      return ''; // 强制移除图注
     }
   });
+});
