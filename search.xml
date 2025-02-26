@@ -1219,7 +1219,7 @@ Wild.png"></p>
 <h1 id="抓包获取POST请求"><a href="#抓包获取POST请求" class="headerlink" title="抓包获取POST请求"></a>抓包获取POST请求</h1><p>要连接校园网，首先要知道按下回车键发生了什么。当连接到学校的开放WIFI或者有线连接时，电脑会尝试连接msftconnecttest.com&#x2F;redirect来测试能不能连接到网络。因为需要认证，所以网页会被重定向到认证服务器10.10.9.9&#x2F;….，账号密码是预先填好的，不需要手动输入，猜测可能是网站cookie。多提一句这个加密的密码和明文密码明显长度不一样啊。</p>
 <p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250226231225443.png" alt="校园网认证的网页"></p>
 <p>F12后打开网络，刷新试图抓包，但是看到一个POST请求一闪而过随后网站跳转到认证成功页面，试了几次都1看不到那个请求，突然发现有一个节流模式的功能，设为离线之后就可以截获post请求（因为发不出去也就不会重定向）</p>
-<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/74cfbdab80925a5c9e91202326d39a1d.png" alt="F12看post请求"></p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250226233457210.png" alt="F12看POST请求"></p>
 <p>后来我才发现这个请求直接复制为powershell格式就可以直接运行，但当时我并没有发现，搞了一大坨东西扔给chatgpt分析，让他给我写了个curl命令出来，打算用python写个定时程序。</p>
 <h1 id="计划任务-脚本"><a href="#计划任务-脚本" class="headerlink" title="计划任务+脚本"></a>计划任务+脚本</h1><p>pws中的curl是另一个命令的alias，我还专门又装了一个正经的curl</p>
 <p>原计划使用python写个定时程序，但是转念一想，直接用bat脚本不就行了吗？正好windows还自带一个计划任务的工具。</p>
