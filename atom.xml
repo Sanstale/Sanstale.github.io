@@ -6,7 +6,7 @@
   <link href="https://cybereal.one/atom.xml" rel="self"/>
   
   <link href="https://cybereal.one/"/>
-  <updated>2025-01-15T02:30:41.588Z</updated>
+  <updated>2025-02-26T15:31:29.977Z</updated>
   <id>https://cybereal.one/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>折腾一下自动连接校园网</title>
+    <link href="https://cybereal.one/2025/02/26/a-script-story/"/>
+    <id>https://cybereal.one/2025/02/26/a-script-story/</id>
+    <published>2025-02-26T14:56:31.000Z</published>
+    <updated>2025-02-26T15:31:29.977Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为每次开电脑都要按一下回车连校园网，像我这么懒的人肯定是不想自己连的，于是打算写一个自动连接的脚本。期间踩的坑是真的很多啊。</p><span id="more"></span><p>说实话折腾半天现在笔者很困，但是怕一觉醒来踩的坑都忘了，还是赶紧记下来，逻辑混乱见谅。</p><h1 id="抓包获取POST请求"><a href="#抓包获取POST请求" class="headerlink" title="抓包获取POST请求"></a>抓包获取POST请求</h1><p>要连接校园网，首先要知道按下回车键发生了什么。当连接到学校的开放WIFI或者有线连接时，电脑会尝试连接msftconnecttest.com&#x2F;redirect来测试能不能连接到网络。因为需要认证，所以网页会被重定向到认证服务器10.10.9.9&#x2F;….，账号密码是预先填好的，不需要手动输入，猜测可能是网站cookie。多提一句这个加密的密码和明文密码明显长度不一样啊。</p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250226231225443.png" alt="image-20250226231225443"></p><p>F12后打开网络，刷新试图抓包，但是看到一个POST请求一闪而过随后网站跳转到认证成功页面，试了几次都1看不到那个请求，突然发现有一个节流模式的功能，设为离线之后就可以截获post请求（因为发不出去也就不会重定向）</p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/74cfbdab80925a5c9e91202326d39a1d.png" alt="74cfbdab80925a5c9e91202326d39a1d"></p><p>后来我才发现这个请求直接复制为powershell格式就可以直接运行，但当时我并没有发现，搞了一大坨东西扔给chatgpt分析，让他给我写了个curl命令出来，打算用python写个定时程序。</p><h1 id="计划任务-脚本"><a href="#计划任务-脚本" class="headerlink" title="计划任务+脚本"></a>计划任务+脚本</h1><p>pws中的curl是另一个命令的alias，我还专门又装了一个正经的curl</p><p>原计划使用python写个定时程序，但是转念一想，直接用bat脚本不就行了吗？正好windows还自带一个计划任务的工具。</p><p>于是直接把curl命令复制进去，执行失败，因为pws有curl这个命令了，真正的curl语法反而不认识了。</p><p>于是换用cmd，还是报错，因为cmd不能识别\这样的换行。</p><p>于是把命令改为一行，可以成功执行，可以正常上网。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;userIndex&quot;:&quot;xxxxxxxxxxx&quot;,&quot;result&quot;:&quot;success&quot;,&quot;message&quot;:&quot;&quot;,&quot;forwordurl&quot;:null,&quot;keepaliveInterval&quot;:0,&quot;casFailErrString&quot;:null,&quot;validCodeUrl&quot;:&quot;&quot;&#125;</span><br></pre></td></tr></table></figure><p>但诡异的事情来了，cmd中正常执行的命令换到bat脚本之后就报错，</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;userIndex&quot;:null,&quot;result&quot;:&quot;fail&quot;,&quot;message&quot;:&quot;WEB认证设备未注册，请确认SAM+/portal/设备上的参数配置是否一致&quot;,&quot;forwordurl&quot;:null,&quot;keepaliveInterval&quot;:0,&quot;casFailErrString&quot;:null,&quot;validCodeUrl&quot;:&quot;&quot;&#125;</span><br></pre></td></tr></table></figure><p>网上说有可能是转义问题，要把“改为^”，但没什么效果，折腾半天还是报错，有点崩溃。</p><h1 id="PS1脚本不能执行"><a href="#PS1脚本不能执行" class="headerlink" title="PS1脚本不能执行"></a>PS1脚本不能执行</h1><p>就在这时候我突然发现这个请求可以直接复制成pws格式，那就很舒服了，pws中正常执行，写了一个ps1脚本也可以正常运行。这里我其实知道ps1默认是不允许运行的，但我右键运行似乎在豁免范围外可以直接运行，我就以为没有这个限制。</p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/image-20250226232504151.png" alt="image-20250226232504151"></p><p>在计划任务里添加了任务，触发器设为解锁时，操作是执行powershell脚本加上你的脚本路径，当且仅当连接到指定的网络时执行。这里还踩了几次坑。第一次是直接路径写ps1脚本路径，结果无效。后来改成启动<code>C:\Windows\SysWOW64\WindowsPowerShell\v1.0\PowerShell.exe</code>，参数写<code>-NonInteractive &quot;ps1脚本路径&quot;</code>，但仍然报错，而且终端一闪而过我都不知道报错是什么……我的解决方法是：打开obs录屏看看报错是什么……朴实无华的方法。结果提示是系统不允许执行ps1脚本，我这才去把限制解了（这个直接网上搜一下就有），但仍然报一样的错。后来看到有人有一样的问题，说是直接写powershell就行了，真是很莫名其妙又很诡异的错误。</p><h1 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h1><p>以上完结，折腾了一个多小时。目前实现的就是每次打开电脑自动执行脚本，之后就可以直接上网了。虽然每次解锁会弹个终端但我也懒得把他隐藏了，要不然时间长了我都忘了有这个脚本，可能以后出什么问题我都不知道去哪找。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;因为每次开电脑都要按一下回车连校园网，像我这么懒的人肯定是不想自己连的，于是打算写一个自动连接的脚本。期间踩的坑是真的很多啊。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
+    
+    
+    <category term="折腾" scheme="https://cybereal.one/tags/%E6%8A%98%E8%85%BE/"/>
+    
+    <category term="网络" scheme="https://cybereal.one/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="校园网" scheme="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
+    
+    <category term="curl" scheme="https://cybereal.one/tags/curl/"/>
+    
+    <category term="powershell" scheme="https://cybereal.one/tags/powershell/"/>
+    
+  </entry>
   
   <entry>
     <title>本世代潜行游戏集大成之作：杀手三部曲</title>
@@ -506,33 +535,6 @@
     <category term="windows" scheme="https://cybereal.one/tags/windows/"/>
     
     <category term="Android" scheme="https://cybereal.one/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Telegram的1library机器人下载电子书</title>
-    <link href="https://cybereal.one/2022/12/17/1lib/"/>
-    <id>https://cybereal.one/2022/12/17/1lib/</id>
-    <published>2022-12-17T15:01:06.000Z</published>
-    <updated>2024-12-24T01:43:10.132Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>前排提醒:zlib网站情况多变,文章内容可能已经过时</strong></p><p>众所周知知名下载电子书的网站zlibrary被fbi搞了，于是就不能很方便的直接上他的官网下书了。好在它的telegram<br>bot还是可以正常使用的。</p><p>虽然没有推荐这种功能了，但是搜书还是很方便的。那么要用这个bot就有那么一些门槛了，下面稍微讲解一下。</p><span id="more"></span><p>2022-12-29更新：telegram已经把机器人封禁了，原来捐赠使用的@zlibrary2bot还正常，不过要付费，应该也没几个人能用，也不知道能活多久。zlibrary官方还没表态。</p><hr><h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>一个代理 能上谷歌看油管就行。</p><p><del>tor浏览器<br>用来上暗网</del>好像也不是很需要了，下载地址:<a href="https://www.torproject.org/zh-CN/download/">https://www.torproject.org/zh-CN/download/</a></p><p>一个telegram账号<br><a href="https://telegram.org/">https://telegram.org/</a><br>具体注册就不讲了</p><p>注意tg的假官网很多，别下错了。</p><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>注意这是要用到tor浏览器的方法，下文提到的网站不需要暗网，如果你用<a href="https://singlelogin.me/">https://singlelogin.me/</a><br>不能注册再尝试这个方法。</p><p>打开tor应该是这个界面，如果你第一次打开的话。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217211212941.png"></p><p>然后这时候你应该是开着代理，点击连接，不出意外的话就可以连上了。如果连不上要么是你的网络问题要么是代理问题。如果你和我一样用clash的话，可以在tor的设置-连接，高级-配置tor浏览器联网方式这里这样填：<img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217211702984.png"></p><p>这是cfw的默认端口，如果你不是请自行更改。</p><p>当然连不上的话也可以使用网桥，我也试了几次才连上，比较玄学。连上后长这样：</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217212237040.png"></p><p>然后就可以输入zlibrary的暗网网址<a href="http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/">http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion/</a><br>来登录了。这个网址复制自它的tgbot，可能以后会变。</p><p>连上后长这样：<img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217212516934.png"></p><p>接着就像正常注册网站注册就行了，注意最好不要用国内邮箱，qq或者163这些，如果你实在要用也不是不行。</p><p>然后就可以把账号关联到tg机器人了。</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217212720785.png"></p><p>这样就可以愉快搜书了。</p><p>效果如下：</p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217210250884.png"></p><p><img src="https://gcore.jsdelivr.net/gh/Sanstale/Picture-bed@main/image-20221217210305898.png"></p><h1 id="不用暗网的方法"><a href="#不用暗网的方法" class="headerlink" title="不用暗网的方法"></a>不用暗网的方法</h1><p>写完之后才发现好像zlib又可以在公网访问了。。<a href="https://singlelogin.me/">https://singlelogin.me/</a><br>直接在这个链接注册应该就行了，流程同上。</p><h1 id="个人不太推荐的方法"><a href="#个人不太推荐的方法" class="headerlink" title="个人不太推荐的方法"></a>个人不太推荐的方法</h1><p>网上好像有一些zlibrary的共享账号什么的，也就是登陆之后把账号绑到自己的tg上，不过这方法指不定有什么风险，最好还是自己注册一个，反正也不费什么时间。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>欢迎继续畅游在电子书海洋中。</p><p>当然zilib的书也不是最全的，下面再推几个电子书相关网站。</p><p>mox.moe:<a href="https://mox.moe/">https://mox.moe/</a></p><p>电子书漫画网站，漫画非常全，还可以一键发到kindle上看，非常方便。就是注册时的验证码比较麻烦。</p><p>尘缘轻水：<a href="https://www.chenyuanqingshui.cn/">https://www.chenyuanqingshui.cn/</a></p><p>日系轻小说非常全，以前是放在蓝奏云上的，后来因为人太多搞了一个网站，总体来说资源还是很丰富的。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;前排提醒:zlib网站情况多变,文章内容可能已经过时&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;众所周知知名下载电子书的网站zlibrary被fbi搞了，于是就不能很方便的直接上他的官网下书了。好在它的telegram&lt;br&gt;bot还是可以正常使用的。&lt;/p&gt;
-&lt;p&gt;虽然没有推荐这种功能了，但是搜书还是很方便的。那么要用这个bot就有那么一些门槛了，下面稍微讲解一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
-    
-    
-    <category term="telegram" scheme="https://cybereal.one/tags/telegram/"/>
-    
-    <category term="机器人" scheme="https://cybereal.one/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
-    
-    <category term="电子书" scheme="https://cybereal.one/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
     
   </entry>
   
