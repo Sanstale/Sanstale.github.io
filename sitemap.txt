@@ -1,3 +1,4 @@
+https://cybereal.one/2025/04/27/brick-bridge/
 https://cybereal.one/2025/03/25/kcd2/
 https://cybereal.one/2025/02/26/a-script-story/
 https://cybereal.one/about/index.html
@@ -31,6 +32,7 @@ https://cybereal.one/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/
 https://cybereal.one/tags/telegram/
 https://cybereal.one/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/
 https://cybereal.one/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/
+https://cybereal.one/tags/%E5%AD%A6%E4%B9%A0/
 https://cybereal.one/tags/%E8%A7%82%E8%B5%9B/
 https://cybereal.one/tags/%E8%BF%90%E5%8A%A8/
 https://cybereal.one/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/
@@ -89,9 +91,12 @@ https://cybereal.one/tags/curl/
 https://cybereal.one/tags/powershell/
 https://cybereal.one/tags/%E6%B5%8B%E8%AF%84/
 https://cybereal.one/tags/%E7%8E%A9%E5%90%8E%E6%84%9F/
+https://cybereal.one/tags/%E6%AF%94%E8%B5%9B/
+https://cybereal.one/tags/%E5%8A%9B%E5%AD%A6/
 https://cybereal.one/categories/%E6%9D%82%E8%B0%88/
 https://cybereal.one/categories/TECH/
 https://cybereal.one/categories/LIFE/
 https://cybereal.one/categories/ACG/
 https://cybereal.one/categories/LIFE/%E6%97%85%E8%A1%8C/
 https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/
+https://cybereal.one/categories/LIFE/%E6%AF%94%E8%B5%9B/
