@@ -1351,4 +1351,26 @@ Wild.png"></p>
         <tag>力学</tag>
       </tags>
   </entry>
+  <entry>
+    <title>华擎J3455-ITX装DSM的一些问题</title>
+    <url>/2025/06/19/j3455itx/</url>
+    <content><![CDATA[<p>延续去年买的那台暴风播酷云二代刷dsm当nas的话题，这主板有几个小问题，导致装dsm体验不是特别好，简单记录一下我这机器常见的几个问题（基本没有参考价值）</p>
+<span id="more"></span>
+
+<p>这里是<a href="https://www.cybereal.one/2024/09/06/nas/">上一期</a> </p>
+<p>主要问题是：</p>
+<h2 id="super-io相关"><a href="#super-io相关" class="headerlink" title="super io相关"></a>super io相关</h2><p>这个主板bios默认开启super io，会导致dsm启动之后不联网也搜不到设备，需要进bios关掉这个东西.</p>
+<h2 id="bios不保存配置"><a href="#bios不保存配置" class="headerlink" title="bios不保存配置"></a>bios不保存配置</h2><p>这问题不是普遍问题，单纯是我主板电池没电了。卸下主板之后换个cmos电池即可解决。（这个问题还和上面问题联动导致我每次开机都要改bios）型号CR2032</p>
+<h2 id="插HDMI之后不输出画面"><a href="#插HDMI之后不输出画面" class="headerlink" title="插HDMI之后不输出画面"></a>插HDMI之后不输出画面</h2><p>虽然平时使用时不需要接hdmi，但是调bios和启动配置之类的还是需要的，特别是之前主板没换电池，每次开机都很麻烦。不过这似乎也只是我主板的个例问题….就是HDMI口坏了，插VGA口之后接个HDMI转换器就能用了</p>
+<p>说是三个问题但其实有两个都不是通用问题。。。。所以其实没什么参考价值只是给我自己备忘一下</p>
+]]></content>
+      <categories>
+        <category>TECH</category>
+      </categories>
+      <tags>
+        <tag>NAS</tag>
+        <tag>DSM</tag>
+        <tag>主板</tag>
+      </tags>
+  </entry>
 </search>
