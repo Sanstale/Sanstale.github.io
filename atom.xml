@@ -62,9 +62,9 @@
     <category term="LIFE" scheme="https://cybereal.one/categories/LIFE/"/>
     
     
-    <category term="电影" scheme="https://cybereal.one/tags/%E7%94%B5%E5%BD%B1/"/>
-    
     <category term="小说" scheme="https://cybereal.one/tags/%E5%B0%8F%E8%AF%B4/"/>
+    
+    <category term="电影" scheme="https://cybereal.one/tags/%E7%94%B5%E5%BD%B1/"/>
     
     <category term="写作" scheme="https://cybereal.one/tags/%E5%86%99%E4%BD%9C/"/>
     
@@ -168,11 +168,11 @@
     <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
     
     
+    <category term="校园网" scheme="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
+    
     <category term="折腾" scheme="https://cybereal.one/tags/%E6%8A%98%E8%85%BE/"/>
     
     <category term="网络" scheme="https://cybereal.one/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="校园网" scheme="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
     
     <category term="curl" scheme="https://cybereal.one/tags/curl/"/>
     
@@ -340,15 +340,15 @@
     <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
     
     
-    <category term="NAS" scheme="https://cybereal.one/tags/NAS/"/>
+    <category term="校园网" scheme="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
     
     <category term="折腾" scheme="https://cybereal.one/tags/%E6%8A%98%E8%85%BE/"/>
     
-    <category term="折磨" scheme="https://cybereal.one/tags/%E6%8A%98%E7%A3%A8/"/>
-    
     <category term="网络" scheme="https://cybereal.one/tags/%E7%BD%91%E7%BB%9C/"/>
     
-    <category term="校园网" scheme="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
+    <category term="NAS" scheme="https://cybereal.one/tags/NAS/"/>
+    
+    <category term="折磨" scheme="https://cybereal.one/tags/%E6%8A%98%E7%A3%A8/"/>
     
   </entry>
   
