@@ -6,7 +6,7 @@
   <link href="https://cybereal.one/atom.xml" rel="self"/>
   
   <link href="https://cybereal.one/"/>
-  <updated>2025-10-30T00:48:11.487Z</updated>
+  <updated>2025-11-08T15:17:52.035Z</updated>
   <id>https://cybereal.one/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论有效娱乐与无效娱乐</title>
+    <link href="https://cybereal.one/2025/11/08/entertainment/"/>
+    <id>https://cybereal.one/2025/11/08/entertainment/</id>
+    <published>2025-11-08T14:53:59.000Z</published>
+    <updated>2025-11-08T15:17:52.035Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽然娱乐这一行为最主要的目的是为了使人心情愉悦放松身心，但这并不意味着就要放空大脑只是单纯享受多巴胺的刺激，由此可以引出娱乐分为有效和无效两种（或更多种）。</p><span id="more"></span><p>首先来给有效和无效做个定义。</p><p>对于进行过这一娱乐行为之后至少一段时间内还能对这段经历有些回味的，或是可以对它有感而发的，或是真正感受到自己在进行了这个娱乐之后有满足感的，都可以算作有效娱乐。</p><p>而与之相对的，如果进行完这一行为之后很快就忘了自己看了什么听了什么，或者在进行这个娱乐行为时就已经觉得没什么意思了，或越“娱乐”反而越烦躁的，可以算是无效娱乐。</p><p>我并不是如同中国人的刻板印象一般讲究<strong>所有事都要有意义</strong>之类，只是我认为过多的无效娱乐并不能带来除了度过一段时间之外的其他收益，反而会带来焦虑烦躁痛苦等等负面情绪，并不能真正被称之为娱乐。</p><p>于我个人而言，我对有效无效娱乐的判断还是比较符合主流价值观的。看书，看电影，写文章，或者研究一些小众爱好都可以算是有效娱乐；无效娱乐对我则是看一些没营养的视频，玩弱智小游戏，等等可以用刷手机概括的一切行为。有效娱乐可以让我相对认真专注，并且在大部分时候这些事都能让我感到快乐。虽然主观上我很厌恶刷手机，但是很多时候对放空大脑的需求似乎比马斯洛的金字塔顶端更有吸引力，于是还是常常陷入小红书或者小游戏中不可自拔。</p><p>不可否认的时人类物种多样性相当丰富，所以当然会有人在刷完短视频之后神清气爽工作效率提升而对于小说或电影反而嗤之以鼻，是很正常的现象。虽然他们价值观与本人不同，但只要没有别的问题，还是可以和平相处的。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;虽然娱乐这一行为最主要的目的是为了使人心情愉悦放松身心，但这并不意味着就要放空大脑只是单纯享受多巴胺的刺激，由此可以引出娱乐分为有效和无效两种（或更多种）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="思考" scheme="https://cybereal.one/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+    <category term="碎碎念" scheme="https://cybereal.one/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>黑泽明《乱》简评</title>
@@ -519,34 +540,6 @@
     
     
     <category term="番评" scheme="https://cybereal.one/tags/%E7%95%AA%E8%AF%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>修一下博客</title>
-    <link href="https://cybereal.one/2023/07/06/repairblog/"/>
-    <id>https://cybereal.one/2023/07/06/repairblog/</id>
-    <published>2023-07-05T16:51:28.000Z</published>
-    <updated>2023-07-11T13:10:28.703Z</updated>
-    
-    <content type="html"><![CDATA[<p>自从上次重装系统忘记备份之后博客的源文件全部丢失，只剩下留在网上的文章，于是2月以来一直没写 拖到今天爆砍4小时基本还原<br>由于手动还原，以前的文章可能出现各种奇奇怪怪的问题<br>手搓博客真的好累，不过熟练度确实也提高了，这些东西之前搞了几天这次四小时就好了，另外网上留着的文章是html，不能直接转回md，找不到好用的工具求助班友了解到一个pandoc，一篇篇手动删掉了乱码终于搞完了<br>下面终于可以开始正常写文章了<br>另：军训很爽 暑假正式开始了 加油！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;自从上次重装系统忘记备份之后博客的源文件全部丢失，只剩下留在网上的文章，于是2月以来一直没写 拖到今天爆砍4小时基本还原&lt;br&gt;由于手动还原，以前的文章可能出现各种奇奇怪怪的问题&lt;br&gt;手搓博客真的好累，不过熟练度确实也提高了，这些东西之前搞了几天这次四小时就好了，另外网上</summary>
-      
-    
-    
-    
-    <category term="杂谈" scheme="https://cybereal.one/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-    <category term="博客" scheme="https://cybereal.one/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="hexo" scheme="https://cybereal.one/tags/hexo/"/>
-    
-    <category term="好累" scheme="https://cybereal.one/tags/%E5%A5%BD%E7%B4%AF/"/>
     
   </entry>
   
