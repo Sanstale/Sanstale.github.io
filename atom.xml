@@ -81,11 +81,11 @@
     <category term="LIFE" scheme="https://cybereal.one/categories/LIFE/"/>
     
     
-    <category term="技术" scheme="https://cybereal.one/tags/%E6%8A%80%E6%9C%AF/"/>
-    
     <category term="自行车" scheme="https://cybereal.one/tags/%E8%87%AA%E8%A1%8C%E8%BD%A6/"/>
     
     <category term="水" scheme="https://cybereal.one/tags/%E6%B0%B4/"/>
+    
+    <category term="技术" scheme="https://cybereal.one/tags/%E6%8A%80%E6%9C%AF/"/>
     
     <category term="新手" scheme="https://cybereal.one/tags/%E6%96%B0%E6%89%8B/"/>
     
@@ -166,9 +166,9 @@
     <category term="比赛" scheme="https://cybereal.one/categories/LIFE/%E6%AF%94%E8%B5%9B/"/>
     
     
-    <category term="学习" scheme="https://cybereal.one/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="比赛" scheme="https://cybereal.one/tags/%E6%AF%94%E8%B5%9B/"/>
+    
+    <category term="学习" scheme="https://cybereal.one/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="力学" scheme="https://cybereal.one/tags/%E5%8A%9B%E5%AD%A6/"/>
     
