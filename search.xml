@@ -1573,6 +1573,7 @@ Wild.png"></p>
 <h1 id="新世界的大门"><a href="#新世界的大门" class="headerlink" title="新世界的大门"></a>新世界的大门</h1><p>直到以上这些其实都还行,我觉得vibe coding还是有些门槛的，并且也有些烧钱。但很快我发现，居然还有一个东西叫api中转商！不同于openrouter直接原价使用api，这些中转站通过一些逆向客户端或者一些其他ai相关的产品，可以以极其低廉的价格搞到高端模型的api，可以把价格打到原厂的几十分之一，甚至还有免费的公益站！甚至中转站已经在我不知道的很长一段时间里发展得非常完善了，还有自己的通用网站面板<a href="https://github.com/QuantumNous/new-api">new-api</a>(类似机场的sspanel)，各种各样的中转站层出不穷，甚至只要站长想的话，也完全可以用什么拉新拿佣金，签到得积分之类的方法留住客户，高端ai的使用落实到应用居然变成了这么灰色地带的神奇东西…..真是太难以置信了。</p>
 <p>不过好消息是，虽然不是正经路子，但我们确实用得起昂贵的模型了。在公益站的帮助下，我顺利地写了一点小项目，虽然还有些bug，但整体是非常满意了。</p>
 <p>一个中转站比价网站：<a href="https://www.getcheapai.com/zh-cn">AI 模型价格对比</a></p>
+<p>vibe coding的项目：<a href="https://github.com/Sanstale/rp2040-knob">https://github.com/Sanstale/rp2040-knob</a></p>
 ]]></content>
       <categories>
         <category>TECH</category>
