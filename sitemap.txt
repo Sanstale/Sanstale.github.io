@@ -1,3 +1,4 @@
+https://cybereal.one/2026/02/21/wandering-shanghai/
 https://cybereal.one/2026/02/19/vibe-coding/
 https://cybereal.one/2025/01/10/stream-platform/
 https://cybereal.one/2025/11/08/entertainment/
@@ -116,6 +117,9 @@ https://cybereal.one/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/
 https://cybereal.one/tags/vibe-coding/
 https://cybereal.one/tags/%E5%B7%A5%E5%85%B7/
 https://cybereal.one/tags/%E7%A0%94%E7%A9%B6/
+https://cybereal.one/tags/CityWalk/
+https://cybereal.one/tags/%E5%9F%8E%E5%B8%82%E6%BC%AB%E6%AD%A5/
+https://cybereal.one/tags/%E8%AE%B0%E5%BD%95/
 https://cybereal.one/categories/TECH/
 https://cybereal.one/categories/LIFE/
 https://cybereal.one/categories/%E6%9D%82%E8%B0%88/
@@ -124,3 +128,4 @@ https://cybereal.one/categories/ACG/
 https://cybereal.one/categories/LIFE/%E6%97%85%E8%A1%8C/
 https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/
 https://cybereal.one/categories/%E6%80%9D%E8%80%83/
+https://cybereal.one/categories/LIFE/TRAVEL/
