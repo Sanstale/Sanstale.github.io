@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225214634.png">
 <meta property="og:image" content="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225215649.png">
 <meta property="article:published_time" content="2026-02-25T14:08:51.000Z">
-<meta property="article:modified_time" content="2026-02-25T14:14:16.859Z">
+<meta property="article:modified_time" content="2026-02-25T14:15:46.134Z">
 <meta property="article:author" content="Sanstale">
 <meta property="article:tag" content="游戏">
 <meta property="article:tag" content="AI">
@@ -232,7 +232,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2026-02-25 22:08:51 / 修改时间：22:14:16" itemprop="dateCreated datePublished" datetime="2026-02-25T22:08:51+08:00">2026-02-25</time>
+      <time title="创建时间：2026-02-25 22:08:51 / 修改时间：22:15:46" itemprop="dateCreated datePublished" datetime="2026-02-25T22:08:51+08:00">2026-02-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -296,9 +296,9 @@
 </li>
 </ul>
 <h1 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h1><h2 id="首轮开发"><a href="#首轮开发" class="headerlink" title="首轮开发"></a>首轮开发</h2><p>第一轮对话之后，codex捣鼓捣鼓发了个网站过来，没什么报错，是个好兆头，不过ui相当简陋</p>
-<p>![[Pasted image 20260225202235.png]]<br>此外bug也不少，包括但不限于：ui非常丑，我希望的ui和微软游戏的界面类似，并且有选牌的动画，出牌特效等；此外我希望在打牌的进程中就可以看到四个人得了多少分，但实际上是一局结束后才显示；最后一局打完之后无法结束，也无法开下一局，应该定一个规则，就是分数最高的玩家达到多少分之后游戏结束，默认可以是100分；传牌阶段只能点快速传牌，不能自己选；机器人只能点击添加，添加之后好像不能修改难度…等等等等</p>
+<p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225202235.png"><br>此外bug也不少，包括但不限于：ui非常丑，我希望的ui和微软游戏的界面类似，并且有选牌的动画，出牌特效等；此外我希望在打牌的进程中就可以看到四个人得了多少分，但实际上是一局结束后才显示；最后一局打完之后无法结束，也无法开下一局，应该定一个规则，就是分数最高的玩家达到多少分之后游戏结束，默认可以是100分；传牌阶段只能点快速传牌，不能自己选；机器人只能点击添加，添加之后好像不能修改难度…等等等等</p>
 <h2 id="优化UI"><a href="#优化UI" class="headerlink" title="优化UI"></a>优化UI</h2><p>首当其冲的是改UI，这ui看着我就不想玩。上网找了找，搞了一套<a target="_blank" rel="noopener" href="https://github.com/hayeah/playing-cards-assets/tree/master">扑克牌的svg图</a>给ai，但体积稍微有点大：不到8MB，这个是要加载到前端的素材，最好优化一下，不过我懒得搞了。</p>
-<p>接着创建一个全新的 <code>PlayingCard.tsx</code> 组件，统一渲染所有卡牌；把背景改成绿的…反正大改ui，改完之后长这样：<br><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225202235.png"></p>
+<p>接着创建一个全新的 <code>PlayingCard.tsx</code> 组件，统一渲染所有卡牌；把背景改成绿的…反正大改ui，改完之后长这样：</p>
 <p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225214525.png"></p>
 <p>偷懒用现在版本的图，不过刚改完也差不多了<br>是不是一下子就有感觉了？对比微软的版本：<br><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225214634.png"><br>这样看着就舒服多了！</p>
 <p>但当时ui还有点小问题，比如中间的出牌区有时会和头像框重合之类的，反馈一下也好了</p>
@@ -373,6 +373,7 @@
 </ul>
 </li>
 </ul>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Sanstale/hearts-online">https://github.com/Sanstale/hearts-online</a></p>
 
     </div>
 
