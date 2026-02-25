@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>网页联机红心大战开发日志</title>
+      <link href="/2026/02/25/hearts-online/"/>
+      <url>/2026/02/25/hearts-online/</url>
+      
+        <content type="html"><![CDATA[<p>玩windows红心大战的时候突然想到可以写一个 打开微软大战代码开干</p><span id="more"></span><h1 id="确定框架"><a href="#确定框架" class="headerlink" title="确定框架"></a>确定框架</h1><p>首先确定需求和技术栈，和Gemini沟通几轮之后决定采用前后端分离的形式，前端负责<strong>UI、发牌动画、点击出牌、房间号输入框</strong>等；后端是游戏服务器（<strong>维护房间列表、洗牌发牌、校验出牌是否合法、计算分数，并通过 WebSocket 实时把画面变化广播给所有玩家</strong>）</p><p>因为我基本没有网站开发经验（也不需要有），技术栈全让AI决定了：</p><ul><li>包管理：pnpm workspace</li><li>语言：TypeScript</li><li>前端：React 19、Vite 6、socket.io-client</li><li>后端：Node.js、Express、Socket.IO</li><li>构建：<ul><li>shared：<code>tsc</code></li><li>client：<code>tsc -b &amp;&amp; vite build</code></li><li>server：<code>tsup</code>（ESM 打包）</li></ul></li></ul><h1 id="开发过程"><a href="#开发过程" class="headerlink" title="开发过程"></a>开发过程</h1><h2 id="首轮开发"><a href="#首轮开发" class="headerlink" title="首轮开发"></a>首轮开发</h2><p>第一轮对话之后，codex捣鼓捣鼓发了个网站过来，没什么报错，是个好兆头，不过ui相当简陋</p><p>![[Pasted image 20260225202235.png]]<br>此外bug也不少，包括但不限于：ui非常丑，我希望的ui和微软游戏的界面类似，并且有选牌的动画，出牌特效等；此外我希望在打牌的进程中就可以看到四个人得了多少分，但实际上是一局结束后才显示；最后一局打完之后无法结束，也无法开下一局，应该定一个规则，就是分数最高的玩家达到多少分之后游戏结束，默认可以是100分；传牌阶段只能点快速传牌，不能自己选；机器人只能点击添加，添加之后好像不能修改难度…等等等等</p><h2 id="优化UI"><a href="#优化UI" class="headerlink" title="优化UI"></a>优化UI</h2><p>首当其冲的是改UI，这ui看着我就不想玩。上网找了找，搞了一套<a href="https://github.com/hayeah/playing-cards-assets/tree/master">扑克牌的svg图</a>给ai，但体积稍微有点大：不到8MB，这个是要加载到前端的素材，最好优化一下，不过我懒得搞了。</p><p>接着创建一个全新的 <code>PlayingCard.tsx</code> 组件，统一渲染所有卡牌；把背景改成绿的…反正大改ui，改完之后长这样：<br><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225202235.png"></p><p><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225214525.png"></p><p>偷懒用现在版本的图，不过刚改完也差不多了<br>是不是一下子就有感觉了？对比微软的版本：<br><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225214634.png"><br>这样看着就舒服多了！</p><p>但当时ui还有点小问题，比如中间的出牌区有时会和头像框重合之类的，反馈一下也好了</p><h2 id="增加出牌动画（暂缓）"><a href="#增加出牌动画（暂缓）" class="headerlink" title="增加出牌动画（暂缓）"></a>增加出牌动画（暂缓）</h2><p>现在这个阶段已经是可玩的了，但所有的cpu出牌都是瞬间出，所以我出完牌之后看不到cpu出的牌这回合就结束了，有点难受，于是让agent增加一个慢速模式，不过改了两版之后，反而连开头的换牌都继续不了了，只能先回退<br>后面这个功能还得加。</p><h1 id="跨域访问"><a href="#跨域访问" class="headerlink" title="跨域访问"></a>跨域访问</h1><p>这个项目是前后端分离的，用<code>pnpm</code>管理，<code>pnpm --filter @hearts/client dev --host</code>可以启动客户端 ,<code>--host</code>参数可以在局域网内都能访问,否则只有localhost可以用;<code>pnpm --filter @hearts/server dev</code>可以开后端,但这时加参数没用了,还是连不上后端,问ai是CORS的问题<br>修改了绑定的host为<code>0.0.0.0</code> CORS 改为环境变量驱动<code>process.env.CORS_ORIGIN || &quot;*&quot;</code>差不多这样就行了</p><h2 id="多设备适配"><a href="#多设备适配" class="headerlink" title="多设备适配"></a>多设备适配</h2><p>这下别的设备也可以访问了,但手机端没做适配,ui有问题,交给ai解决<br><img src="https://cdn.cybereal.one/gh/Sanstale/Picture-bed/Pasted%20image%2020260225215649.png"></p><h2 id="后端打包成docker并部署"><a href="#后端打包成docker并部署" class="headerlink" title="后端打包成docker并部署"></a>后端打包成docker并部署</h2><p>现在游戏基本可用了,下一步就是把后端打包成docker镜像,这样随便找台服务器放上去就行了<br>让agent写<code>Dockerfile</code> <code>.dockerignore</code>等配置文件,写好之后传到对应机器构建<br>不过遇到点问题:构建完之后无法运行,还没找到解决办法,暂时只能在本地跑后端了</p><h2 id="前端部署到Vercel"><a href="#前端部署到Vercel" class="headerlink" title="前端部署到Vercel"></a>前端部署到Vercel</h2><p>前端比较好办,把项目传到github上之后从vercel拉下来就行,但由于这是一个monorepo,即客户端和服务端放在一个仓库里,还有<code>shared</code>文件夹存放了共享的代码,所以部署有些麻烦<br>首先根目录不能是<code>packages/client</code>,而是<code>packages</code> 因为client和shared都和前端有关<br>然后<strong>Build Command</strong>改为</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pnpm install &amp;&amp; pnpm -F @hearts/shared build &amp;&amp; pnpm -F @hearts/client build</span><br></pre></td></tr></table></figure><p><strong>Output Directory</strong>改为<code>client/dist</code></p><p>然后直接Deploy,前端就没啥毛病了</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>AI编程还是很有趣的,整个项目我几乎完全没写过代码,让我写我也不会,但排查bug不断反馈还是相当累人的,而前端后端部署虽然ai也可以代劳,但研究之路还很长,就先这样吧</p><h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><p><input disabled="" type="checkbox"> <strong>隐蔽的调试后门 (Hidden Debug Menu)</strong></p><ul><li><p><strong>建议实现方式</strong>：在登录页或大厅的某个不起眼的角落（比如左下角的版本号文本），实现“连续点击 5 次”触发的隐藏彩蛋。</p></li><li><p><strong>功能</strong>：弹出一个弹窗，允许手动输入后端的 WebSocket URL（例如 <code>ws://192.168.x.x:3001</code>），并将其持久化保存到浏览器的 <code>localStorage</code> 中。这样你在手机上测试时，随时可以切换后端地址，再也不用重新部署 Vercel。</p></li></ul></li><li><p><input disabled="" type="checkbox"> <strong>前端管理员大盘 (Admin Dashboard)</strong></p><ul><li><p><strong>入口</strong>：单独的路由（例如 <code>/admin</code>）。</p></li><li><p><strong>鉴权</strong>：最简单的实现方案是在前端输入一个密码，通过 WebSocket 发给后端校验（密码可以配置在后端的 <code>.env</code> 中）。</p></li><li><p><strong>功能</strong>：获取并展示当前所有活跃房间的列表、房间内的玩家状态（真人&#x2F;CPU）、当前进行到第几局、服务器内存占用等基本信息。</p></li></ul></li><li><p><input disabled="" type="checkbox"> <strong>彻底攻克 Docker 打包 (Docker Build)</strong></p><ul><li><p><strong>目标</strong>：解决 Node.js ESM 模块的路径解析报错（<code>ERR_MODULE_NOT_FOUND</code>）。</p></li><li><p><strong>方案</strong>：在 <code>packages/server</code> 引入 <code>tsup</code>，将后端代码打包成单文件（Single Executable），彻底规避 Monorepo 目录结构和文件后缀带来的各种奇怪路径问题。</p></li></ul></li><li><p><input disabled="" type="checkbox"> <strong>重构前端动作队列与出牌动画 (Action Queue)</strong></p><ul><li><p><strong>目标</strong>：解决“AI 瞬间出牌导致玩家看不清”的问题。</p></li><li><p><strong>方案</strong>：重新审视之前回退的代码。将 WebSocket 收到的事件先推入前端队列，按照固定的时间间隔（如 800ms）逐个播放，并配上 SVG 卡牌的平移飞行动画。</p></li></ul></li><li><p><input disabled="" type="checkbox"> <strong>加入基础音效系统 (Audio Effects)</strong></p><ul><li><strong>建议</strong>：寻找几个无版权的清脆音效：发牌声、出牌声、一墩结算收牌声、得分警告声（比如吃到黑桃 Q 时的特殊音效）。音效对棋牌类游戏的“打击感”提升是巨大的。</li></ul></li><li><p><input disabled="" type="checkbox"> <strong>幽灵房间清理机制 (Garbage Collection)</strong></p><ul><li><p><strong>目标</strong>：防止服务器长时间运行后内存泄漏。</p></li><li><p><strong>方案</strong>：在后端的 <code>RoomManager</code> 里加一个定时器。如果一个房间超过 2 小时没有任何操作，或者所有真人都断开连接超过 15 分钟，自动销毁该房间实例。</p></li></ul></li><li><p><input disabled="" type="checkbox"> <strong>房主踢人与权限转移</strong></p><ul><li><strong>功能</strong>：房主可以手动将一直不准备的玩家踢出房间；如果房主掉线，系统自动将房主权限移交给房间内的下一个真人玩家。</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> TECH </category>
+          
+          <category> CODE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> AI </tag>
+            
+            <tag> 编程 </tag>
+            
+            <tag> 纸牌 </tag>
+            
+            <tag> Vibe COding </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Wandering Shanghai 漫步上海不完全指北</title>
       <link href="/2026/02/21/wandering-shanghai/"/>
       <url>/2026/02/21/wandering-shanghai/</url>
