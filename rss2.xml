@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sanstale&#39;s Blog</title>
+    <link>https://cybereal.one/</link>
+    
+    <atom:link href="https://cybereal.one/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>简单记录生活</description>
+    <pubDate>Wed, 25 Feb 2026 14:15:46 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>网页联机红心大战开发日志</title>
+      <link>https://cybereal.one/2026/02/25/hearts-online/</link>
+      <guid>https://cybereal.one/2026/02/25/hearts-online/</guid>
+      <pubDate>Wed, 25 Feb 2026 14:08:51 GMT</pubDate>
+      
+      <description>&lt;p&gt;玩windows红心大战的时候突然想到可以写一个 打开微软大战代码开干&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
+      
+      <category domain="https://cybereal.one/categories/TECH/CODE/">CODE</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F/">游戏</category>
+      
+      <category domain="https://cybereal.one/tags/AI/">AI</category>
+      
+      <category domain="https://cybereal.one/tags/%E7%BC%96%E7%A8%8B/">编程</category>
+      
+      <category domain="https://cybereal.one/tags/%E7%BA%B8%E7%89%8C/">纸牌</category>
+      
+      <category domain="https://cybereal.one/tags/Vibe-COding/">Vibe COding</category>
+      
+      
+      <comments>https://cybereal.one/2026/02/25/hearts-online/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Wandering Shanghai 漫步上海不完全指北</title>
+      <link>https://cybereal.one/2026/02/21/wandering-shanghai/</link>
+      <guid>https://cybereal.one/2026/02/21/wandering-shanghai/</guid>
+      <pubDate>Sat, 21 Feb 2026 11:49:57 GMT</pubDate>
+      
+      <description>&lt;p&gt;上海有趣的地方很多，但再有趣的地方去得多了也难免心生厌倦，而笔者就是这样一个喜新厌旧的人。对于去过一次的地方，除非是非常喜欢的，否则我基本不会再去第二遍。因此每次出门最大的阻力就是不知道去哪玩。麻烦导航软件给个随机取点吧，这对我真的非常重要……不过22年之后我在上海也去了不少地方，尽量记录下来，供和我一样喜欢漫步上海的人参考。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/LIFE/">LIFE</category>
+      
+      <category domain="https://cybereal.one/categories/LIFE/TRAVEL/">TRAVEL</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E9%9A%8F%E7%AC%94/">随笔</category>
+      
+      <category domain="https://cybereal.one/tags/CityWalk/">CityWalk</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%9F%8E%E5%B8%82%E6%BC%AB%E6%AD%A5/">城市漫步</category>
+      
+      <category domain="https://cybereal.one/tags/%E8%AE%B0%E5%BD%95/">记录</category>
+      
+      
+      <comments>https://cybereal.one/2026/02/21/wandering-shanghai/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Vibe Coding初探</title>
+      <link>https://cybereal.one/2026/02/19/vibe-coding/</link>
+      <guid>https://cybereal.one/2026/02/19/vibe-coding/</guid>
+      <pubDate>Thu, 19 Feb 2026 15:25:24 GMT</pubDate>
+      
+      <description>&lt;p&gt;前几天在老家没网，闲着没事就刷视频，不刷不知道，一下子给我打开了新世界的大门&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E7%BC%96%E7%A8%8B/">编程</category>
+      
+      <category domain="https://cybereal.one/tags/vibe-coding/">vibe coding</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%B7%A5%E5%85%B7/">工具</category>
+      
+      <category domain="https://cybereal.one/tags/%E7%A0%94%E7%A9%B6/">研究</category>
+      
+      
+      <comments>https://cybereal.one/2026/02/19/vibe-coding/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>论有效娱乐与无效娱乐</title>
+      <link>https://cybereal.one/2025/11/08/entertainment/</link>
+      <guid>https://cybereal.one/2025/11/08/entertainment/</guid>
+      <pubDate>Sat, 08 Nov 2025 14:53:59 GMT</pubDate>
+      
+      <description>&lt;p&gt;虽然娱乐这一行为最主要的目的是为了使人心情愉悦放松身心，但这并不意味着就要放空大脑只是单纯享受多巴胺的刺激，由此可以引出娱乐分为有效和无效两种（或更多种）。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/%E6%80%9D%E8%80%83/">思考</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">碎碎念</category>
+      
+      
+      <comments>https://cybereal.one/2025/11/08/entertainment/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>黑泽明《乱》简评</title>
+      <link>https://cybereal.one/2025/10/29/ran-review/</link>
+      <guid>https://cybereal.one/2025/10/29/ran-review/</guid>
+      <pubDate>Wed, 29 Oct 2025 14:57:08 GMT</pubDate>
+      
+      <description>&lt;p&gt;刚从大光明出来不久，趁着记忆还新鲜，就趁热打铁在地铁上写一段吧。&lt;br&gt;黑泽明作为一位久负盛名的日本导演，虽然久仰大名，但我一直没有看过他的作品。本来六月电影节还买了七武士的票，但后来还是没去成，所以这部《乱》就是我初次观看黑泽明监督的作品。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/LIFE/">LIFE</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E7%94%B5%E5%BD%B1/">电影</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%BD%B1%E8%AF%84/">影评</category>
+      
+      <category domain="https://cybereal.one/tags/%E9%BB%91%E6%B3%BD%E6%98%8E/">黑泽明</category>
+      
+      <category domain="https://cybereal.one/tags/%E4%BC%91%E9%97%B2/">休闲</category>
+      
+      
+      <comments>https://cybereal.one/2025/10/29/ran-review/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>买了辆山地车</title>
+      <link>https://cybereal.one/2025/09/15/bike/</link>
+      <guid>https://cybereal.one/2025/09/15/bike/</guid>
+      <pubDate>Mon, 15 Sep 2025 14:33:29 GMT</pubDate>
+      
+      <description>&lt;p&gt;因为电瓶车摔了而九月开学了，本人在大学没有代步工具是万万活不下去的，而再买一辆电瓶车虽然理论上是最优解，但是被母亲大人一票否决，于是退而求其次买一辆自行车。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/LIFE/">LIFE</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      <category domain="https://cybereal.one/tags/%E8%87%AA%E8%A1%8C%E8%BD%A6/">自行车</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%B0%B4/">水</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%96%B0%E6%89%8B/">新手</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%B1%B1%E5%9C%B0%E8%BD%A6/">山地车</category>
+      
+      
+      <comments>https://cybereal.one/2025/09/15/bike/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>从张艺谋的电影《活着》，说说余华和他的作品</title>
+      <link>https://cybereal.one/2025/07/21/to-live/</link>
+      <guid>https://cybereal.one/2025/07/21/to-live/</guid>
+      <pubDate>Mon, 21 Jul 2025 14:22:26 GMT</pubDate>
+      
+      <description>&lt;p&gt;《活着》的小说我是在前两年看的，虽然不是我看的第一部余华的小说，但作为他的代表作，带给人的触动还是比较大的。今天看完了张艺谋改编的电影，有感而发随便写点。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/LIFE/">LIFE</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E7%94%B5%E5%BD%B1/">电影</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%B0%8F%E8%AF%B4/">小说</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%86%99%E4%BD%9C/">写作</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%82%B2%E5%89%A7/">悲剧</category>
+      
+      <category domain="https://cybereal.one/tags/%E4%BD%99%E5%8D%8E/">余华</category>
+      
+      
+      <comments>https://cybereal.one/2025/07/21/to-live/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>华擎J3455-ITX装DSM的一些问题</title>
+      <link>https://cybereal.one/2025/06/19/j3455itx/</link>
+      <guid>https://cybereal.one/2025/06/19/j3455itx/</guid>
+      <pubDate>Wed, 18 Jun 2025 16:02:48 GMT</pubDate>
+      
+      <description>&lt;p&gt;延续去年买的那台暴风播酷云二代刷dsm当nas的话题，这主板有几个小问题，导致装dsm体验不是特别好，简单记录一下我这机器常见的几个问题（基本没有参考价值）&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
+      
+      
+      <category domain="https://cybereal.one/tags/NAS/">NAS</category>
+      
+      <category domain="https://cybereal.one/tags/DSM/">DSM</category>
+      
+      <category domain="https://cybereal.one/tags/%E4%B8%BB%E6%9D%BF/">主板</category>
+      
+      
+      <comments>https://cybereal.one/2025/06/19/j3455itx/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>一次积木搭桥比赛</title>
+      <link>https://cybereal.one/2025/04/27/brick-bridge/</link>
+      <guid>https://cybereal.one/2025/04/27/brick-bridge/</guid>
+      <pubDate>Sun, 27 Apr 2025 14:33:53 GMT</pubDate>
+      
+      <description>&lt;p&gt;上周朋友邀请我参加一个力学学院办的比赛，内容是用积木搭桥然后加载负荷，载重能力强并且用料少的桥得分越高，感觉挺好玩就参加了。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/LIFE/">LIFE</category>
+      
+      <category domain="https://cybereal.one/categories/LIFE/%E6%AF%94%E8%B5%9B/">比赛</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E5%AD%A6%E4%B9%A0/">学习</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%AF%94%E8%B5%9B/">比赛</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%8A%9B%E5%AD%A6/">力学</category>
+      
+      
+      <comments>https://cybereal.one/2025/04/27/brick-bridge/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>天国：拯救2——难得一见的中世纪RPG佳作</title>
+      <link>https://cybereal.one/2025/03/25/kcd2/</link>
+      <guid>https://cybereal.one/2025/03/25/kcd2/</guid>
+      <pubDate>Tue, 25 Mar 2025 13:35:09 GMT</pubDate>
+      
+      <description>&lt;p&gt;&lt;em&gt;天国拯救2&lt;/em&gt;&amp;#x2F;&lt;em&gt;Kingdom Come: Deliverance II&lt;/em&gt;是捷克的战马工作室在2025&amp;#x2F;2&amp;#x2F;4发售的中世纪rpg游戏，这游戏我是看王老菊玩之后感觉很好玩就咬咬牙买了黄金版，真是越玩越好玩啊。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/ACG/">ACG</category>
+      
+      <category domain="https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/">游戏</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E6%B5%8B%E8%AF%84/">测评</category>
+      
+      <category domain="https://cybereal.one/tags/%E7%8E%A9%E5%90%8E%E6%84%9F/">玩后感</category>
+      
+      
+      <comments>https://cybereal.one/2025/03/25/kcd2/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>折腾一下自动连接校园网</title>
+      <link>https://cybereal.one/2025/02/26/a-script-story/</link>
+      <guid>https://cybereal.one/2025/02/26/a-script-story/</guid>
+      <pubDate>Wed, 26 Feb 2025 14:56:31 GMT</pubDate>
+      
+      <description>&lt;p&gt;因为每次开电脑都要按一下回车连校园网，像我这么懒的人肯定是不想自己连的，于是打算写一个自动连接的脚本。期间踩的坑是真的很多啊。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/">校园网</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%8A%98%E8%85%BE/">折腾</category>
+      
+      <category domain="https://cybereal.one/tags/%E7%BD%91%E7%BB%9C/">网络</category>
+      
+      <category domain="https://cybereal.one/tags/curl/">curl</category>
+      
+      <category domain="https://cybereal.one/tags/powershell/">powershell</category>
+      
+      
+      <comments>https://cybereal.one/2025/02/26/a-script-story/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>本世代潜行游戏集大成之作：杀手三部曲</title>
+      <link>https://cybereal.one/2025/01/15/hitman/</link>
+      <guid>https://cybereal.one/2025/01/15/hitman/</guid>
+      <pubDate>Wed, 15 Jan 2025 01:40:42 GMT</pubDate>
+      
+      <description>&lt;p&gt;要说最近几年专精于潜行暗杀系游戏的，恐怕杀手系列是只此一家了。虽说别家也有潜行游戏，但基本走狂战士流也未尝不可。杀手对滥杀无辜的惩罚很重（指分数上），确实是正统暗杀游戏（废话）。&lt;/p&gt;
+&lt;p&gt;作为目前系列最新作WoA（HITMAN World of Assassination），三部曲捆绑了新杀手1，2，3，总共二十多个关卡 ，，每一关都是一个巨大的箱庭，暗杀方式也有很多种可能性，重复游玩的价值很高。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/ACG/">ACG</category>
+      
+      <category domain="https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/">游戏</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E6%B8%B8%E6%88%8F/">游戏</category>
+      
+      <category domain="https://cybereal.one/tags/%E8%AF%84%E6%B5%8B/">评测</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%BD%9C%E8%A1%8C/">潜行</category>
+      
+      <category domain="https://cybereal.one/tags/%E4%B8%BB%E8%A7%82/">主观</category>
+      
+      
+      <comments>https://cybereal.one/2025/01/15/hitman/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>用SRS搭建一个私人直播平台</title>
+      <link>https://cybereal.one/2025/01/10/stream-platform/</link>
+      <guid>https://cybereal.one/2025/01/10/stream-platform/</guid>
+      <pubDate>Fri, 10 Jan 2025 13:52:34 GMT</pubDate>
+      
+      <description>&lt;p&gt;初衷是想给朋友直播一些游戏或者一起看剧看番这类需求，但一是在b站等公共平台有审查，且不说一堆黄赌毒，或者比较暴力血腥的游戏都不能播，版权问题也很麻烦；腾讯会议这类比较私密的方式又会限制码率（其实b站也会），播游戏会又卡又糊，于是打算搭一个小型直播平台。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E7%BD%91%E7%BB%9C/">网络</category>
+      
+      <category domain="https://cybereal.one/tags/%E7%9B%B4%E6%92%AD/">直播</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%88%86%E4%BA%AB/">分享</category>
+      
+      
+      <comments>https://cybereal.one/2025/01/10/stream-platform/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>2024上海马拉松凑热闹实录</title>
+      <link>https://cybereal.one/2024/12/10/2024-shanghai-marathon/</link>
+      <guid>https://cybereal.one/2024/12/10/2024-shanghai-marathon/</guid>
+      <pubDate>Tue, 10 Dec 2024 11:23:16 GMT</pubDate>
+      
+      <description>&lt;p&gt;今年12月1日是一年一度的上海马拉松，虽然笔者完全没有运动细胞跑个一公里都嫌累，但是看马拉松还是挺有意思的，加上朋友也报名了上马（虽然只是健康跑），就半凑热闹地来看看这个一年一度的赛事。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/LIFE/">LIFE</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E8%A7%82%E8%B5%9B/">观赛</category>
+      
+      <category domain="https://cybereal.one/tags/%E8%BF%90%E5%8A%A8/">运动</category>
+      
+      <category domain="https://cybereal.one/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/">马拉松</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%B8%B8%E8%AE%B0/">游记</category>
+      
+      
+      <comments>https://cybereal.one/2024/12/10/2024-shanghai-marathon/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>给旧手机root一下来跑校园跑</title>
+      <link>https://cybereal.one/2024/12/07/try-root/</link>
+      <guid>https://cybereal.one/2024/12/07/try-root/</guid>
+      <pubDate>Sat, 07 Dec 2024 12:41:48 GMT</pubDate>
+      
+      <description>&lt;p&gt;学校要求每学期40公里校园跑，偏偏某大学还是三学期，于是一年要整三次校园跑，实在很麻烦。上学期是用模拟器完成的，但想想还是实体机方便一点。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E6%8A%98%E8%85%BE/">折腾</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F/">大学生</category>
+      
+      <category domain="https://cybereal.one/tags/root/">root</category>
+      
+      <category domain="https://cybereal.one/tags/bootloader/">bootloader</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E8%B7%91/">校园跑</category>
+      
+      
+      <comments>https://cybereal.one/2024/12/07/try-root/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
