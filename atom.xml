@@ -6,7 +6,7 @@
   <link href="https://cybereal.one/atom.xml" rel="self"/>
   
   <link href="https://cybereal.one/"/>
-  <updated>2026-02-25T14:15:46.134Z</updated>
+  <updated>2026-04-25T14:31:36.812Z</updated>
   <id>https://cybereal.one/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>神界原罪2：我的CRPG启蒙作</title>
+    <link href="https://cybereal.one/2026/04/25/dos2/"/>
+    <id>https://cybereal.one/2026/04/25/dos2/</id>
+    <published>2026-04-25T13:42:49.000Z</published>
+    <updated>2026-04-25T14:31:36.812Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;今天终于通关了拉瑞安的crpg神作（之一），神界：原罪2 趁热打铁写点东西出来&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="ACG" scheme="https://cybereal.one/categories/ACG/"/>
+    
+    <category term="游戏" scheme="https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+    <category term="玩后感" scheme="https://cybereal.one/tags/%E7%8E%A9%E5%90%8E%E6%84%9F/"/>
+    
+    <category term="CRPG" scheme="https://cybereal.one/tags/CRPG/"/>
+    
+    <category term="杂谈" scheme="https://cybereal.one/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="好评" scheme="https://cybereal.one/tags/%E5%A5%BD%E8%AF%84/"/>
+    
+  </entry>
   
   <entry>
     <title>网页联机红心大战开发日志</title>
@@ -366,33 +393,6 @@
     <category term="马拉松" scheme="https://cybereal.one/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/"/>
     
     <category term="游记" scheme="https://cybereal.one/tags/%E6%B8%B8%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>给旧手机root一下来跑校园跑</title>
-    <link href="https://cybereal.one/2024/12/07/try-root/"/>
-    <id>https://cybereal.one/2024/12/07/try-root/</id>
-    <published>2024-12-07T12:41:48.000Z</published>
-    <updated>2024-12-07T13:20:51.862Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;学校要求每学期40公里校园跑，偏偏某大学还是三学期，于是一年要整三次校园跑，实在很麻烦。上学期是用模拟器完成的，但想想还是实体机方便一点。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
-    
-    
-    <category term="折腾" scheme="https://cybereal.one/tags/%E6%8A%98%E8%85%BE/"/>
-    
-    <category term="大学生" scheme="https://cybereal.one/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F/"/>
-    
-    <category term="root" scheme="https://cybereal.one/tags/root/"/>
-    
-    <category term="bootloader" scheme="https://cybereal.one/tags/bootloader/"/>
-    
-    <category term="校园跑" scheme="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E8%B7%91/"/>
     
   </entry>
   

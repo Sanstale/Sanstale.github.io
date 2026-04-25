@@ -9,8 +9,37 @@
     <atom:link href="https://cybereal.one/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>简单记录生活</description>
-    <pubDate>Wed, 25 Feb 2026 14:15:46 GMT</pubDate>
+    <pubDate>Sat, 25 Apr 2026 14:31:36 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>神界原罪2：我的CRPG启蒙作</title>
+      <link>https://cybereal.one/2026/04/25/dos2/</link>
+      <guid>https://cybereal.one/2026/04/25/dos2/</guid>
+      <pubDate>Sat, 25 Apr 2026 13:42:49 GMT</pubDate>
+      
+      <description>&lt;p&gt;今天终于通关了拉瑞安的crpg神作（之一），神界：原罪2 趁热打铁写点东西出来&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/ACG/">ACG</category>
+      
+      <category domain="https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/">游戏</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E7%8E%A9%E5%90%8E%E6%84%9F/">玩后感</category>
+      
+      <category domain="https://cybereal.one/tags/CRPG/">CRPG</category>
+      
+      <category domain="https://cybereal.one/tags/%E6%9D%82%E8%B0%88/">杂谈</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%A5%BD%E8%AF%84/">好评</category>
+      
+      
+      <comments>https://cybereal.one/2026/04/25/dos2/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>网页联机红心大战开发日志</title>
@@ -390,35 +419,6 @@
       
       
       <comments>https://cybereal.one/2024/12/10/2024-shanghai-marathon/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>给旧手机root一下来跑校园跑</title>
-      <link>https://cybereal.one/2024/12/07/try-root/</link>
-      <guid>https://cybereal.one/2024/12/07/try-root/</guid>
-      <pubDate>Sat, 07 Dec 2024 12:41:48 GMT</pubDate>
-      
-      <description>&lt;p&gt;学校要求每学期40公里校园跑，偏偏某大学还是三学期，于是一年要整三次校园跑，实在很麻烦。上学期是用模拟器完成的，但想想还是实体机方便一点。&lt;/p&gt;</description>
-      
-      
-      
-      
-      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
-      
-      
-      <category domain="https://cybereal.one/tags/%E6%8A%98%E8%85%BE/">折腾</category>
-      
-      <category domain="https://cybereal.one/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F/">大学生</category>
-      
-      <category domain="https://cybereal.one/tags/root/">root</category>
-      
-      <category domain="https://cybereal.one/tags/bootloader/">bootloader</category>
-      
-      <category domain="https://cybereal.one/tags/%E6%A0%A1%E5%9B%AD%E8%B7%91/">校园跑</category>
-      
-      
-      <comments>https://cybereal.one/2024/12/07/try-root/#disqus_thread</comments>
       
     </item>
     
