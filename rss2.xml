@@ -9,8 +9,35 @@
     <atom:link href="https://cybereal.one/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>简单记录生活</description>
-    <pubDate>Mon, 27 Apr 2026 15:02:58 GMT</pubDate>
+    <pubDate>Thu, 30 Apr 2026 17:44:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>squeeze+Cloudflare R2实现博客图片压缩和加载优化</title>
+      <link>https://cybereal.one/2026/05/01/blog-image-optimization/</link>
+      <guid>https://cybereal.one/2026/05/01/blog-image-optimization/</guid>
+      <pubDate>Thu, 30 Apr 2026 16:17:57 GMT</pubDate>
+      
+      <description>&lt;p&gt;对于博客的图片管理这一块我之前一直做得比较随意，但前两天回看我的文章时发现加载速度惊人地慢…然后我就想起来：&lt;strong&gt;我的图片好像都是原图上传的！&lt;/strong&gt;一篇文章加载几十MB的图片谁来都顶不住啊，于是赶紧把图片优化提上日程。&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://cybereal.one/categories/TECH/">TECH</category>
+      
+      
+      <category domain="https://cybereal.one/tags/%E5%8D%9A%E5%AE%A2/">博客</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%9B%BE%E7%89%87/">图片</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/">对象存储</category>
+      
+      <category domain="https://cybereal.one/tags/%E5%8E%8B%E7%BC%A9/">压缩</category>
+      
+      
+      <comments>https://cybereal.one/2026/05/01/blog-image-optimization/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>神界原罪2：我的CRPG启蒙作</title>
@@ -392,33 +419,6 @@
       
       
       <comments>https://cybereal.one/2025/01/10/stream-platform/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>2024上海马拉松凑热闹实录</title>
-      <link>https://cybereal.one/2024/12/10/2024-shanghai-marathon/</link>
-      <guid>https://cybereal.one/2024/12/10/2024-shanghai-marathon/</guid>
-      <pubDate>Tue, 10 Dec 2024 11:23:16 GMT</pubDate>
-      
-      <description>&lt;p&gt;今年12月1日是一年一度的上海马拉松，虽然笔者完全没有运动细胞跑个一公里都嫌累，但是看马拉松还是挺有意思的，加上朋友也报名了上马（虽然只是健康跑），就半凑热闹地来看看这个一年一度的赛事。&lt;/p&gt;</description>
-      
-      
-      
-      
-      <category domain="https://cybereal.one/categories/LIFE/">LIFE</category>
-      
-      
-      <category domain="https://cybereal.one/tags/%E8%A7%82%E8%B5%9B/">观赛</category>
-      
-      <category domain="https://cybereal.one/tags/%E8%BF%90%E5%8A%A8/">运动</category>
-      
-      <category domain="https://cybereal.one/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/">马拉松</category>
-      
-      <category domain="https://cybereal.one/tags/%E6%B8%B8%E8%AE%B0/">游记</category>
-      
-      
-      <comments>https://cybereal.one/2024/12/10/2024-shanghai-marathon/#disqus_thread</comments>
       
     </item>
     

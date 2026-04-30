@@ -6,7 +6,7 @@
   <link href="https://cybereal.one/atom.xml" rel="self"/>
   
   <link href="https://cybereal.one/"/>
-  <updated>2026-04-27T15:02:58.096Z</updated>
+  <updated>2026-04-30T17:44:05.303Z</updated>
   <id>https://cybereal.one/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>squeeze+Cloudflare R2实现博客图片压缩和加载优化</title>
+    <link href="https://cybereal.one/2026/05/01/blog-image-optimization/"/>
+    <id>https://cybereal.one/2026/05/01/blog-image-optimization/</id>
+    <published>2026-04-30T16:17:57.000Z</published>
+    <updated>2026-04-30T17:44:05.303Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;对于博客的图片管理这一块我之前一直做得比较随意，但前两天回看我的文章时发现加载速度惊人地慢…然后我就想起来：&lt;strong&gt;我的图片好像都是原图上传的！&lt;/strong&gt;一篇文章加载几十MB的图片谁来都顶不住啊，于是赶紧把图片优化提上日程。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="TECH" scheme="https://cybereal.one/categories/TECH/"/>
+    
+    
+    <category term="博客" scheme="https://cybereal.one/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="图片" scheme="https://cybereal.one/tags/%E5%9B%BE%E7%89%87/"/>
+    
+    <category term="对象存储" scheme="https://cybereal.one/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    
+    <category term="压缩" scheme="https://cybereal.one/tags/%E5%8E%8B%E7%BC%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>神界原罪2：我的CRPG启蒙作</title>
@@ -368,31 +393,6 @@
     <category term="直播" scheme="https://cybereal.one/tags/%E7%9B%B4%E6%92%AD/"/>
     
     <category term="分享" scheme="https://cybereal.one/tags/%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2024上海马拉松凑热闹实录</title>
-    <link href="https://cybereal.one/2024/12/10/2024-shanghai-marathon/"/>
-    <id>https://cybereal.one/2024/12/10/2024-shanghai-marathon/</id>
-    <published>2024-12-10T11:23:16.000Z</published>
-    <updated>2024-12-24T01:43:10.141Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;今年12月1日是一年一度的上海马拉松，虽然笔者完全没有运动细胞跑个一公里都嫌累，但是看马拉松还是挺有意思的，加上朋友也报名了上马（虽然只是健康跑），就半凑热闹地来看看这个一年一度的赛事。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="LIFE" scheme="https://cybereal.one/categories/LIFE/"/>
-    
-    
-    <category term="观赛" scheme="https://cybereal.one/tags/%E8%A7%82%E8%B5%9B/"/>
-    
-    <category term="运动" scheme="https://cybereal.one/tags/%E8%BF%90%E5%8A%A8/"/>
-    
-    <category term="马拉松" scheme="https://cybereal.one/tags/%E9%A9%AC%E6%8B%89%E6%9D%BE/"/>
-    
-    <category term="游记" scheme="https://cybereal.one/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   

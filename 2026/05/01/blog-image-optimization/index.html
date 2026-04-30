@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cybereal.one","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="对于博客的图片管理这一块我之前一直做得比较随意，但前两天回看我的文章时发现加载速度惊人地慢…然后我就想起来：我的图片好像都是原图上传的！一篇文章加载几十MB的图片谁来都顶不住啊，于是赶紧把图片优化提上日程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="squeeze+Cloudflare R2实现博客图片压缩和加载优化">
+<meta property="og:url" content="https://cybereal.one/2026/05/01/blog-image-optimization/index.html">
+<meta property="og:site_name" content="Sanstale&#39;s Blog">
+<meta property="og:description" content="对于博客的图片管理这一块我之前一直做得比较随意，但前两天回看我的文章时发现加载速度惊人地慢…然后我就想起来：我的图片好像都是原图上传的！一篇文章加载几十MB的图片谁来都顶不住啊，于是赶紧把图片优化提上日程。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/image-20260501011045925.png">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/image-20260501011427283.png">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/screenshot_251114_130654.jpg.jpeg">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/image-20260501012036464.png">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/image-20260501013213902.png">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/image-20260501013401213.png">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/image-20260501013544149.png">
+<meta property="og:image" content="https://cdn1.cybereal.one/2026/05/image-20260501013608569.png">
+<meta property="article:published_time" content="2026-04-30T16:17:57.000Z">
+<meta property="article:modified_time" content="2026-04-30T17:44:05.303Z">
+<meta property="article:author" content="Sanstale">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="图片">
+<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="压缩">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn1.cybereal.one/2026/05/image-20260501011045925.png">
+
+
+<link rel="canonical" href="https://cybereal.one/2026/05/01/blog-image-optimization/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cybereal.one/2026/05/01/blog-image-optimization/","path":"2026/05/01/blog-image-optimization/","title":"squeeze+Cloudflare R2实现博客图片压缩和加载优化"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>squeeze+Cloudflare R2实现博客图片压缩和加载优化 | Sanstale's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Sanstale's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Sanstale's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sanstale's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">背景介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9"><span class="nav-number">2.</span> <span class="nav-text">图片压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloudflare-R2"><span class="nav-number">3.</span> <span class="nav-text">Cloudflare R2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9A%E5%9C%A8-Cloudflare-%E5%88%9B%E5%BB%BA-R2-%E5%AD%98%E5%82%A8%E6%A1%B6%E4%B8%8E%E8%8E%B7%E5%8F%96%E5%87%AD%E8%AF%81"><span class="nav-number">3.1.</span> <span class="nav-text">第一阶段：在 Cloudflare 创建 R2 存储桶与获取凭证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9A%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%EF%BC%88%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">第二阶段：绑定自定义域名（关键步骤）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5%EF%BC%9A%E6%89%93%E9%80%9A-PicGo-%E9%93%BE%E8%B7%AF"><span class="nav-number">3.3.</span> <span class="nav-text">第三阶段：打通 PicGo 链路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%EF%BC%81"><span class="nav-number">4.</span> <span class="nav-text">结束！</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sanstale</p>
+  <div class="site-description" itemprop="description">简单记录生活</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">93</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cybereal.one/2026/05/01/blog-image-optimization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sanstale">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sanstale's Blog">
+      <meta itemprop="description" content="简单记录生活">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="squeeze+Cloudflare R2实现博客图片压缩和加载优化 | Sanstale's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          squeeze+Cloudflare R2实现博客图片压缩和加载优化
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-05-01 00:17:57 / 修改时间：01:44:05" itemprop="dateCreated datePublished" datetime="2026-05-01T00:17:57+08:00">2026-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TECH/" itemprop="url" rel="index"><span itemprop="name">TECH</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>对于博客的图片管理这一块我之前一直做得比较随意，但前两天回看我的文章时发现加载速度惊人地慢…然后我就想起来：<strong>我的图片好像都是原图上传的！</strong>一篇文章加载几十MB的图片谁来都顶不住啊，于是赶紧把图片优化提上日程。</p>
+<span id="more"></span>
+
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>我原来的做法很简单：写作使用Typora，通过设置和PicGo联动，在PicGo设置Github图床，然后设一个二级域名（比如cdn.cybereal.one) 用CNAME解析到一个jsDelivr的国内镜像，这样基本不用我做什么设置，在编辑器里传一张图就可以之间转为cdn,cyebreal.one开头的网址了。</p>
+<p>但这样做有两个问题：一个是我原图上传毫无压缩，这在互联网内容传输是非常错误的选择，因为在网页浏览中一张10MB的原图可能和压缩后300KB的图片观感差异并不太大，但对加载速度的影响是极为显著的，以前看过这么一段话：</p>
+<blockquote>
+<p>网站加载时间每多一秒，将严重损害业务表现。根据多项研究，每增加1秒延迟：转化率会减少7%，页面浏览量减少11%，用户满意度下降16%，甚至会导致10%的用户流失。加载时间超过3秒，可能导致超过53%的移动用户跳出。</p>
+</blockquote>
+<p>虽然个人网站也不是特别在意用户流失(本来也没多少浏览量)，但加载速度太慢无论如何都还是很不方便。</p>
+<p>此外，原来用的cdn是我在网上随便找的jsDelivr镜像，加载速度和可靠性都不是很有保证。</p>
+<p>于是打算在上传前加一个压缩的预处理，以及换一个CDN，研究一番决定使用Cloudflare R2存储桶。</p>
+<h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>既然之前上传图片的工作流用到了PicGo，它也有丰富的插件生态，那么事情就很好办了。一番搜寻之后我找到了<a target="_blank" rel="noopener" href="https://github.com/Redns/picgo-plugin-squeeze">picgo-plugin-squeeze</a>这个插件，它支持本地压缩和在线压缩两种模式，本地使用npm包<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/sharp">sharp</a>实现，在线压缩使用<a target="_blank" rel="noopener" href="https://www.secaibi.com/tools/%E5%9C%A8%E7%BA%BF%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/">色彩笔</a>（昨天我下插件时还是这样，但今天一看作者又更新了一个TinyPNG的在线方案）</p>
+<img src="https://cdn1.cybereal.one/2026/05/image-20260501011045925.png" alt="" style="zoom:80%;" />
+
+<p>这个插件其实功能很完善，该有的都有，但我还希望有两个功能：一个是格式转换，比如压缩的同时把jpg转webp之类的（作者已经更新了），还有自定义分辨率，比如4k的图压一下顺便转1080p，因为想加这两个功能，晚上用codex写了一个小时，但各种原因装不到PicGo里…遂放弃</p>
+<p>于是就直接使用这个插件了，图片质量我设为75，其实压缩效果还是不错的，游戏截图可以压缩92%左右</p>
+<p><img src="https://cdn1.cybereal.one/2026/05/image-20260501011427283.png" alt="PicGo日志"></p>
+<p><img src="https://cdn1.cybereal.one/2026/05/screenshot_251114_130654.jpg.jpeg" alt="压缩后游戏截图"></p>
+<p>于是图片优化的部分就结束了，很简单，就在PicGo装个插件的事</p>
+<h2 id="Cloudflare-R2"><a href="#Cloudflare-R2" class="headerlink" title="Cloudflare R2"></a>Cloudflare R2</h2><p>接下来是更换CDN，本来想着换到国内的某些对象存储，比如腾讯云，七牛云OSS之类的，后来看到网上说R2不收流量费，还有免费额度，正好我域名也是托管在CF的，比较方便，就选这个了</p>
+<h3 id="第一阶段：在-Cloudflare-创建-R2-存储桶与获取凭证"><a href="#第一阶段：在-Cloudflare-创建-R2-存储桶与获取凭证" class="headerlink" title="第一阶段：在 Cloudflare 创建 R2 存储桶与获取凭证"></a>第一阶段：在 Cloudflare 创建 R2 存储桶与获取凭证</h3><p>首先登陆<a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/">Cloudflare</a> ，接着选择<strong>R2对象存储</strong>，第一次打开会需要激活R2的计划，要绑个银行卡之类的，不过只要用量不超过<strong>A类操作（上传写入之类的）100万次&#x2F;月</strong>和<strong>B类操作（读取等）1000万次&#x2F;月</strong>，以及<strong>每月10GB限额</strong>，就不会收费，如果没有银行卡参照<a target="_blank" rel="noopener" href="https://www.cybereal.one/2023/08/04/debitcard/">这期文章</a>或者<a target="_blank" rel="noopener" href="https://docofcard.com/">docofcard</a></p>
+<p><img src="https://cdn1.cybereal.one/2026/05/image-20260501012036464.png"></p>
+<p><strong>创建存储桶 (Bucket)</strong></p>
+<ul>
+<li>点击“创建存储桶” (Create Bucket)。</li>
+<li><strong>名称</strong>：起一个你喜欢的名字（比如 <code>my-blog-images</code>）。</li>
+<li><strong>位置提示</strong>：默认“自动”即可（Cloudflare 会根据上传源自动分配，通常会在亚太地区）。</li>
+<li>创建完成后，你会在存储桶概览里看到一个类似于 <code>https://&lt;你的账户ID&gt;.r2.cloudflarestorage.com</code> 的 <strong>S3 终结点 (Endpoint)</strong> 链接，把它复制下来备用。</li>
+<li><img src="https://cdn1.cybereal.one/2026/05/image-20260501013213902.png"></li>
+</ul>
+<p><strong>获取 API 令牌 (核心钥匙)</strong></p>
+<ul>
+<li>回到 R2 的主界面（不要进具体的存储桶），在右上角或者右侧边栏找到 <strong>“管理 R2 API 令牌”</strong>。</li>
+<li>点击“创建 API 令牌”。</li>
+<li><strong>权限</strong>：务必选择 <strong>“对象读和写”</strong>。</li>
+<li><strong>指定存储桶</strong>：强烈建议只勾选你刚才创建的那个博客专属 Bucket，遵循最小权限原则。</li>
+<li><strong>TTL</strong>：选择“永久”。</li>
+<li>创建后，页面会<strong>仅显示一次</strong>你的秘钥信息。请立刻将 <strong>访问密钥 ID (Access Key ID)</strong> 和 <strong>机密访问密钥 (Secret Access Key)</strong> 复制并妥善保存。</li>
+</ul>
+<h3 id="第二阶段：绑定自定义域名（关键步骤）"><a href="#第二阶段：绑定自定义域名（关键步骤）" class="headerlink" title="第二阶段：绑定自定义域名（关键步骤）"></a>第二阶段：绑定自定义域名（关键步骤）</h3><p>R2 默认会提供一个 <code>*.r2.dev</code> 的公共访问链接，但这个链接经常被墙，且有速率限制。既然你有自己的域名并且托管在 Cloudflare 上，直接绑定自定义域名才是完全体。</p>
+<ol>
+<li>进入你刚才创建的存储桶设置页面。</li>
+<li>找到 <strong>“公共访问” (Public Access)</strong> -&gt; **“自定义域” (Custom Domains)**。</li>
+<li>点击“连接域”，输入你规划好的图片二级域名（例如 <code>cdn.你的域名.com</code>）。</li>
+<li>Cloudflare 会自动在你的 DNS 记录里添加对应的 CNAME 记录，并自动配置 SSL 证书。</li>
+<li>等待几分钟，直到状态显示为“活跃 (Active)”。你的图片访问基础 URL 就是 <code>[https://cdn.你的域名.com](https://cdn.你的域名.com)</code> 了。</li>
+<li><img src="https://cdn1.cybereal.one/2026/05/image-20260501013401213.png"></li>
+</ol>
+<h3 id="第三阶段：打通-PicGo-链路"><a href="#第三阶段：打通-PicGo-链路" class="headerlink" title="第三阶段：打通 PicGo 链路"></a>第三阶段：打通 PicGo 链路</h3><p>因为 R2 完美兼容亚马逊 S3 协议，所以我们不需要找专门的 R2 插件，直接用最成熟的 S3 插件即可。</p>
+<ol>
+<li><strong>安装插件</strong> 在 PicGo 的插件设置里，搜索并安装 <code>picgo-plugin-s3</code>（认准作者是 wayjam 的那个版本，下载量最高）。</li>
+<li><strong>配置 S3 图床参数</strong> 进入图床设置 -&gt; 亚马逊 S3，按照以下规则填写：<ul>
+<li><strong>应用密钥 ID</strong>：填入第一阶段获取的 Access Key ID。</li>
+<li><strong>应用密钥</strong>：填入第一阶段获取的 Secret Access Key。</li>
+<li><strong>桶名</strong>：填入你的存储桶名称（例如 <code>my-blog-images</code>）。</li>
+<li><strong>上传文件路径</strong>：可以写 <code>&#123;year&#125;/&#123;month&#125;/&#123;fileName&#125;</code>，这样云端文件会自动按年月归档。</li>
+<li><strong>地区</strong>：填 <code>auto</code> 或者直接留空。</li>
+<li><strong>自定义节点</strong>：填入第一阶段获取的 S3 终结点，类似于 <code>https://&lt;账户ID&gt;.r2.cloudflarestorage.com</code>。</li>
+<li><strong>自定义域名</strong>：填入第二阶段绑定的域名，例如 <code>[https://cdn.你的域名.com](https://cdn.你的域名.com)</code>。</li>
+<li><strong>ForcePathStyle</strong>：开启（设为 <code>true</code> 或勾选）。这是兼容第三方 S3 服务的关键开关。</li>
+<li><strong>RejectUnauthorized</strong>：关闭（设为 <code>false</code>，避免某些本地证书校验问题）。</li>
+<li><strong>ACL 访问控制列表</strong>：<code>public-read</code></li>
+</ul>
+</li>
+<li><strong>设为默认图床</strong> 保存配置，并将其设为默认图床。</li>
+</ol>
+<p><img src="https://cdn1.cybereal.one/2026/05/image-20260501013544149.png"></p>
+<p><img src="https://cdn1.cybereal.one/2026/05/image-20260501013608569.png"></p>
+<h2 id="结束！"><a href="#结束！" class="headerlink" title="结束！"></a>结束！</h2><p>如果不出问题的话，做完这两步，配合Typora联动PicGo，就可以实现<strong>向Typora粘贴图片→自动通过PicGo上传图片→压缩图片→传到R2存储桶→自动返回链接</strong>的模式了，大幅减少网站加载速度，收工！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Sanstale
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://cybereal.one/2026/05/01/blog-image-optimization/" title="squeeze+Cloudflare R2实现博客图片压缩和加载优化">https://cybereal.one/2026/05/01/blog-image-optimization/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
+              <a href="/tags/%E5%9B%BE%E7%89%87/" rel="tag"># 图片</a>
+              <a href="/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" rel="tag"># 对象存储</a>
+              <a href="/tags/%E5%8E%8B%E7%BC%A9/" rel="tag"># 压缩</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/04/25/dos2/" rel="prev" title="神界原罪2：我的CRPG启蒙作">
+                  <i class="fa fa-chevron-left"></i> 神界原罪2：我的CRPG启蒙作
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Sanstale</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">50k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div><div class="moebeian"><a href="https://icp.gov.moe/?keyword=20232339" target="_blank">萌ICP备20232339号</a>
+  </div>
+
+    </div>
+  </footer>
+
+
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://unpkg.com/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
