@@ -58,11 +58,11 @@
     <category term="游戏" scheme="https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/"/>
     
     
-    <category term="玩后感" scheme="https://cybereal.one/tags/%E7%8E%A9%E5%90%8E%E6%84%9F/"/>
-    
     <category term="CRPG" scheme="https://cybereal.one/tags/CRPG/"/>
     
     <category term="杂谈" scheme="https://cybereal.one/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="玩后感" scheme="https://cybereal.one/tags/%E7%8E%A9%E5%90%8E%E6%84%9F/"/>
     
     <category term="好评" scheme="https://cybereal.one/tags/%E5%A5%BD%E8%AF%84/"/>
     
@@ -114,13 +114,13 @@
     <category term="TRAVEL" scheme="https://cybereal.one/categories/LIFE/TRAVEL/"/>
     
     
-    <category term="随笔" scheme="https://cybereal.one/tags/%E9%9A%8F%E7%AC%94/"/>
-    
     <category term="CityWalk" scheme="https://cybereal.one/tags/CityWalk/"/>
     
     <category term="城市漫步" scheme="https://cybereal.one/tags/%E5%9F%8E%E5%B8%82%E6%BC%AB%E6%AD%A5/"/>
     
     <category term="记录" scheme="https://cybereal.one/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+    <category term="随笔" scheme="https://cybereal.one/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -208,11 +208,11 @@
     <category term="LIFE" scheme="https://cybereal.one/categories/LIFE/"/>
     
     
-    <category term="技术" scheme="https://cybereal.one/tags/%E6%8A%80%E6%9C%AF/"/>
-    
     <category term="自行车" scheme="https://cybereal.one/tags/%E8%87%AA%E8%A1%8C%E8%BD%A6/"/>
     
     <category term="水" scheme="https://cybereal.one/tags/%E6%B0%B4/"/>
+    
+    <category term="技术" scheme="https://cybereal.one/tags/%E6%8A%80%E6%9C%AF/"/>
     
     <category term="新手" scheme="https://cybereal.one/tags/%E6%96%B0%E6%89%8B/"/>
     
@@ -312,9 +312,9 @@
     <category term="游戏" scheme="https://cybereal.one/categories/ACG/%E6%B8%B8%E6%88%8F/"/>
     
     
-    <category term="测评" scheme="https://cybereal.one/tags/%E6%B5%8B%E8%AF%84/"/>
-    
     <category term="玩后感" scheme="https://cybereal.one/tags/%E7%8E%A9%E5%90%8E%E6%84%9F/"/>
+    
+    <category term="测评" scheme="https://cybereal.one/tags/%E6%B5%8B%E8%AF%84/"/>
     
   </entry>
   
